@@ -1,5 +1,5 @@
-from flask import Flask, jsonify, render_template, url_for
 import requests
+from flask import Flask, jsonify, render_template, url_for
 
 app = Flask(__name__)
 
@@ -22,6 +22,7 @@ def call_service(domain, service, payload):
 
 from flask import redirect
 
+
 @app.route("/light")
 def light():
     call_service(
@@ -36,9 +37,9 @@ def playpause():
     call_service("media_player", "media_play_pause", {"entity_id": "media_player.tv"})
     return redirect("/")
 
-@app.route("/")
+@app.route("/gold_small")
 def index():
-    return render_template("index.html")
+    return render_template("gold/small/index.html")
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0", port=5001)
