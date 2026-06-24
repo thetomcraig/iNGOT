@@ -1,0 +1,37 @@
+<html>
+
+<head>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Home Panel">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Home Panel</title>
+    <link rel="stylesheet" href="/static/style.css?v=20260614-mobile">
+</head>
+<body>
+    <img class="hero-image" src="/static/background.png?v=20260614-test" alt="">
+    <main class="panel">
+        <div class="button-grid">
+            <div class="left-column">
+                <form action="/light">
+                    <button class="image-button" type="submit">
+                        <img src="/static/light_bulb.png" alt="LVG Light">
+                    </button>
+                </form>
+                <form action="/all_off">
+                    <button class="image-button" type="submit">
+                        <img src="/static/three_light_bulbs.png" alt="LVG Light">
+                    </button>
+                </form>
+            </div>
+            <div class="right-column">
+                <form action="/playpause">
+                    <button class="image-button" type="submit">
+                        <img src="/static/playpause.png" alt="Play Pause">
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

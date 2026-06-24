@@ -1,0 +1,44 @@
+from flask import Flask, jsonify, render_template, url_for
+import requests
+
+app = Flask(__name__)
+
+HA_URL = "http://127.0.0.1:8123"
+ENV_VARS = {}
+
+with open(".env", "r") as f:
+    for line in f:
+        key_var = line.split("=")
+        ENV_VARS[key_var[0].strip()] = key_var[1].strip()
+
+HEADERS = {
+    "Authorization": f"Bearer {ENV_VARS['HA_TOKEN']}",
+    "Content-Type": "application/json",
+}
+
+def call_service(domain, service, payload):
+    url = f"{HA_URL}/api/services/{domain}/{service}"
+    return requests.post(url, headers=HEADERS, json=payload)
+
+from flask import redirect
+
+@app.route("/light")
+def light():
+    call_service(
+        "switch",
+        "toggle",
+        {"entity_id": "switch.living_room_light"}
+    )
+    return redirect("/")
+
+@app.route("/playpause")
+def playpause():
+    call_service("media_player", "media_play_pause", {"entity_id": "media_player.tv"})
+    return redirect("/")
+
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)

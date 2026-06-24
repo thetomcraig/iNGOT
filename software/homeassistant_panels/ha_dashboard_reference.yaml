@@ -1,0 +1,301 @@
+kiosk_mode:
+  hide_sidebar: true
+  hide_header: true
+views:
+  - type: sections
+    path: ''
+    sections:
+      - type: grid
+        cards:
+          - type: custom:bubble-card
+            card_type: button
+            button_type: switch
+            entity: switch.office_lamp
+            name: Lamp
+            icon: mdi:lamp
+            tap_action:
+              action: toggle
+            rows: '1'
+            grid_options:
+              columns: 3
+              rows: 1
+            scrolling_effect: false
+            show_state: false
+            show_name: false
+            sub_button:
+              main: []
+              bottom: []
+          - type: custom:bubble-card
+            card_type: button
+            button_type: switch
+            name: Desk light
+            entity: switch.office_desk_light
+            icon: mdi:desk-lamp
+            tap_action:
+              action: toggle
+            rows: '1'
+            grid_options:
+              columns: 3
+              rows: 1
+            scrolling_effect: false
+            show_state: false
+            show_name: false
+            sub_button:
+              main: []
+              bottom: []
+          - type: custom:bubble-card
+            card_type: button
+            button_type: switch
+            entity: switch.office_lamp
+            name: Office Lights
+            icon: mdi:lamps
+            button_action:
+              tap_action:
+                action: perform-action
+                perform_action: script.toggle_office_lights
+            rows: '1'
+            grid_options:
+              columns: 6
+              rows: 1
+            scrolling_effect: false
+            show_state: false
+            show_name: true
+            sub_button:
+              main: []
+              bottom: []
+          - type: custom:bubble-card
+            card_type: button
+            button_type: switch
+            entity: switch.on_air_light
+            name: On Air
+            icon: mdi:microphone-variant
+            tap_action:
+              action: toggle
+            rows: '1'
+            grid_options:
+              columns: 6
+              rows: 1
+            show_name: false
+            scrolling_effect: false
+            show_attribute: false
+            sub_button:
+              main: []
+              bottom: []
+          - type: custom:bubble-card
+            card_type: button
+            button_type: switch
+            entity: switch.3d_printer
+            name: 3D Printer
+            icon: mdi:printer-3d
+            tap_action:
+              action: toggle
+            rows: '1'
+            grid_options:
+              columns: 6
+              rows: 1
+            show_name: true
+            scrolling_effect: false
+            show_attribute: false
+            sub_button:
+              main: []
+              bottom: []
+          - type: custom:bubble-card
+            card_type: button
+            button_type: name
+            entity: switch.pi
+            name: Turn on Aesop
+            icon: mdi:power-plug
+            button_action:
+              tap_action:
+                action: perform-action
+                perform_action: script.turn_on_aesop_and_crt
+            rows: '1'
+            grid_options:
+              columns: 6
+              rows: 1
+            scrolling_effect: false
+            show_state: false
+            show_name: true
+            sub_button:
+              main: []
+              bottom: []
+          - type: custom:bubble-card
+            card_type: button
+            button_type: name
+            entity: switch.pi
+            name: Shutdown
+            icon: mdi:power-plug-off
+            button_action:
+              tap_action:
+                action: perform-action
+                perform_action: script.safely_shutdown_aesop
+            rows: '1'
+            grid_options:
+              columns: 6
+              rows: 1
+            scrolling_effect: false
+            show_state: false
+            show_name: true
+            sub_button:
+              main: []
+              bottom: []
+          - type: custom:bubble-card
+            card_type: button
+            button_type: name
+            entity: switch.pi
+            name: Start Recording
+            icon: mdi:record-circle-outline
+            button_action:
+              tap_action:
+                action: perform-action
+                perform_action: script.demophon_start_recording
+            rows: '1'
+            grid_options:
+              columns: 6
+              rows: 1
+            scrolling_effect: false
+            show_state: false
+            show_name: true
+            sub_button:
+              main: []
+              bottom: []
+          - type: custom:bubble-card
+            card_type: button
+            button_type: name
+            entity: switch.pi
+            name: Stop Recording
+            icon: mdi:stop-circle
+            button_action:
+              tap_action:
+                action: perform-action
+                perform_action: script.demophon_stop_recording
+            rows: '1'
+            grid_options:
+              columns: 6
+              rows: 1
+            scrolling_effect: false
+            show_state: false
+            show_name: true
+            sub_button:
+              main: []
+              bottom: []
+          - type: custom:bubble-card
+            card_type: button
+            button_type: switch
+            entity: switch.ihome_smartplug_1de27e_outlet
+            name: C
+            icon: mdi:monitor-small
+            tap_action:
+              action: toggle
+            rows: '1'
+            grid_options:
+              columns: 3
+              rows: 1
+            scrolling_effect: false
+            show_name: false
+            sub_button:
+              main: []
+              bottom: []
+          - type: custom:bubble-card
+            card_type: button
+            button_type: switch
+            entity: switch.pi
+            name: C
+            icon: mdi:pi-box
+            tap_action:
+              action: toggle
+            rows: '1'
+            grid_options:
+              columns: 3
+              rows: 1
+            scrolling_effect: false
+            show_name: false
+            sub_button:
+              main: []
+              bottom: []
+      - type: grid
+        cards:
+          - type: custom:bubble-card
+            card_type: button
+            button_type: switch
+            entity: binary_sensor.0xd44867fffeb362ef_contact
+            name: Front Door
+            icon: mdi:door-open
+            tap_action:
+              action: toggle
+            show_state: true
+            show_last_changed: false
+            rows: '1'
+            grid_options:
+              columns: 6
+              rows: 1
+            show_icon: true
+          - type: custom:bubble-card
+            card_type: button
+            button_type: switch
+            entity: binary_sensor.back_door_contact
+            name: Back Door
+            icon: mdi:door-open
+            tap_action:
+              action: toggle
+            show_state: true
+            show_last_changed: false
+            rows: '1'
+            grid_options:
+              columns: 6
+              rows: 1
+            show_icon: true
+          - type: custom:bubble-card
+            card_type: button
+            button_type: switch
+            entity: switch.living_room_light
+            name: LVG Light
+            icon: mdi:floor-lamp-torchiere
+            tap_action:
+              action: toggle
+            rows: '1'
+            grid_options:
+              columns: 6
+              rows: 1
+          - type: custom:bubble-card
+            card_type: button
+            button_type: switch
+            entity: switch.office_salt_lamp
+            name: Opal
+            icon: mdi:cube
+            tap_action:
+              action: toggle
+            rows: '1'
+            grid_options:
+              columns: 6
+              rows: 1
+            sub_button:
+              main: []
+              bottom: []
+          - type: custom:bubble-card
+            card_type: button
+            button_type: switch
+            entity: switch.outside_lights
+            name: Outside
+            icon: mdi:string-lights
+            tap_action:
+              action: toggle
+            rows: '1'
+            grid_options:
+              columns: 6
+              rows: 1
+          - type: custom:bubble-card
+            card_type: button
+            button_type: state
+            entity: sensor.eloise_s_room_temp_temperature
+            grid_options:
+              columns: 6
+              rows: auto
+            name: Eloise
+            scrolling_effect: false
+        column_span: 1
+      - type: grid
+        cards: []
+    max_columns: 4
+    title: Home
+    cards: []
