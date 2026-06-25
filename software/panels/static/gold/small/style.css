@@ -30,11 +30,11 @@ body {
     bottom: 0;
     left: 0;
     z-index: 2;
-    display: block;
-    padding-top: 75px;
-    padding-bottom: 50px;
-    padding-left: 50px;
-    padding-right: 50px;
+    /* display: flex; */
+    padding-top: 30px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     pointer-events: none;
@@ -43,41 +43,31 @@ body {
 .button-grid {
     width: 100%;
     overflow: hidden;
+    /* display: flex; */
+    /* justify-content: space-around; */
 }
 
 .left-column {
     float: left;
-    width: 10%;
+    /* flex-direction: column; */
+    /* width: 30%; */
+}
+
+.center-column {
+    /* flex-direction: column; */
+    /* width: 30%; */
 }
 
 .right-column {
+    /* flex-direction: column; */
     float: right;
-    width: 60%;
+    /* width: 30%; */
 }
 
 form {
     display: block;
-    width: 100%;
     margin: 0 0 12px 0;
     pointer-events: auto;
-}
-
-.right-column form {
-    margin: 0;
-}
-
-.tile-button {
-    display: block;
-    width: 100%;
-    padding: 16px 20px;
-    border: 0;
-    border-radius: 16px;
-    background: rgba(40, 40, 40, 0.88);
-    color: #fff;
-    font-size: 20px;
-    cursor: pointer;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
-    -webkit-tap-highlight-color: transparent;
 }
 
 .image-button {
