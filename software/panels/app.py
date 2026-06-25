@@ -37,7 +37,7 @@ def playpause():
     call_service("media_player", "media_play_pause", {"entity_id": "media_player.tv"})
     return redirect("/")
 
-@app.route("/gold_small")
+@app.route("/gold/small")
 def index():
     return render_template("gold/small/index.html")
 
