@@ -23,8 +23,17 @@ def call_service(domain, service, payload):
 from flask import redirect
 
 
-@app.route("/light")
-def light():
+@app.route("/living_room_on")
+def living_room_on():
+    call_service(
+        "switch",
+        "toggle",
+        {"entity_id": "switch.living_room_light"}
+    )
+    return redirect("/")
+
+@app.route("/living_room_off")
+def living_room_off():
     call_service(
         "switch",
         "toggle",
