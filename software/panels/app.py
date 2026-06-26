@@ -46,9 +46,9 @@ def playpause():
     call_service("media_player", "media_play_pause", {"entity_id": "media_player.tv"})
     return redirect(f"{request.referrer or url_for('index')}")
 
-@app.route("/gold/small")
+@app.route("/ios/small")
 def index():
-    return render_template("gold/small/index.html")
+    return render_template("ios/small/index.html")
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5001)
