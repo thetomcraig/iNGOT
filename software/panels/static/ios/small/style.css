@@ -38,7 +38,6 @@ body {
 .button-grid {
     position: absolute;
     top: 7%;
-    left: 2%;
 }
 
 form {
@@ -46,6 +45,10 @@ form {
     padding: 0;
     pointer-events: auto;
     display: inline;
+}
+
+.inside-td {
+    margin: 14;
 }
 
 td {
