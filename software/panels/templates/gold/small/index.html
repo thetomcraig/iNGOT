@@ -1,28 +1,91 @@
 <html>
-
-<head>
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Home Panel">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <head>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-title" content="Home Panel" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
     <title>Home Panel</title>
-    <link rel="stylesheet" href="/static/gold/small/style.css?v=20260614-mobile">
-</head>
-<body>
-    <img class="hero-image" src="/static/gold/small/background.png?v=20260614-test" alt="">
+    <link
+      rel="stylesheet"
+      href="/static/gold/small/style.css?v=20260614-mobile"
+    />
+  </head>
+  <body>
+    <img
+      class="hero-image"
+      src="/static/gold/small/background.png?v=20260614-test"
+      alt=""
+    />
     <main class="panel">
-    <table class="button-grid" cellpadding="0" cellspacing="0" border="0">
+      <table class="button-grid" cellpadding="0" cellspacing="0" border="0">
         <tr>
-            <td><form action="/living_room_on"><button class="image-button" type="submit"><img src="/static/gold/small/ios_light_bulb_on.png" alt="Living Room On"></button></form></td>
-            <td><form action="/all_on" style="display:inline;"><button class="image-button" type="submit"><img src="/static/gold/small/ios_3_light_bulbs_on.png" alt="All On"></button></form></td>
-            <td><form action="/playpause" style="display:inline;"><button class="image-button" type="submit"><img src="/static/gold/small/ios_playpause.png" alt="Play/Pause"></button></form></td>
+          <td>
+            <form action="/living_room_toggle">
+              <button class="image-button" type="submit" method="post">
+                <img
+                  src="/static/gold/small/ios_light_bulb_on.png"
+                  alt="Living Room Toggle"
+                />
+              </button>
+            </form>
+          </td>
+          <td>
+            <form action="/downstairs_toggle" style="display: inline">
+              <button class="image-button" type="submit">
+                <img
+                  src="/static/gold/small/ios_3_light_bulbs_on.png"
+                  alt="All On"
+                />
+              </button>
+            </form>
+          </td>
+          <td>
+            <form action="/playpause" style="display: inline">
+              <button class="image-button" type="submit">
+                <img
+                  src="/static/gold/small/ios_playpause.png"
+                  alt="Play/Pause"
+                />
+              </button>
+            </form>
+          </td>
         </tr>
         <tr>
-            <td><form action="/living_room_off"><button class="image-button" type="submit"><img src="/static/gold/small/ios_light_bulb_off.png" alt="Living Room Off"></button></form></td>
-            <td><form action="/all_off" style="display:inline;"><button class="image-button" type="submit"><img src="/static/gold/small/ios_3_light_bulbs_off.png" alt="All Off"></button></form></td>
-            <td><form action="/" style="display:inline;"><button class="image-button" type="submit"><img src="/static/gold/small/ios_blank.png" alt="Blank"></button></form></td>
+          <td>
+            <form action="/living_room_toggle">
+              <button class="image-button" type="submit">
+                <img
+                  src="/static/gold/small/ios_light_bulb_off.png"
+                  alt="Living Room Off"
+                />
+              </button>
+            </form>
+          </td>
+          <td>
+            <form action="/all_off" style="display: inline">
+              <button class="image-button" type="submit">
+                <img
+                  src="/static/gold/small/ios_3_light_bulbs_off.png"
+                  alt="All Off"
+                />
+              </button>
+            </form>
+          </td>
+          <td>
+            <form action="/" style="display: inline">
+              <button class="image-button" type="submit">
+                <img src="/static/gold/small/ios_blank.png" alt="Blank" />
+              </button>
+            </form>
+          </td>
         </tr>
-    </table>
-</main>
-</body>
+      </table>
+    </main>
+  </body>
 </html>

@@ -1,9 +1,10 @@
 import requests
-from flask import Flask, jsonify, render_template, url_for
+from flask import Flask, jsonify, render_template, request, url_for
 
 app = Flask(__name__)
 
-HA_URL = "http://127.0.0.1:8123"
+# HA_URL = "http://127.0.0.1:8123"
+HA_URL = "http://ariston:8123"
 ENV_VARS = {}
 
 with open(".env", "r") as f:
@@ -23,28 +24,27 @@ def call_service(domain, service, payload):
 from flask import redirect
 
 
-@app.route("/living_room_on")
-def living_room_on():
+@app.route("/living_room_toggle", methods=['GET', 'POST'])
+def living_room_toggle():
     call_service(
         "switch",
         "toggle",
         {"entity_id": "switch.living_room_light"}
     )
-    return redirect("/")
+    return redirect(f"{request.referrer or url_for('index')}")
 
-@app.route("/living_room_off")
-def living_room_off():
+@app.route("/downstairs_toggle", methods=['GET', 'POST'])
+def downstairs_toggle():
     call_service(
-        "switch",
-        "toggle",
-        {"entity_id": "switch.living_room_light"}
+        "script",
+        "toggle_downstairs_lights",
+        {}
     )
-    return redirect("/")
-
+    return redirect(f"{request.referrer or url_for('index')}")
 @app.route("/playpause")
 def playpause():
     call_service("media_player", "media_play_pause", {"entity_id": "media_player.tv"})
-    return redirect("/")
+    return redirect(f"{request.referrer or url_for('index')}")
 
 @app.route("/gold/small")
 def index():
