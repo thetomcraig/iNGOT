@@ -5,21 +5,21 @@
       name="apple-mobile-web-app-status-bar-style"
       content="black-translucent"
     />
-    <meta name="apple-mobile-web-app-title" content="iNGOT Panel" />
+    <meta name="apple-mobile-web-app-title" content="Home Panel" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"
     />
-    <title>iNGOT</title>
+    <title>Home Panel</title>
     <link
       rel="stylesheet"
-      href="/static/ios/small/style.css?v=20260614-mobile"
+      href="/static/ios/style.css?v=20260614-mobile"
     />
   </head>
   <body>
     <img
       class="hero-image"
-      src="/static/ios/small/background.png?v=20260614-test"
+      src="/static/ios/background.png?v=20260614-test"
       alt=""
     />
     <main class="panel">
@@ -29,27 +29,25 @@
             <form action="/living_room_toggle">
               <button class="image-button" type="submit" method="post">
                 <img
-                  src="/static/ios/small/light_bulb_couch.png"
+                  src="/static/ios/light_bulb_couch.png"
                   alt="Living Room Toggle"
                 />
               </button>
             </form>
           </td>
           <td>
-            <form action="/dining_room_toggle">
+            <form action="/dining_room_toggle" class="inside-td">
               <button class="image-button" type="submit" method="post">
                 <img
-                  src="/static/ios/small/light_bulb_table.png"
+                  src="/static/ios/light_bulb_table.png"
                   alt="Dining Room Toggle"
                 />
               </button>
             </form>
-          </td>
-          <td>
-            <form action="/downstairs_toggle" style="display: inline">
+            <form action="/downstairs_toggle" class="inside-td" >
               <button class="image-button" type="submit">
                 <img
-                  src="/static/ios/small/light_bulb_house.png"
+                  src="/static/ios/light_bulb_house.png"
                   alt="All Off"
                 />
               </button>
@@ -61,7 +59,7 @@
             <form action="/playpause" style="display: inline">
               <button class="image-button" type="submit">
                 <img
-                  src="/static/ios/small/tv.png"
+                  src="/static/ios/tv.png"
                   alt="Play/Pause"
                 />
               </button>
@@ -71,17 +69,7 @@
             <form action="/playpause" style="display: inline">
               <button class="image-button" type="submit">
                 <img
-                  src="/static/ios/small/tv.png"
-                  alt="Play/Pause"
-                />
-              </button>
-            </form>
-          </td>
-          <td>
-            <form action="/playpause" style="display: inline">
-              <button class="image-button" type="submit">
-                <img
-                  src="/static/ios/small/tv.png"
+                  src="/static/ios/icon_1x2.png"
                   alt="Play/Pause"
                 />
               </button>
