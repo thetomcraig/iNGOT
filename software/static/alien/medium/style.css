@@ -1,0 +1,75 @@
+html,
+body {
+    margin: 0;
+    width: 100%;
+    min-height: 100%;
+    background: #000;
+    overflow: hidden;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    position: relative;
+    min-height: 100svh;
+}
+
+.hero-image {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.panel {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    pointer-events: none;
+}
+
+.button-grid {
+    position: absolute;
+    top: 7%;
+}
+
+form {
+    margin: 0;
+    padding: 0;
+    pointer-events: auto;
+    display: inline;
+}
+
+.inside-td {
+    margin: 14;
+}
+
+td {
+    padding: 15px 15px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+
+.image-button {
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+    line-height: 0;
+}
+
+.image-button img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: none;
+}

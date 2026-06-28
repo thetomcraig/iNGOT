@@ -50,5 +50,9 @@ def playpause():
 def index():
     return render_template("ios/small/index.html")
 
+@app.route("/alien/medium")
+def index():
+    return render_template("alien/medium/index.html")
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5001)
