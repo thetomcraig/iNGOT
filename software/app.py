@@ -33,6 +33,15 @@ def living_room_toggle():
     )
     return redirect(f"{request.referrer or url_for('index')}")
 
+@app.route("/dining_room_toggle", methods=['GET', 'POST'])
+def dining_room_toggle():
+    call_service(
+        "light",
+        "toggle",
+        {"entity_id": "light.dining_room_light"}
+    )
+    return redirect(f"{request.referrer or url_for('index')}")
+
 @app.route("/downstairs_toggle", methods=['GET', 'POST'])
 def downstairs_toggle():
     call_service(
@@ -50,9 +59,9 @@ def playpause():
 def index():
     return render_template("ios/small/index.html")
 
-@app.route("/alien/medium")
-def index():
-    return render_template("alien/medium/index.html")
+# @app.route("/alien/medium")
+# def index():
+#     return render_template("alien/medium/index.html")
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5001)
