@@ -47,10 +47,6 @@ form {
     display: inline;
 }
 
-.inside-td {
-    margin: 14;
-}
-
 td {
     padding: 15px 15px;
     text-align: center;
