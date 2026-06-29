@@ -38,6 +38,7 @@ body {
 .button-grid {
     position: absolute;
     top: 7%;
+    left: 5%;
 }
 
 form {
