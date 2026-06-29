@@ -56,9 +56,9 @@ def playpause():
 def index():
     return render_template("living_room.html")
 
-# @app.route("/alien/medium")
-# def index():
-#     return render_template("alien/medium/index.html")
+@app.route("/office")
+def office():
+    return render_template("office.html")
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5001)
