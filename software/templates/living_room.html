@@ -16,6 +16,16 @@
       href="/static/living_room.css?v=20260614-mobile"
     />
   </head>
+  <script>
+document.querySelectorAll('form').forEach(function(form) {
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', form.action, true);
+    xhr.send(new FormData(form));
+  });
+});
+</script>
   <body>
     <main class="panel">
       <table class="button-grid" cellpadding="0" cellspacing="0" border="0">
@@ -104,14 +114,3 @@
     </main>
   </body>
 </html>
-
-<script>
-document.querySelectorAll('form').forEach(function(form) {
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', form.action, true);
-    xhr.send(new FormData(form));
-  });
-});
-</script>
