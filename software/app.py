@@ -28,7 +28,6 @@ def living_room_toggle():
         {"entity_id": "switch.living_room_light"}
     )
     return '', 204
-    # return redirect(f"{request.referrer or url_for('index')}")
 
 @app.route("/dining_room_toggle", methods=['GET', 'POST'])
 def dining_room_toggle():
@@ -37,7 +36,7 @@ def dining_room_toggle():
         "toggle",
         {"entity_id": "light.dining_room_light"}
     )
-    return redirect(f"{request.referrer or url_for('index')}")
+    return '', 204
 
 @app.route("/downstairs_toggle", methods=['GET', 'POST'])
 def downstairs_toggle():
@@ -46,12 +45,12 @@ def downstairs_toggle():
         "toggle_downstairs_lights",
         {}
     )
-    return redirect(f"{request.referrer or url_for('index')}")
+    return '', 204
 
 @app.route("/playpause")
 def playpause():
     call_service("media_player", "media_play_pause", {"entity_id": "media_player.tv"})
-    return redirect(f"{request.referrer or url_for('index')}")
+    return '', 204
 
 @app.route("/living_room")
 def index():
