@@ -31,9 +31,9 @@ body {
     left: 3%;
 }
 
-.button-grid, .button-grid td {
+/* .button-grid, .button-grid td {
     pointer-events: auto;
-}
+} */
 
 form {
     margin: 0;
@@ -52,7 +52,7 @@ td {
     padding: 0;
     border: 0;
     background: none;
-    pointer-events: auto;
+    /* pointer-events: auto; */
     cursor: pointer;
     line-height: 0;
 }
