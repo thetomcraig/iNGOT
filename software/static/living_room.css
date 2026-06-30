@@ -22,7 +22,7 @@ body {
     height: 100%;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
-    pointer-events: none;
+    /* pointer-events: none; */
 }
 
 .button-grid {
@@ -31,10 +31,14 @@ body {
     left: 3%;
 }
 
+.button-grid, .button-grid td {
+    pointer-events: auto;
+}
+
 form {
     margin: 0;
     padding: 0;
-    pointer-events: auto;
+    /* pointer-events: auto; */
     display: inline;
 }
 
@@ -48,6 +52,7 @@ td {
     padding: 0;
     border: 0;
     background: none;
+    pointer-events: auto;
     cursor: pointer;
     line-height: 0;
 }

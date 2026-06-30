@@ -17,11 +17,11 @@
     />
   </head>
   <body>
+    <iframe name="sink" style="display:none"></iframe>
     <main class="panel">
       <table class="button-grid" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td>
-            <iframe name="sink" style="display:none"></iframe>
               <form action="/living_room_toggle" method="post" target="sink"></form>
               <button class="image-button" type="submit">
                 <img src="/static/ios/light_bulb_couch.png" alt="Living Room Toggle" />
@@ -103,15 +103,5 @@
         </tr>
       </table>
     </main>
-<script>
-document.querySelectorAll('form').forEach(function(form) {
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', form.action, true);
-    xhr.send(new FormData(form));
-  });
-});
-</script>
   </body>
 </html>
