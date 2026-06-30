@@ -55,18 +55,18 @@
               </button>
             </form>
           </td>
+        </tr>
+        <tr>
           <td>
-            <form action="/vacuum_start">
+            <form action="/living_room_toggle">
               <button class="image-button" type="submit" method="post">
                 <img
-                  src="/static/ios/vacuum_start.png"
-                  alt="Start Vacuum"
+                  src="/static/ios/light_bulb_couch.png"
+                  alt="Living Room Toggle"
                 />
               </button>
             </form>
           </td>
-        </tr>
-        <tr>
           <td>
             <form action="/playpause">
               <button class="image-button" type="submit" method="post">
@@ -83,26 +83,6 @@
                 <img
                   src="/static/ios/hobbit_hole.png"
                   alt="Home"
-                />
-              </button>
-            </form>
-          </td>
-          <td>
-            <form action="/ice_maker_toggle">
-              <button class="image-button" type="submit">
-                <img
-                  src="/static/ios/ice_maker.png"
-                  alt="Ice Maker Toggle"
-                />
-              </button>
-            </form>
-          </td>
-          <td>
-            <form action="/vacuum_stop">
-              <button class="image-button" type="submit" method="post">
-                <img
-                  src="/static/ios/vacuum_stop.png"
-                  alt="Stop Vacuum"
                 />
               </button>
             </form>
