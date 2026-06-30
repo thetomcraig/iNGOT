@@ -29,7 +29,7 @@
             </form>
           </td>
           <td>
-            <form action="/dining_room_toggle" method="post">
+            <form action="/dining_room_toggle" method="post" target="sink">
               <button class="image-button" type="submit">
                 <img
                   src="/static/ios/light_bulb_table.png"
@@ -39,7 +39,7 @@
             </form>
           </td>
           <td>
-            <form action="/downstairs_toggle" method="post">
+            <form action="/downstairs_toggle" method="post" target="sink">
               <button class="image-button" type="submit">
                 <img
                   src="/static/ios/light_bulb_house.png"
@@ -50,7 +50,7 @@
           </td>
           <td>
             <form action="/vacuum_start" method="post">
-              <button class="image-button" type="submit" method="post">
+              <button class="image-button" type="submit" method="post" target="sink">
                 <img
                   src="/static/ios/vacuum_start.png"
                   alt="Start Vacuum"
@@ -61,7 +61,7 @@
         </tr>
         <tr>
           <td>
-            <form action="/playpause" method="post">
+            <form action="/playpause" method="post" target="sink">
               <button class="image-button" type="submit">
                 <img
                   src="/static/ios/tv.png"
@@ -71,7 +71,7 @@
             </form>
           </td>
           <td>
-            <form action="/home" method="post">
+            <form action="/home" method="post" target="sink">
               <button class="image-button" type="submit">
                 <img
                   src="/static/ios/hobbit_hole.png"
@@ -81,7 +81,7 @@
             </form>
           </td>
           <td>
-            <form action="/ice_maker_toggle" method="post">
+            <form action="/ice_maker_toggle" method="post" target="sink">
               <button class="image-button" type="submit">
                 <img
                   src="/static/ios/ice_maker.png"
@@ -91,7 +91,7 @@
             </form>
           </td>
           <td>
-            <form action="/vacuum_stop" method="post">
+            <form action="/vacuum_stop" method="post" target="sink">
               <button class="image-button" type="submit">
                 <img
                   src="/static/ios/vacuum_stop.png"
@@ -103,15 +103,5 @@
         </tr>
       </table>
     </main>
-<script>
-document.querySelectorAll('form').forEach(function(form) {
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', form.action, true);
-    xhr.send(new FormData(form));
-  });
-});
-</script>
   </body>
 </html>
