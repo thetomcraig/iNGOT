@@ -103,5 +103,15 @@
         </tr>
       </table>
     </main>
+<script>
+document.querySelectorAll('form').forEach(function(form) {
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', form.action, true);
+    xhr.send(new FormData(form));
+  });
+});
+</script>
   </body>
 </html>
