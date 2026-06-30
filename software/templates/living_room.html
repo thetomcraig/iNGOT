@@ -17,27 +17,19 @@
     />
   </head>
   <body>
-    <img
-      class="hero-image"
-      src="/static/ios/background.png?v=20260614-test"
-      alt=""
-    />
     <main class="panel">
       <table class="button-grid" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td>
-            <form action="/living_room_toggle">
-              <button class="image-button" type="submit" method="post">
-                <img
-                  src="/static/ios/light_bulb_couch.png"
-                  alt="Living Room Toggle"
-                />
+            <form action="/living_room_toggle" method="post">
+              <button class="image-button" type="submit">
+                <img src="/static/ios/light_bulb_couch.png" alt="Living Room Toggle" />
               </button>
             </form>
           </td>
           <td>
-            <form action="/dining_room_toggle">
-              <button class="image-button" type="submit" method="post">
+            <form action="/dining_room_toggle" method="post">
+              <button class="image-button" type="submit">
                 <img
                   src="/static/ios/light_bulb_table.png"
                   alt="Dining Room Toggle"
@@ -46,7 +38,7 @@
             </form>
           </td>
           <td>
-            <form action="/downstairs_toggle">
+            <form action="/downstairs_toggle" method="post">
               <button class="image-button" type="submit">
                 <img
                   src="/static/ios/light_bulb_house.png"
@@ -56,7 +48,7 @@
             </form>
           </td>
           <td>
-            <form action="/vacuum_start">
+            <form action="/vacuum_start" method="post">
               <button class="image-button" type="submit" method="post">
                 <img
                   src="/static/ios/vacuum_start.png"
@@ -68,8 +60,8 @@
         </tr>
         <tr>
           <td>
-            <form action="/playpause">
-              <button class="image-button" type="submit" method="post">
+            <form action="/playpause" method="post">
+              <button class="image-button" type="submit">
                 <img
                   src="/static/ios/tv.png"
                   alt="Play Pause"
@@ -78,7 +70,7 @@
             </form>
           </td>
           <td>
-            <form action="/home">
+            <form action="/home" method="post">
               <button class="image-button" type="submit">
                 <img
                   src="/static/ios/hobbit_hole.png"
@@ -88,7 +80,7 @@
             </form>
           </td>
           <td>
-            <form action="/ice_maker_toggle">
+            <form action="/ice_maker_toggle" method="post">
               <button class="image-button" type="submit">
                 <img
                   src="/static/ios/ice_maker.png"
@@ -98,8 +90,8 @@
             </form>
           </td>
           <td>
-            <form action="/vacuum_stop">
-              <button class="image-button" type="submit" method="post">
+            <form action="/vacuum_stop" method="post">
+              <button class="image-button" type="submit">
                 <img
                   src="/static/ios/vacuum_stop.png"
                   alt="Stop Vacuum"
@@ -112,3 +104,12 @@
     </main>
   </body>
 </html>
+
+<script>
+document.querySelectorAll('form').forEach(form => {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    await fetch(e.target.action, { method: 'POST' });
+  });
+});
+</script>
