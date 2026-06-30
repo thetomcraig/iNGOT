@@ -27,7 +27,8 @@ def living_room_toggle():
         "toggle",
         {"entity_id": "switch.living_room_light"}
     )
-    return '', 204
+    # return '', 204
+    return redirect(request.referrer or url_for('index'))
 
 @app.route("/dining_room_toggle", methods=['GET', 'POST'])
 def dining_room_toggle():
