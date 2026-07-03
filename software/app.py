@@ -20,6 +20,20 @@ def call_service(domain, service, payload):
     url = f"{HA_URL}/api/services/{domain}/{service}"
     return requests.post(url, headers=HEADERS, json=payload)
 
+@app.route("/vacuum_start", methods=['GET', 'POST'])
+def vacuum_start():
+    call_service("button", "press", {
+        "entity_id": "button.s8_maxv_ultra_lvg_hall_bath_bed"
+    })
+    return redirect(request.referrer or url_for('index'))
+
+@app.route("/vacuum_stop", methods=['GET', 'POST'])
+def vacuum_stop():
+    call_service("vacuum", "stop", {
+        "entity_id": "vacuum.s8_maxv_ultra"
+    })
+    return redirect(request.referrer or url_for('index'))
+
 @app.route("/living_room_toggle", methods=['GET', 'POST'])
 def living_room_toggle():
     call_service(
