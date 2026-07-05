@@ -67,6 +67,26 @@ def playpause():
     call_service("media_player", "media_play_pause", {"entity_id": "media_player.tv"})
     return '', 204
 
+@app.route("/office_fans_toggle", methods=['GET', 'POST'])
+def office_fans_toggle():
+    call_service(
+        "script",
+        "toggle_office_fan_lights",
+        {}
+    )
+    return '', 204
+
+@app.route("/office_lights_toggle", methods=['GET', 'POST'])
+def office_lights_toggle():
+    call_service(
+        "script",
+        "toggle_office_lights",
+        {}
+    )
+    return '', 204
+
+
+
 @app.route("/living_room")
 def index():
     return render_template("living_room.html")
