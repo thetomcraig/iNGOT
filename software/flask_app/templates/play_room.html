@@ -1,0 +1,110 @@
+<html>
+  <head>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-title" content="Living Room" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <title>Office</title>
+    <link
+      rel="stylesheet"
+      href="/static/play_room.css?v=20260706-room"
+    />
+  </head>
+  <body>
+    <img
+      class="hero-image"
+      src="/static/ios/background.png?v=20260614-test"
+      alt=""
+    />
+    <iframe name="sink" style="visibility:hidden;width:0;height:0;border:0;position:absolute"></iframe>
+    <main class="panel">
+      <table class="button-grid" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td>
+            <span class="temp-tile">
+              <img
+                src="/static/ios/blank_cyan.png"
+                alt="Home"
+              />
+              <span id="eloises-temp"></span>
+            </span>
+          </td>
+          <td>
+            <form action="/office_fans_toggle" method="post" target="sink">
+              <button class="image-button" type="submit">
+                <img
+                  src="/static/ios/light_bulb_fan.png"
+                  alt="Home"
+                />
+              </button>
+            </form>
+          </td>
+          <td>
+            <form action="/TODO" method="post" target="sink">
+              <button class="image-button" type="submit">
+                <img
+                  src="/static/ios/light_bulb_attic.png"
+                  alt="Living Room Toggle"
+                />
+              </button>
+            </form>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <form action="/TODO" method="post" target="sink">
+              <button class="image-button" type="submit">
+                <img
+                  src="/static/ios/light_bulb_fan_white.png"
+                  alt="Living Room Toggle"
+                />
+              </button>
+            </form>
+          </td>
+          <td>
+            <form action="/TODO" method="post" target="sink">
+              <button class="image-button" type="submit">
+                <img
+                  src="/static/ios/light_bulb_fan_orange.png"
+                  alt="Play Pause"
+                />
+              </button>
+            </form>
+          </td>
+          <td>
+            <button class="image-button" id="refresh-page" type="button">
+              <img
+                src="/static/ios/rotate.png"
+                alt="Refresh"
+              />
+            </button>
+          </td>
+        </tr>
+      </table>
+    </main>
+    <script>
+      fetch("/eloises_temp")
+        .then((response) => response.text())
+        .then((temp) => {
+          var digits = temp.replace("°", "");
+          document.getElementById("eloises-temp").innerHTML =
+            '<span class="temp-reading"><span class="temp-number">' +
+            digits +
+            '</span><span class="temp-degree">°</span></span>';
+        });
+
+      document.getElementById("refresh-page").addEventListener("click", function () {
+        window.setTimeout(function () {
+          window.location.reload();
+        }, 180);
+      });
+    </script>
+    <script src="/static/press_feedback.js?v=20260706-ios3"></script>
+  </body>
+</html>

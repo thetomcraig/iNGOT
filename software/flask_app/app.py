@@ -31,8 +31,8 @@ def eloises_temp():
     )
     response.raise_for_status()
     sensor = response.json()
-    unit = sensor.get("attributes", {}).get("unit_of_measurement", "")
-    return f"{sensor.get('state', '')}{unit}"
+    temp = round(float(sensor.get("state", "")))
+    return f"{temp}°"
 
 @app.route("/vacuum_start", methods=['GET', 'POST'])
 def vacuum_start():
