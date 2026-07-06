@@ -25,10 +25,6 @@
     var i;
 
     for (i = 0; i < buttons.length; i++) {
-      if ((" " + buttons[i].className + " ").indexOf(" image-button ") === -1) {
-        continue;
-      }
-
       buttons[i].ontouchstart = function () {
         press(this);
       };
