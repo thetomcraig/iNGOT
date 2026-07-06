@@ -16,9 +16,23 @@ HEADERS = {
     "Content-Type": "application/json",
 }
 
-def call_service(domain, service, payload):
+def call_service(domain, service, payload, rest_method="POST"):
     url = f"{HA_URL}/api/services/{domain}/{service}"
-    return requests.post(url, headers=HEADERS, json=payload)
+    if rest_method == "POST":
+        return requests.post(url, headers=HEADERS, json=payload)
+    elif rest_method == "GET":
+        return requests.get(url, headers=HEADERS, json=payload)
+
+@app.route("/eloises_temp", methods=['GET', 'POST'])
+def eloises_temp():
+    response = requests.get(
+        f"{HA_URL}/api/states/sensor.eloise_s_room_temp_temperature",
+        headers=HEADERS,
+    )
+    response.raise_for_status()
+    sensor = response.json()
+    unit = sensor.get("attributes", {}).get("unit_of_measurement", "")
+    return f"{sensor.get('state', '')}{unit}"
 
 @app.route("/vacuum_start", methods=['GET', 'POST'])
 def vacuum_start():
@@ -100,6 +114,11 @@ def index():
 @app.route("/office")
 def office():
     return render_template("office.html")
+
+@app.route("/play_room")
+def play_room():
+    return render_template("play_room.html")
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5001)
