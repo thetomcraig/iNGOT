@@ -1,5 +1,5 @@
 import requests
-from flask import Flask, jsonify, redirect, render_template, request, url_for
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -25,14 +25,23 @@ def vacuum_start():
     call_service("button", "press", {
         "entity_id": "button.s8_maxv_ultra_lvg_hall_bath_bed"
     })
-    return redirect(request.referrer or url_for('index'))
+    return '', 204
 
 @app.route("/vacuum_stop", methods=['GET', 'POST'])
 def vacuum_stop():
     call_service("vacuum", "stop", {
         "entity_id": "vacuum.s8_maxv_ultra"
     })
-    return redirect(request.referrer or url_for('index'))
+    return '', 204
+
+@app.route("/3d_printer_toggle", methods=['GET', 'POST'])
+def _3d_printer_toggle():
+    call_service(
+        "switch",
+        "toggle",
+        {"entity_id": "switch.3d_printer"}
+    )
+    return '', 204
 
 @app.route("/living_room_toggle", methods=['GET', 'POST'])
 def living_room_toggle():
@@ -41,8 +50,7 @@ def living_room_toggle():
         "toggle",
         {"entity_id": "switch.living_room_light"}
     )
-    # return '', 204
-    return redirect(request.referrer or url_for('index'))
+    return '', 204
 
 @app.route("/dining_room_toggle", methods=['GET', 'POST'])
 def dining_room_toggle():
@@ -84,8 +92,6 @@ def office_lights_toggle():
         {}
     )
     return '', 204
-
-
 
 @app.route("/living_room")
 def index():
