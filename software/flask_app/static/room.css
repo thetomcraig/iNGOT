@@ -37,8 +37,7 @@ body {
 
 .button-grid {
     position: absolute;
-    top: 7%;
-    left: 7%;
+    top: 8%;
 }
 
 form {
@@ -49,7 +48,6 @@ form {
 }
 
 td {
-    padding: 15px 5px;
     text-align: center;
     vertical-align: middle;
 }
