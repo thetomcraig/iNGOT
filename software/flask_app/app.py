@@ -98,11 +98,20 @@ def playpause():
     call_service("media_player", "media_play_pause", {"entity_id": "media_player.tv"})
     return '', 204
 
-@app.route("/office_fans_toggle", methods=['GET', 'POST'])
-def office_fans_toggle():
+@app.route("/office_fans_lights_toggle", methods=['GET', 'POST'])
+def office_fans_lights_toggle():
     call_service(
         "script",
         "toggle_office_fan_lights",
+        {}
+    )
+    return '', 204
+
+@app.route("/office_ceiling_lights_toggle", methods=['GET', 'POST'])
+def office_ceiling_lights_toggle():
+    call_service(
+        "script",
+        "toggle_office_ceiling_lights",
         {}
     )
     return '', 204
