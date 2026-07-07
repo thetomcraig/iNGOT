@@ -48,6 +48,15 @@ def vacuum_stop():
     })
     return '', 204
 
+@app.route("/office_lights_off", methods=['GET', 'POST'])
+def office_lights_off():
+    call_service(
+        "script",
+        "turn_off_all_office_lights",
+        {}
+    )
+    return '', 204
+
 @app.route("/3d_printer_toggle", methods=['GET', 'POST'])
 def _3d_printer_toggle():
     call_service(
@@ -98,11 +107,11 @@ def office_fans_toggle():
     )
     return '', 204
 
-@app.route("/office_lights_toggle", methods=['GET', 'POST'])
-def office_lights_toggle():
+@app.route("/office_lamps_toggle", methods=['GET', 'POST'])
+def office_lamps_toggle():
     call_service(
         "script",
-        "toggle_office_lights",
+        "toggle_office_lamps",
         {}
     )
     return '', 204
