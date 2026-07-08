@@ -58,12 +58,32 @@ td {
     background: none;
     pointer-events: auto;
     cursor: pointer;
-    line-height: 0;
+    display: inline-block;
+    text-align: center;
+    line-height: 1;
 }
 
 .image-button img {
     display: block;
+    margin: 0 auto;
     width: auto;
     height: auto;
     max-width: none;
+}
+
+.icon-label {
+    display: block;
+    max-width: 72px;
+    margin: 3px auto 0;
+    color: #adadad;
+    font-family: HelveticaNeue-Bold, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 1.05;
+    text-align: center;
+    -webkit-text-stroke: 0.2px #adadad;
+    text-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.85),
+        0 0 2px rgba(0, 0, 0, 0.75);
+    overflow-wrap: break-word;
 }
