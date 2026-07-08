@@ -5,15 +5,15 @@
       name="apple-mobile-web-app-status-bar-style"
       content="black-translucent"
     />
-    <meta name="apple-mobile-web-app-title" content="Living Room" />
+    <meta name="apple-mobile-web-app-title" content="Libbys Office" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"
     />
-    <title>Office</title>
+    <title>Libbys Office</title>
     <link
       rel="stylesheet"
-      href="/static/play_room.css?v=20260706-room"
+      href="/static/libbys_office.css?v=20260706-room"
     />
   </head>
   <body>
@@ -27,13 +27,14 @@
       <table class="button-grid" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td>
-            <span class="temp-tile">
-              <img
-                src="/static/ios/blank_cyan.png"
-                alt="Home"
-              />
-              <span id="eloises-temp"></span>
-            </span>
+            <form action="/libbys_office_lights_toggle" method="post" target="sink">
+              <button class="image-button" type="submit">
+                <img
+                  src="/static/ios/lamp_purple.png"
+                  alt="Home"
+                />
+              </button>
+            </form>
           </td>
           <td>
             <form action="/office_fans_toggle" method="post" target="sink">
@@ -58,14 +59,13 @@
         </tr>
         <tr>
           <td>
-            <form action="/TODO" method="post" target="sink">
-              <button class="image-button" type="submit">
-                <img
-                  src="/static/ios/light_bulb_fan_white.png"
-                  alt="Living Room Toggle"
-                />
-              </button>
-            </form>
+            <span class="temp-tile">
+              <img
+                src="/static/ios/blank_cyan.png"
+                alt="Home"
+              />
+              <span id="eloises-temp"></span>
+            </span>
           </td>
           <td>
             <form action="/TODO" method="post" target="sink">
@@ -89,15 +89,19 @@
       </table>
     </main>
     <script>
-      fetch("/eloises_temp")
-        .then((response) => response.text())
-        .then((temp) => {
-          var digits = temp.replace("°", "");
+      var tempRequest = new XMLHttpRequest();
+      tempRequest.onreadystatechange = function () {
+        if (tempRequest.readyState === 4 && tempRequest.status === 200) {
+          var digits = tempRequest.responseText.replace("°", "");
           document.getElementById("eloises-temp").innerHTML =
-            '<span class="temp-reading"><span class="temp-number">' +
-            digits +
-            '</span><span class="temp-degree">°</span></span>';
-        });
+            '<span class="temp-reading">' +
+            '<span class="temp-number">' + digits + '</span>' +
+            '<span class="temp-degree">°</span>' +
+            '</span>';
+        }
+      };
+      tempRequest.open("GET", "/eloises_temp", true);
+      tempRequest.send();
 
       document.getElementById("refresh-page").addEventListener("click", function () {
         window.setTimeout(function () {

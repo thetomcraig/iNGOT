@@ -125,6 +125,15 @@ def office_lamps_toggle():
     )
     return '', 204
 
+@app.route("/libbys_office_lights_toggle", methods=['GET', 'POST'])
+def libbys_office_lights_toggle():
+    call_service(
+        "switch",
+        "toggle",
+        {"entity_id": "switch.libby_s_office_lamp"}
+    )
+    return '', 204
+
 @app.route("/living_room")
 def index():
     return render_template("living_room.html")
@@ -133,9 +142,9 @@ def index():
 def office():
     return render_template("office.html")
 
-@app.route("/play_room")
-def play_room():
-    return render_template("play_room.html")
+@app.route("/libbys_office")
+def libbys_office():
+    return render_template("libbys_office.html")
 
 
 if __name__ == "__main__":
