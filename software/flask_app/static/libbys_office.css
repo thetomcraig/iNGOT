@@ -22,7 +22,7 @@ td {
     height: 100%;
 }
 
-#eloises-temp {
+.temp-value {
     position: absolute;
     top: 50%;
     left: 0;
