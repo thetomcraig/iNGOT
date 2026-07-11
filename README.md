@@ -14,7 +14,7 @@
 ### Introduction
 
 <p align="center">
-  <img src="photo.HEIC" alt="iNgot title"><br>
+  <img src="photo.HEIC" alt="iNgot Photo"><br>
   <b>iNgot</b>
 </p>
 `iNgot` is a project to transform old touch scren deices as kiosk displays.  
