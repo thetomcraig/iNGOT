@@ -17,7 +17,7 @@
   <img src="photo.HEIC" alt="iNgot Photo"><br>
   <b>iNgot</b>
 </p>
-`iNgot` is a project to transform old touch scren deices as kiosk displays.  
+`iNgot` is a project to transform old touch scren devices as kiosk displays.  
 
 #### Why "iNgot"?
 The name iNgot comes the [hunks of metal](https://en.wikipedia.org/wiki/Ingot) which are the same shape.  
