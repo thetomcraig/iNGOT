@@ -1,7 +1,7 @@
 # iNgot
 
 <p align="center">
-  <img src="img/icon.png" alt="iNgot title"><br>
+  <img src="icon.png" alt="iNgot title"><br>
   <b>iNgot</b>
 </p>
 
