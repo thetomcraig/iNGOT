@@ -17,7 +17,7 @@
 #### Why "iNgot"?
 The name iNgot comes the [hunks of metal](https://en.wikipedia.org/wiki/Ingot) which are the same shape.  
 This is also an homage to the "iDevice" naming scheme of the mid 00's.  
-Save thes devices from the landfill, they're worth their weight in gold!
+Save these devices from the landfill, they're worth their weight in gold!
 
 ### Components
 iNgot is comprised of three components:  
@@ -46,6 +46,7 @@ iOS devices are notoriously more difficult to tweak that Android devices, but a 
 - Always-on display
 - Auto-aunch webpage on boot
 - No lock screen
+- Supression of notifications
 - Up to date information (as "real time" as possible, given hardware/software limitations) 
 
 ### Other Features
