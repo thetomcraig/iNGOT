@@ -12,6 +12,11 @@
 </p>
 
 ### Introduction
+
+<p align="center">
+  <img src="photo.HEIC" alt="iNgot title"><br>
+  <b>iNgot</b>
+</p>
 `iNgot` is a project to transform old touch scren deices as kiosk displays.  
 
 #### Why "iNgot"?
@@ -47,11 +52,12 @@ iOS devices are notoriously more difficult to tweak that Android devices, but a 
 - Auto-aunch webpage on boot
 - No lock screen
 - Supression of notifications
+
 - Up to date information (as "real time" as possible, given hardware/software limitations) 
 
 ### Other Features
 iNgot has a USB C port, a small custom cable inside hooks it up to the device.  
-To assist in easy disassembly, iNogt has a big ol' hole in the back, which you can poke a stick through to push the device out. As much as I like a big ol' hole for pokin' I may be able to eliminate this.  
+To assist in easy disassembly, iNogt has a big ol' hole in the back, which you can poke a stick through to push the device out. As much as I like a _big ol' hole for pokin'_ I may be able to eliminate this.  
 The buttons are also 3D printed, and need no additional parts.  
 
 ### Credits and License
