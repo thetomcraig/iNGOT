@@ -17,7 +17,7 @@
   <img src="photo.HEIC" alt="iNgot Photo"><br>
   <b>iNgot</b>
 </p>
-`iNgot` is a project to transform old touch scren devices as kiosk displays.  
+**iNgot** is a project to transform old touch scren devices as kiosk displays.  
 
 #### Why "iNgot"?
 The name iNgot comes the [hunks of metal](https://en.wikipedia.org/wiki/Ingot) which are the same shape.  
@@ -34,7 +34,7 @@ iNgot is comprised of three components:
 #### Devices
 I started this project because I wanted to put my old iPods and iPhones to use, rather then throwing them in the ewaste pile or letting them collect dust in a drawer.  
 The main use case is simple kiosk display and controller for my HomeAssistant instance.  
-By designging the enclosure and software to be compatible with legacy hardware, I could quickly and easily convert any old mobile device into a new iNgot. 
+By designging the enclosure and software to be compatible with legacy hardware, I can quickly and easily convert any old mobile device into a new iNgot. 
 
 #### Enclosure
 I designed the enclosure to be as compatible as possible with iPods and smart phones.  
