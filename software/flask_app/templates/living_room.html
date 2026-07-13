@@ -27,6 +27,7 @@
                 <img src="/static/ios/light_bulb_couch.png" alt="Living Room Toggle" />
               </button>
             </form>
+            <span class="icon-label">Living Room</span>
           </td>
           <td>
             <form action="/dining_room_toggle" method="post" target="sink">
@@ -37,16 +38,7 @@
                 />
               </button>
             </form>
-          </td>
-          <td>
-            <form action="/downstairs_toggle" method="post" target="sink">
-              <button class="image-button" type="submit">
-                <img
-                  src="/static/ios/light_bulb_house.png"
-                  alt="Downstairs Lights Toggle"
-                />
-              </button>
-            </form>
+            <span class="icon-label">Dining Room</span>
           </td>
           <td>
             <form action="/vacuum_start" method="post" target="sink">
@@ -57,38 +49,7 @@
                 />
               </button>
             </form>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <form action="/playpause" method="post" target="sink">
-              <button class="image-button" type="submit">
-                <img
-                  src="/static/ios/tv.png"
-                  alt="Play Pause"
-                />
-              </button>
-            </form>
-          </td>
-          <td>
-            <form action="/home" method="post" target="sink">
-              <button class="image-button" type="submit">
-                <img
-                  src="/static/ios/hobbit_hole.png"
-                  alt="Home"
-                />
-              </button>
-            </form>
-          </td>
-          <td>
-            <form action="/ice_maker_toggle" method="post" target="sink">
-              <button class="image-button" type="submit">
-                <img
-                  src="/static/ios/ice_maker.png"
-                  alt="Ice Maker Toggle"
-                />
-              </button>
-            </form>
+            <span class="icon-label">Start Rocky</span>
           </td>
           <td>
             <form action="/vacuum_stop" method="post" target="sink">
@@ -99,6 +60,57 @@
                 />
               </button>
             </form>
+            <span class="icon-label">Stop Rocky</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="temp-tile">
+              <img
+                src="/static/ios/blank_ios_weather_blue.png"
+                alt="Eloise's Temperature"
+              />
+              <span class="temp-value" id="eloises-temp">
+                <span class="temp-reading">
+                  <span class="temp-number" id="eloises-temp-number"></span>
+                  <span class="temp-degree">°</span>
+                </span>
+              </span>
+            </span>
+            <span class="icon-label">Eloise</span>
+          </td>
+          <td>
+            <form action="/playpause" method="post" target="sink">
+              <button class="image-button" type="submit">
+                <img
+                  src="/static/ios/tv.png"
+                  alt="Play Pause"
+                />
+              </button>
+            </form>
+            <span class="icon-label">Play Pause</span>
+          </td>
+          <td>
+            <form action="/ice_maker_toggle" method="post" target="sink">
+              <button class="image-button" type="submit">
+                <img
+                  src="/static/ios/ice_maker.png"
+                  alt="Ice Maker Toggle"
+                />
+              </button>
+            </form>
+            <span class="icon-label">Ice Maker</span>
+          </td>
+          <td>
+            <form action="/downstairs_toggle" method="post" target="sink">
+              <button class="image-button" type="submit">
+                <img
+                  src="/static/ios/light_bulb_house.png"
+                  alt="Downstairs Lights Toggle"
+                />
+              </button>
+            </form>
+            <span class="icon-label">Lights</span>
           </td>
         </tr>
       </table>

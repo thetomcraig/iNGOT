@@ -52,7 +52,6 @@ iOS devices are notoriously more difficult to tweak that Android devices, but a 
 - Auto-aunch webpage on boot
 - No lock screen
 - Supression of notifications
-
 - Up to date information (as "real time" as possible, given hardware/software limitations) 
 
 ### Other Features
@@ -61,4 +60,6 @@ To assist in easy disassembly, iNogt has a big ol' hole in the back, which you c
 The buttons are also 3D printed, and need no additional parts.  
 
 ### Credits and License
+Gold icons created by vectorsmarket15 - Flaticon.  
+https://www.flaticon.com/free-icons/gold  
 [MIT](https://opensource.org/licenses/MIT)

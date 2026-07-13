@@ -104,7 +104,11 @@ def downstairs_toggle():
 
 @app.route("/playpause")
 def playpause():
-    call_service("media_player", "media_play_pause", {"entity_id": "media_player.tv"})
+    call_service(
+        "script",
+        "play_pause_tv",
+        {}
+    )
     return '', 204
 
 @app.route("/office_fans_lights_toggle", methods=['GET', 'POST'])
