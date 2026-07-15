@@ -25,16 +25,19 @@
     tempRequests[tile.url] = tempRequest;
     tempRequest.onreadystatechange = function () {
       if (tempRequest.readyState === 4 && tempRequest.status === 200) {
-        tile.number.textContent = tempRequest.responseText.replace("°", "").trim();
+        tile.number.textContent = tempRequest.responseText.replace("°", "").replace(/^\s+|\s+$/g, "");
       }
     };
-    tempRequest.open("GET", tile.url + "?t=" + Date.now(), true);
+    tempRequest.open("GET", tile.url + "?t=" + new Date().getTime(), true);
     tempRequest.send();
   }
 
-  function refreshTemps() {
-    tempTiles.forEach(refreshTemp);
+function refreshTemps() {
+  var i;
+  for (i = 0; i < tempTiles.length; i++) {
+    refreshTemp(tempTiles[i]);
   }
+}
 
   refreshTemps();
   window.setInterval(refreshTemps, refreshIntervalMs);
