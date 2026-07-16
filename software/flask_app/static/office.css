@@ -20,7 +20,7 @@ td {
 }
 
 .modal {
-    position: fixed;
+    position: absolute;
     left: 50%;
     /* this has no effect on old safari */
     top: 50%;
