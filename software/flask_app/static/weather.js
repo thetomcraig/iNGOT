@@ -11,7 +11,7 @@
     }
   ];
 
-  var refreshIntervalMs = 10 * 60 * 1000;
+  var refreshIntervalMs = 1 * 60 * 1000;
   var tempRequests = {};
 
   function refreshTemp(tile) {
