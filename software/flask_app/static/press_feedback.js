@@ -50,7 +50,7 @@
 
     function showModal() {
       modal.style.top =
-    (window.pageYOffset + (window.innerHeight - modal.offsetHeight) / 2 + 30) + "px";
+    (window.pageYOffset + (window.innerHeight - modal.offsetHeight) / 2 + 12) + "px";
       modal.style.display = "block";
       backdrop.style.display = "block";
     }
