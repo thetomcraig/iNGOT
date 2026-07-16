@@ -38,7 +38,7 @@ td {
     -webkit-border-radius: 20px;
     border-radius: 20px;
 
-    border: 3px solid rgba(255,255,255,.70);
+    border: 3px solid rgba(255,255,255,.60);
 
     background: rgba(30,48,82,.88);
     background: -webkit-gradient(
@@ -52,35 +52,13 @@ td {
     );
 
     -webkit-box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.55),
-        0 10px 28px rgba(0,0,0,.65);
+    inset 0 1px 0 rgba(255,255,255,.30),
+    0 8px 24px rgba(0,0,0,.65);
 
     position: relative;
     z-index: 1001;
 }
 
-.modal:before {
-    content: "";
-    position: absolute;
-
-    left: 3px;
-    right: 3px;
-    top: 3px;
-    height: 42%;
-
-    -webkit-border-radius: 18px 18px 70px 70px;
-
-    background: -webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        from(rgba(255,255,255,.70)),
-        color-stop(.45, rgba(255,255,255,.20)),
-        to(rgba(255,255,255,0))
-    );
-
-    pointer-events: none;
-}
 
 .modal h2 {
     margin: 6px 0 10px;
@@ -115,6 +93,33 @@ td {
     position: relative;
     z-index: 2;
 }
+
+.modal-highlight-top {
+    position:absolute;
+
+    left:5px;
+    right:5px;
+    top:5px;
+
+    height:28px;
+
+    -webkit-border-top-left-radius:15px;
+    -webkit-border-top-right-radius:15px;
+
+    background:-webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(rgba(255,255,255,.42)),
+        color-stop(.55, rgba(255,255,255,.16)),
+        to(rgba(255,255,255,0))
+    );
+
+    z-index:1;
+
+    pointer-events:none;
+}
+
 
 .modal-buttons {
     overflow: hidden;
@@ -161,6 +166,24 @@ td {
 
 #modal-cancel {
     float: left;
+
+    background: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(#7f8999),
+        color-stop(.48,#5f6878),
+        color-stop(.49,#444d5c),
+        to(#2f3744)
+    );
+
+    border: 1px solid rgba(0,0,0,.55);
+
+    -webkit-box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.35),
+        inset 0 -1px 0 rgba(0,0,0,.45);
+
+    color: white;
 }
 
 #modal-confirm {
@@ -175,5 +198,17 @@ td {
         from(#6f8fc8),
         color-stop(.48,#4d6da7),
         to(#2e4d82)
+    );
+}
+
+#modal-cancel:active {
+
+    background: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(#4a5464),
+        color-stop(.48,#303846),
+        to(#1c232d)
     );
 }
