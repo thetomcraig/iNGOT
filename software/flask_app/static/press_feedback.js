@@ -44,6 +44,46 @@
         clearPress(this);
       };
     }
+
+    var modal = document.getElementById("all-lights-modal");
+    var backdrop = document.getElementById("modal-backdrop");
+
+    function showModal() {
+      modal.style.display = "block";
+      backdrop.style.display = "block";
+    }
+
+    function hideModal() {
+      modal.style.display = "none";
+      backdrop.style.display = "none";
+    }
+
+    var allLightsButton = document.getElementById("all-lights-button");
+    if (allLightsButton) {
+      allLightsButton.onclick = function () {
+        showModal();
+        return false;
+      };
+    }
+
+    var cancelButton = document.getElementById("modal-cancel");
+    if (cancelButton) {
+      cancelButton.onclick = function () {
+        hideModal();
+        return false;
+      };
+    }
+
+    var confirmButton = document.getElementById("modal-all-lights");
+    if (confirmButton) {
+      confirmButton.onclick = function () {
+        hideModal();
+        window.setTimeout(function () {
+          document.getElementById("all-lights-form").submit();
+        }, 50);
+        return false;
+      };
+    }
   }
 
   if (window.addEventListener) {

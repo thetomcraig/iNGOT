@@ -84,19 +84,32 @@
             </form>
           </td>
           <td>
-            <form action="/office_lights_off" method="post" target="sink">
-              <button class="image-button" type="submit">
-                <img
-                  src="/static/ios/light_bulb_attic.png"
-                  alt="Office Lights Off"
-                />
-                <span class="icon-label">All Lights Off</span>
-              </button>
-            </form>
+            <button id="all-lights-button" class="image-button" type="button">
+              <img
+                src="/static/ios/light_bulb_attic.png"
+                alt="Office Lights Off"
+              />
+              <span class="icon-label">All Lights Off</span>
+            </button>
           </td>
         </tr>
       </table>
     </main>
+    <div id="modal-backdrop" class="modal-backdrop" style="display:none;"></div>
+    <div id="all-lights-modal" class="modal" style="display:none;">
+      <h2>Turn Off Lights</h2>
+
+      <button id="modal-all-lights">All Office Lights</button>
+
+      <button id="modal-cancel">Cancel</button>
+    </div>
     <script src="/static/press_feedback.js?v=20260706-ios3"></script>
+    <form
+      id="all-lights-form"
+      action="/office_lights_off"
+      method="post"
+      target="sink"
+      style="display:none"
+    ></form>
   </body>
 </html>
