@@ -25,88 +25,145 @@ td {
     top: 50%;
     width: 270px;
     margin-left: -135px;
-    margin-top: -80px;
+    margin-top: -85px;
 
-    -webkit-border-radius: 18px;
-    border-radius: 18px;
+    padding: 14px;
 
-    border: 1px solid rgba(255,255,255,.35);
+    position: fixed;
+    overflow: hidden;
 
-    background: #4b5f78;
+    font-family: Helvetica, Arial, sans-serif;
+
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+
+    border: 3px solid rgba(255,255,255,.70);
+
+    background: rgba(30,48,82,.88);
     background: -webkit-gradient(
         linear,
         left top,
         left bottom,
-        color-stop(0,#7b8ea7),
-        color-stop(.08,#667991),
-        color-stop(.45,#43556d),
-        color-stop(1,#28384d)
+        from(rgba(124,142,180,.90)),
+        color-stop(.20, rgba(82,102,144,.90)),
+        color-stop(.21, rgba(54,72,116,.90)),
+        to(rgba(26,40,70,.90))
     );
 
     -webkit-box-shadow:
-        0 0 1px rgba(255,255,255,.5) inset,
-        0 12px 30px rgba(0,0,0,.65);
+        inset 0 1px 0 rgba(255,255,255,.55),
+        0 10px 28px rgba(0,0,0,.65);
 
+    position: relative;
     z-index: 1001;
-
-    font-family: Helvetica;
 }
 
-.modal h2 {
-    margin: 16px 15px 6px;
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-    text-shadow: 0 -1px 1px rgba(0,0,0,.8);
-}
+.modal:before {
+    content: "";
+    position: absolute;
 
-.modal p {
-    margin: 0 20px 18px;
-    color: white;
-    font-size: 15px;
-    text-align: center;
-    text-shadow: 0 -1px 1px rgba(0,0,0,.8);
-}
+    left: 3px;
+    right: 3px;
+    top: 3px;
+    height: 42%;
 
-.modal-buttons {
-    border-top: 1px solid rgba(255,255,255,.15);
-}
-
-.modal-buttons table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.modal-buttons td {
-    width: 50%;
-}
-
-.modal-buttons td:first-child {
-    border-right: 1px solid rgba(255,255,255,.15);
-}
-
-.modal-buttons button {
-    width: 100%;
-    height: 44px;
-
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    text-shadow: 0 -1px 1px rgba(0,0,0,.8);
-
-    border: 0;
+    -webkit-border-radius: 18px 18px 70px 70px;
 
     background: -webkit-gradient(
         linear,
         left top,
         left bottom,
-        from(#7ea9e8),
-        color-stop(.5,#4c78c8),
-        to(#315da8)
+        from(rgba(255,255,255,.70)),
+        color-stop(.45, rgba(255,255,255,.20)),
+        to(rgba(255,255,255,0))
     );
 
+    pointer-events: none;
+}
+
+.modal h2 {
+    margin: 6px 0 10px;
+
+    color: #fff;
+
+    text-align: center;
+
+    font-size: 22px;
+    font-weight: bold;
+
+    text-shadow:
+        0 -1px 1px rgba(0,0,0,.85),
+        0 1px 0 rgba(255,255,255,.18);
+
+    position: relative;
+    z-index: 2;
+}
+
+.modal p {
+    margin: 0 8px 16px;
+
+    color: #fff;
+
+    text-align: center;
+
+    font-size: 15px;
+    line-height: 18px;
+
+    text-shadow: 0 -1px 1px rgba(0,0,0,.85);
+
+    position: relative;
+    z-index: 2;
+}
+
+.modal-buttons {
+    overflow: hidden;
+    margin-top: 8px;
+    position: relative;
+    z-index: 2;
+}
+
+.modal-buttons button {
+
+    width: 120px;
+    height: 46px;
+
+    border: 1px solid rgba(0,0,0,.45);
+
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+
     -webkit-appearance: none;
+
+    color: #fff;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    text-shadow: 0 -1px 1px rgba(0,0,0,.8);
+
+    background: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(#dfe5f1),
+        color-stop(.48,#aebcd6),
+        color-stop(.49,#7f92b6),
+        to(#667ca6)
+    );
+
+    -webkit-box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.75),
+        inset 0 -1px 0 rgba(0,0,0,.25);
+
+    margin: 0;
+}
+
+#modal-cancel {
+    float: left;
+}
+
+#modal-confirm {
+    float: right;
 }
 
 .modal-buttons button:active {
@@ -114,7 +171,8 @@ td {
         linear,
         left top,
         left bottom,
-        from(#29518f),
-        to(#1d3968)
+        from(#6f8fc8),
+        color-stop(.48,#4d6da7),
+        to(#2e4d82)
     );
 }
