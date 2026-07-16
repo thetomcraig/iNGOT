@@ -49,8 +49,8 @@
     var backdrop = document.getElementById("modal-backdrop");
 
     function showModal() {
-      modal.style.top =
-    (window.pageYOffset + (window.innerHeight - modal.offsetHeight) / 2 + 12) + "px";
+      var top = window.navigator.standalone ? 150 : 135;
+modal.style.top = top + "px";
       modal.style.display = "block";
       backdrop.style.display = "block";
     }
