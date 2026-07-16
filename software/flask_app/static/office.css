@@ -15,31 +15,106 @@ td {
     width: 100%;
     height: 100%;
     background: #000;
-    opacity: 0.45;
+    opacity: .45;
     z-index: 1000;
 }
 
 .modal {
     position: fixed;
-    width: 220px;
     left: 50%;
     top: 50%;
-    margin-left: -110px;
-    margin-top: -90px;
-    background: #fff;
-    border: 2px solid #555;
-    padding: 12px;
-    text-align: center;
+    width: 270px;
+    margin-left: -135px;
+    margin-top: -80px;
+
+    -webkit-border-radius: 18px;
+    border-radius: 18px;
+
+    border: 1px solid rgba(255,255,255,.35);
+
+    background: #4b5f78;
+    background: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0,#7b8ea7),
+        color-stop(.08,#667991),
+        color-stop(.45,#43556d),
+        color-stop(1,#28384d)
+    );
+
+    -webkit-box-shadow:
+        0 0 1px rgba(255,255,255,.5) inset,
+        0 12px 30px rgba(0,0,0,.65);
+
     z-index: 1001;
+
+    font-family: Helvetica;
 }
 
 .modal h2 {
-    margin: 0 0 12px;
-    font-size: 18px;
+    margin: 16px 15px 6px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0 -1px 1px rgba(0,0,0,.8);
 }
 
-.modal button {
-    display: block;
+.modal p {
+    margin: 0 20px 18px;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    text-shadow: 0 -1px 1px rgba(0,0,0,.8);
+}
+
+.modal-buttons {
+    border-top: 1px solid rgba(255,255,255,.15);
+}
+
+.modal-buttons table {
     width: 100%;
-    margin: 8px 0;
+    border-collapse: collapse;
+}
+
+.modal-buttons td {
+    width: 50%;
+}
+
+.modal-buttons td:first-child {
+    border-right: 1px solid rgba(255,255,255,.15);
+}
+
+.modal-buttons button {
+    width: 100%;
+    height: 44px;
+
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 0 -1px 1px rgba(0,0,0,.8);
+
+    border: 0;
+
+    background: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(#7ea9e8),
+        color-stop(.5,#4c78c8),
+        to(#315da8)
+    );
+
+    -webkit-appearance: none;
+}
+
+.modal-buttons button:active {
+    background: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(#29518f),
+        to(#1d3968)
+    );
 }

@@ -74,13 +74,16 @@
       };
     }
 
-    var confirmButton = document.getElementById("modal-all-lights");
+    var confirmButton = document.getElementById("modal-confirm");
+
     if (confirmButton) {
       confirmButton.onclick = function () {
         hideModal();
+
         window.setTimeout(function () {
           document.getElementById("all-lights-form").submit();
         }, 50);
+
         return false;
       };
     }
