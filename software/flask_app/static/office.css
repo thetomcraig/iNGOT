@@ -22,10 +22,11 @@ td {
 .modal {
     position: fixed;
     left: 50%;
-    top: 90%;
+    /* this has no effect on old safari */
+    top: 50%;
     width: 270px;
     margin-left: -135px;
-    margin-top: -85px;
+    margin-top: -65px;
 
     padding: 14px;
 
