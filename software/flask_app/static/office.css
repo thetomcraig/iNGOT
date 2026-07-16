@@ -22,7 +22,7 @@ td {
 .modal {
     position: fixed;
     left: 50%;
-    top: 0%;
+    top: 90%;
     width: 270px;
     margin-left: -135px;
     margin-top: -85px;
