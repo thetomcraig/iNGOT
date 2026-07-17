@@ -156,7 +156,13 @@ def index():
 
 @app.route("/office")
 def office():
-    return render_template("office.html")
+    return render_template(
+        "rooms/office.html",
+        modal_title="All Office Lights",
+        modal_message="Are you sure you want to turn off all office lights?",
+        modal_cancel_text="Cancel",
+        modal_confirm_text="OK"
+    )
 
 @app.route("/libbys_office")
 def libbys_office():
