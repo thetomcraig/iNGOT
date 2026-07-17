@@ -167,7 +167,7 @@ def office():
 
 @app.route("/libbys_office")
 def libbys_office():
-    return render_template("libbys_office.html")
+    return render_template("rooms/libbys_office.html")
 
 
 if __name__ == "__main__":

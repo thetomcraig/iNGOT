@@ -10,8 +10,6 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"
     />
-    <title>Office</title>
-    <link rel="stylesheet" href="/static/office.css?v=20260708-labels" />
   </head>
   <body>
     <img
@@ -30,11 +28,12 @@
       "
     ></iframe>
     <main class="panel">
-      <table class="button-grid" cellpadding="0" cellspacing="0" border="0">
-        {% block content %}
-        {% endblock %}
-      </table>
-    <script src="/static/press_feedback.js?v=20260706-ios3"></script>
+    <table class="button-grid" cellpadding="0" cellspacing="0" border="0">
+      {% block content %}
+      {% endblock %}
+    </table>
+    <script src="{{ url_for('static', filename='scripts/press_feedback.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/weather.js') }}"></script>
     </main>
   </body>
 </html>
