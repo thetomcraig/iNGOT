@@ -45,7 +45,7 @@
       };
     }
 
-    var modal = document.getElementById("all-lights-modal");
+    var modal = document.getElementById("modal");
     var backdrop = document.getElementById("modal-backdrop");
 
     function showModal() {
@@ -83,7 +83,7 @@ modal.style.top = top + "px";
         hideModal();
 
         window.setTimeout(function () {
-          document.getElementById("all-lights-form").submit();
+          document.getElementById("modal-form").submit();
         }, 50);
 
         return false;

@@ -161,7 +161,8 @@ def office():
         modal_title="All Office Lights",
         modal_message="Are you sure you want to turn off all office lights?",
         modal_cancel_text="Cancel",
-        modal_confirm_text="OK"
+        modal_confirm_text="OK",
+        modal_confirm_action="/office_lights_off"
     )
 
 @app.route("/libbys_office")

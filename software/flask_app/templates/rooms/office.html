@@ -1,0 +1,69 @@
+{% extends "rooms/base.html" %} {% block content %}
+<!------------->
+<!-- TOP ROW -->
+<!------------->
+<tr>
+  <td>
+    <form action="/office_lamps_toggle" method="post" target="sink">
+      <button class="image-button" type="submit">
+        <img src="/static/ios/lamp.png" alt="Office Lamps Toggle" />
+        <span class="icon-label">Lamps</span>
+      </button>
+    </form>
+  </td>
+  <td>
+    <form action="/office_fans_lights_toggle" method="post" target="sink">
+      <button class="image-button" type="submit">
+        <img
+          src="/static/ios/ceiling_light.png"
+          alt="Office Fan Lights Toggle"
+        />
+        <span class="icon-label">Overhead</span>
+      </button>
+    </form>
+  </td>
+  <td>
+    <form action="/TODO" method="post" target="sink">
+      <button class="image-button" type="submit">
+        <img src="/static/ios/fan.png" alt="TODO" />
+        <span class="icon-label">Fans</span>
+      </button>
+    </form>
+  </td>
+</tr>
+<!---------------->
+<!-- BOTTOM ROW -->
+<!---------------->
+<tr>
+  <td>
+    <form action="/office_ceiling_lights_toggle" method="post" target="sink">
+      <button class="image-button" type="submit">
+        <img
+          src="/static/ios/light_bulb_peg_board.png"
+          alt="Office Ceiling Lights Toggle"
+        />
+        <span class="icon-label">Workshop</span>
+      </button>
+    </form>
+  </td>
+  <td>
+    <form action="/3d_printer_toggle" method="post" target="sink">
+      <button class="image-button" type="submit">
+        <img src="/static/ios/3d_printer.png" alt="3D Printer Toggle" />
+        <span class="icon-label">Printer</span>
+      </button>
+    </form>
+  </td>
+  <td>
+    <button id="all-lights-button" class="image-button" type="button">
+      <img src="/static/ios/light_bulb_attic.png" alt="Office Lights Off" />
+      <span class="icon-label">All Lights Off</span>
+    </button>
+  </td>
+</tr>
+{% endblock %}
+
+<!------------------>
+<!-- LIGHTS MODAL -->
+<!------------------>
+{% include "components/modal.html" %}
