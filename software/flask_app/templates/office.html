@@ -11,10 +11,7 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"
     />
     <title>Office</title>
-    <link
-      rel="stylesheet"
-      href="/static/office.css?v=20260708-labels"
-    />
+    <link rel="stylesheet" href="/static/office.css?v=20260708-labels" />
   </head>
   <body>
     <img
@@ -22,23 +19,33 @@
       src="/static/ios/background.png?v=20260614-test"
       alt=""
     />
-    <iframe name="sink" style="visibility:hidden;width:0;height:0;border:0;position:absolute"></iframe>
+    <iframe
+      name="sink"
+      style="
+        visibility: hidden;
+        width: 0;
+        height: 0;
+        border: 0;
+        position: absolute;
+      "
+    ></iframe>
     <main class="panel">
       <table class="button-grid" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td>
             <form action="/office_lamps_toggle" method="post" target="sink">
               <button class="image-button" type="submit">
-                <img
-                  src="/static/ios/lamp.png"
-                  alt="Office Lamps Toggle"
-                />
+                <img src="/static/ios/lamp.png" alt="Office Lamps Toggle" />
                 <span class="icon-label">Lamps</span>
               </button>
             </form>
           </td>
           <td>
-            <form action="/office_fans_lights_toggle" method="post" target="sink">
+            <form
+              action="/office_fans_lights_toggle"
+              method="post"
+              target="sink"
+            >
               <button class="image-button" type="submit">
                 <img
                   src="/static/ios/ceiling_light.png"
@@ -51,10 +58,7 @@
           <td>
             <form action="/TODO" method="post" target="sink">
               <button class="image-button" type="submit">
-                <img
-                  src="/static/ios/fan.png"
-                  alt="TODO"
-                />
+                <img src="/static/ios/fan.png" alt="TODO" />
                 <span class="icon-label">Fans</span>
               </button>
             </form>
@@ -62,7 +66,11 @@
         </tr>
         <tr>
           <td>
-            <form action="/office_ceiling_lights_toggle" method="post" target="sink">
+            <form
+              action="/office_ceiling_lights_toggle"
+              method="post"
+              target="sink"
+            >
               <button class="image-button" type="submit">
                 <img
                   src="/static/ios/light_bulb_peg_board.png"
@@ -75,10 +83,7 @@
           <td>
             <form action="/3d_printer_toggle" method="post" target="sink">
               <button class="image-button" type="submit">
-                <img
-                  src="/static/ios/3d_printer.png"
-                  alt="3D Printer Toggle"
-                />
+                <img src="/static/ios/3d_printer.png" alt="3D Printer Toggle" />
                 <span class="icon-label">Printer</span>
               </button>
             </form>
@@ -95,18 +100,15 @@
         </tr>
       </table>
     </main>
-    <div id="modal-backdrop" class="modal-backdrop" style="display:none;"></div>
-    <div id="all-lights-modal" class="modal" style="display:none;">
+    <div id="modal-backdrop" class="modal-backdrop" style="display: none"></div>
+    <div id="all-lights-modal" class="modal" style="display: none">
       <div class="modal-highlight-top"></div>
-<div class="modal-highlight-left"></div>
-        <h2>All Lights Off</h2>
-
-        <p>Are you sure you want to turn off all office lights?</p>
-
-        <div class="modal-buttons">
-            <button id="modal-cancel" type="button">Cancel</button>
-            <button id="modal-confirm" type="button">OK</button>
-        </div>
+      <h2>All Lights Off</h2>
+      <p>Are you sure you want to turn off all office lights?</p>
+      <div class="modal-buttons">
+        <button id="modal-cancel" type="button">Cancel</button>
+        <button id="modal-confirm" type="button">OK</button>
+      </div>
     </div>
     <script src="/static/press_feedback.js?v=20260706-ios3"></script>
     <form
@@ -114,7 +116,7 @@
       action="/office_lights_off"
       method="post"
       target="sink"
-      style="display:none"
+      style="display: none"
     ></form>
   </body>
 </html>
