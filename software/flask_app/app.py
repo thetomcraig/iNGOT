@@ -152,7 +152,7 @@ def libbys_office_lights_toggle():
 
 @app.route("/living_room")
 def index():
-    return render_template("living_room.html")
+    return render_template("rooms/living_room.html")
 
 @app.route("/office")
 def office():

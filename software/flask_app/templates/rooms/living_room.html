@@ -1,121 +1,107 @@
-<html>
-  <head>
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta
-      name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
-    />
-    <meta name="apple-mobile-web-app-title" content="Living Room" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"
-    />
-    <title>Living Room</title>
-    <link
-      rel="stylesheet"
-      href="/static/living_room.css?v=20260706-room"
-    />
-  </head>
-  <body>
-    <iframe name="sink" style="visibility:hidden;width:0;height:0;border:0;position:absolute"></iframe>
-    <main class="panel">
-      <table class="button-grid" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td>
-            <form action="/living_room_toggle" method="post" target="sink">
-              <button class="image-button" type="submit">
-                <img src="/static/ios/light_bulb_couch.png" alt="Living Room Toggle" />
-              </button>
-            </form>
-            <span class="icon-label">Living Room</span>
-          </td>
-          <td>
-            <form action="/dining_room_toggle" method="post" target="sink">
-              <button class="image-button" type="submit">
-                <img
-                  src="/static/ios/light_bulb_table.png"
-                  alt="Dining Room Toggle"
-                />
-              </button>
-            </form>
-            <span class="icon-label">Dining Room</span>
-          </td>
-          <td>
-            <form action="/vacuum_start" method="post" target="sink">
-              <button class="image-button" type="submit">
-                <img
-                  src="/static/ios/vacuum_start.png"
-                  alt="Start Vacuum"
-                />
-              </button>
-            </form>
-            <span class="icon-label">Start Rocky</span>
-          </td>
-          <td>
-            <form action="/vacuum_stop" method="post" target="sink">
-              <button class="image-button" type="submit">
-                <img
-                  src="/static/ios/vacuum_stop.png"
-                  alt="Stop Vacuum"
-                />
-              </button>
-            </form>
-            <span class="icon-label">Stop Rocky</span>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <span class="temp-tile">
-              <img
-                src="/static/ios/blank_ios_weather_blue.png"
-                alt="Eloise's Temperature"
-              />
-              <span class="temp-value" id="eloises-temp">
-                <span class="temp-reading">
-                  <span class="temp-number" id="eloises-temp-number"></span>
-                  <span class="temp-degree">°</span>
-                </span>
-              </span>
-            </span>
-            <span class="icon-label">Eloise</span>
-          </td>
-          <td>
-            <form action="/playpause" method="post" target="sink">
-              <button class="image-button" type="submit">
-                <img
-                  src="/static/ios/tv.png"
-                  alt="Play Pause"
-                />
-              </button>
-            </form>
-            <span class="icon-label">Play Pause</span>
-          </td>
-          <td>
-            <form action="/ice_maker_toggle" method="post" target="sink">
-              <button class="image-button" type="submit">
-                <img
-                  src="/static/ios/ice_maker.png"
-                  alt="Ice Maker Toggle"
-                />
-              </button>
-            </form>
-            <span class="icon-label">Ice Maker</span>
-          </td>
-          <td>
-            <form action="/downstairs_toggle" method="post" target="sink">
-              <button class="image-button" type="submit">
-                <img
-                  src="/static/ios/light_bulb_house.png"
-                  alt="Downstairs Lights Toggle"
-                />
-              </button>
-            </form>
-            <span class="icon-label">Lights</span>
-          </td>
-        </tr>
-      </table>
-    </main>
-    <script src="/static/weather.js"></script>
-    <script src="/static/press_feedback.js?v=20260706-ios3"></script>
-  </body>
-</html>
+<title>Living Room</title>
+<link rel="stylesheet" href="/static/living_room.css?v=20260708-labels" />
+
+{% extends "rooms/base.html" %}
+{% block content %}
+<!------------->
+<!-- TOP ROW -->
+<!------------->
+<tr>
+  <td>
+    <form action="/living_room_toggle" method="post" target="sink">
+      <button class="image-button" type="submit">
+        <img src="/static/ios/light_bulb_couch.png" alt="Living Room Toggle" />
+      </button>
+    </form>
+    <span class="icon-label">Living Room</span>
+  </td>
+  <td>
+    <form action="/dining_room_toggle" method="post" target="sink">
+      <button class="image-button" type="submit">
+        <img
+          src="/static/ios/light_bulb_table.png"
+          alt="Dining Room Toggle"
+        />
+      </button>
+    </form>
+    <span class="icon-label">Dining Room</span>
+  </td>
+  <td>
+    <form action="/vacuum_start" method="post" target="sink">
+      <button class="image-button" type="submit">
+        <img
+          src="/static/ios/vacuum_start.png"
+          alt="Start Vacuum"
+        />
+      </button>
+    </form>
+    <span class="icon-label">Start Rocky</span>
+  </td>
+  <td>
+    <form action="/vacuum_stop" method="post" target="sink">
+      <button class="image-button" type="submit">
+        <img
+          src="/static/ios/vacuum_stop.png"
+          alt="Stop Vacuum"
+        />
+      </button>
+    </form>
+    <span class="icon-label">Stop Rocky</span>
+  </td>
+</tr>
+<!---------------->
+<!-- BOTTOM ROW -->
+<!---------------->
+<tr>
+  <td>
+    <span class="temp-tile">
+      <img
+        src="/static/ios/blank_ios_weather_blue.png"
+        alt="Eloise's Temperature"
+      />
+      <span class="temp-value" id="eloises-temp">
+        <span class="temp-reading">
+          <span class="temp-number" id="eloises-temp-number"></span>
+          <span class="temp-degree">°</span>
+        </span>
+      </span>
+    </span>
+    <span class="icon-label">Eloise</span>
+  </td>
+  <td>
+    <form action="/playpause" method="post" target="sink">
+      <button class="image-button" type="submit">
+        <img
+          src="/static/ios/tv.png"
+          alt="Play Pause"
+        />
+      </button>
+    </form>
+    <span class="icon-label">Play Pause</span>
+  </td>
+  <td>
+    <form action="/ice_maker_toggle" method="post" target="sink">
+      <button class="image-button" type="submit">
+        <img
+          src="/static/ios/ice_maker.png"
+          alt="Ice Maker Toggle"
+        />
+      </button>
+    </form>
+    <span class="icon-label">Ice Maker</span>
+  </td>
+  <td>
+    <form action="/downstairs_toggle" method="post" target="sink">
+      <button class="image-button" type="submit">
+        <img
+          src="/static/ios/light_bulb_house.png"
+          alt="Downstairs Lights Toggle"
+        />
+      </button>
+    </form>
+    <span class="icon-label">Lights</span>
+  </td>
+</tr>
+{% endblock %}
+
+{% include "components/modal.html" %}
