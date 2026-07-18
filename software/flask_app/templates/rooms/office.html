@@ -51,18 +51,19 @@
     </form>
   </td>
   <td>
-    <form action="/3d_printer_toggle" method="post" target="sink">
-      <button class="image-button" type="submit">
-        <img src="/static/ios/3d_printer.png" alt="3D Printer Toggle" />
-        <span class="icon-label">Printer</span>
-      </button>
-    </form>
+    <button id="3d-printer-button" class="image-button" type="button">
+    <button id="modal-button" class="image-button" type="button">
+      <img src="/static/ios/3d_printer.png" alt="3D Printer Toggle" />
+      <span class="icon-label">Printer</span>
+    </button>
   </td>
   <td>
-    <button id="all-lights-button" class="image-button" type="button">
-      <img src="/static/ios/light_bulb_attic.png" alt="Office Lights Off" />
-      <span class="icon-label">All Lights Off</span>
-    </button>
+    <form action="/office_lights_off" method="post" target="sink">
+      <button class="image-button" type="submit">
+        <img src="/static/ios/light_bulb_attic.png" alt="Office Lights Off" />
+        <span class="icon-label">All Lights Off</span>
+      </button>
+    </form>
   </td>
 </tr>
 {% endblock %}

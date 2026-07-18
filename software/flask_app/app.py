@@ -11,11 +11,11 @@ def index():
 def office():
     return render_template(
         "rooms/office.html",
-        modal_title="All Office Lights",
-        modal_message="Are you sure you want to turn off all office lights?",
+        modal_title="3D Printer",
+        modal_message="Toggle the printer?",
         modal_cancel_text="Cancel",
         modal_confirm_text="OK",
-        modal_confirm_action="/office_lights_off"
+        modal_confirm_action="/3d_printer_toggle"
     )
 
 @app.route("/libbys_office")

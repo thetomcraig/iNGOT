@@ -60,9 +60,9 @@ modal.style.top = top + "px";
       backdrop.style.display = "none";
     }
 
-    var allLightsButton = document.getElementById("all-lights-button");
-    if (allLightsButton) {
-      allLightsButton.onclick = function () {
+    var modalButton = document.getElementById("modal-button");
+    if (modalButton) {
+      modalButton.onclick = function () {
         showModal();
         return false;
       };

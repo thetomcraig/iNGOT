@@ -49,6 +49,15 @@ def _3d_printer_toggle():
     )
     return '', 204
 
+@app.route("/ice_maker_toggle", methods=['GET', 'POST'])
+def ice_maker_toggle():
+    call_service(
+        "switch",
+        "toggle",
+        {"entity_id": "switch.opal"}
+    )
+    return '', 204
+
 @app.route("/living_room_toggle", methods=['GET', 'POST'])
 def living_room_toggle():
     call_service(
