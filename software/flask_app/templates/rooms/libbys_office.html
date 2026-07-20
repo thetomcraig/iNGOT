@@ -1,49 +1,13 @@
 <title>Libby's Office</title>
 <link rel="stylesheet" href="/static/libbys_office.css?v=20260708-labels" />
-
 {% extends "rooms/base.html" %}
+{% import "components/buttons/api_call_buttons.html" as api_call_buttons %}
 {% block content %}
-<!------------->
-<!-- TOP ROW -->
-<!------------->
 <tr>
-  <td>
-    <form action="/libbys_office_lights_toggle" method="post" target="sink">
-      <button class="image-button" type="submit">
-        <img
-          src="/static/ios/lamp_purple.png"
-          alt="Libbys Office Lights Toggle"
-        />
-        <span class="icon-label">Lamp</span>
-      </button>
-    </form>
-  </td>
-  <td>
-    <form action="/vacuum_start" method="post" target="sink">
-      <button class="image-button" type="submit">
-        <img
-          src="/static/ios/vacuum_start.png"
-          alt="Start Vacuum"
-        />
-        <span class="icon-label">Start Rocky</span>
-      </button>
-    </form>
-  </td>
-  <td>
-    <form action="/vacuum_stop" method="post" target="sink">
-      <button class="image-button" type="submit">
-        <img
-          src="/static/ios/vacuum_stop.png"
-          alt="Stop Vacuum"
-        />
-        <span class="icon-label">Stop Rocky</span>
-      </button>
-    </form>
-  </td>
+  <td>{{ api_call_buttons.libbys_office_lights_toggle() }}</td>
+  <td>{{ api_call_buttons.vacuum_start() }}</td>
+  <td>{{ api_call_buttons.vacuum_stop() }}</td>
 </tr>
-<!---------------->
-<!-- BOTTOM ROW -->
-<!---------------->
 <tr>
   <td>
     <span class="temp-tile">
@@ -75,16 +39,6 @@
     </span>
     <span class="icon-label">Today</span>
   </td>
-  <td>
-    <form action="/downstairs_toggle" method="post" target="sink">
-      <button class="image-button" type="submit">
-        <img
-          src="/static/ios/light_bulb_house.png"
-          alt="Downstairs Lights Toggle"
-        />
-        <span class="icon-label">Lights</span>
-      </button>
-    </form>
-  </td>
+  <td>{{ api_call_buttons.downstairs_toggle() }}</td>
 </tr>
 {% endblock %}

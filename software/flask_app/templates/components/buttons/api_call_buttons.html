@@ -107,3 +107,12 @@
   "All Lights Off"
 )}}
 {% endmacro %}
+
+{% macro libbys_office_lights_toggle() %}
+{{ api_call_button(
+  "/libbys_office_lights_toggle",
+  "/static/ios/lamp_purple.png",
+  "Libbys Office Lights Toggle",
+  "Lamp"
+)}}
+{% endmacro %}
