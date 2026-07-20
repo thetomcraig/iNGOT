@@ -85,11 +85,12 @@ def downstairs_toggle():
     )
     return '', 204
 
-@app.route("/playpause")
+@app.route("/playpause", methods=['GET', 'POST'])
 def playpause():
+    print("Toggling TV play/pause")
     call_service(
         "script",
-        "play_pause_tv",
+        "play_pause",
         {}
     )
     return '', 204
