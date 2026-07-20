@@ -1,0 +1,109 @@
+{% from "components/buttons/base_api_call_button.html" import api_call_button %}
+
+{% macro living_room_light() %}
+{{ api_call_button(
+  "/living_room_toggle",
+  "/static/ios/light_bulb_couch.png",
+  "Living Room Toggle",
+  "Living Room"
+)}}
+{% endmacro %}
+
+{% macro dining_room_light() %}
+{{ api_call_button(
+  "/dining_room_toggle",
+  "/static/ios/light_bulb_table.png",
+  "Dining Room Toggle",
+  "Dining Room"
+)}}
+{% endmacro %}
+
+{% macro vacuum_start() %}
+{{ api_call_button(
+  "/vacuum_start",
+  "/static/ios/vacuum_start.png",
+  "Start Vacuum",
+  "Start Rocky"
+)}}
+{% endmacro %}
+
+{% macro vacuum_stop() %}
+{{ api_call_button(
+  "/vacuum_stop",
+  "/static/ios/vacuum_stop.png",
+  "Stop Vacuum",
+  "Stop Rocky"
+)}}
+{% endmacro %}
+
+{% macro play_pause() %}
+{{ api_call_button(
+  "/playpause",
+  "/static/ios/tv.png",
+  "Play Pause",
+  "Play Pause"
+)}}
+{% endmacro %}
+
+{% macro ice_maker_toggle() %}
+{{ api_call_button(
+  "/ice_maker_toggle",
+  "/static/ios/ice_maker.png",
+  "Ice Maker Toggle",
+  "Ice Maker"
+)}}
+{% endmacro %}
+
+{% macro downstairs_toggle() %}
+{{ api_call_button(
+  "/downstairs_toggle",
+  "/static/ios/light_bulb_house.png",
+  "Downstairs Lights Toggle",
+  "Downstairs Lights"
+)}}
+{% endmacro %}
+
+{% macro office_lamps_toggle() %}
+{{ api_call_button(
+  "/office_lamps_toggle",
+  "/static/ios/lamp.png",
+  "Office Lamps Toggle",
+  "Office Lamps"
+)}}
+{% endmacro %}
+
+{% macro office_fans_lights_toggle() %}
+{{ api_call_button(
+  "/office_fans_lights_toggle",
+  "/static/ios/ceiling_light.png",
+  "Office Fan Lights Toggle",
+  "Overhead"
+)}}
+{% endmacro %}
+
+{% macro office_fans_toggle() %}
+{{ api_call_button(
+  "/TODO",
+  "/static/ios/fan.png",
+  "TODO",
+  "Fans"
+)}}
+{% endmacro %}
+
+{% macro office_ceiling_lights_toggle() %}
+{{ api_call_button(
+  "/office_ceiling_lights_toggle",
+  "/static/ios/light_bulb_peg_board.png",
+  "Office Ceiling Lights Toggle",
+  "Workshop"
+)}}
+{% endmacro %}
+
+{% macro office_lights_off() %}
+{{ api_call_button(
+  "/office_lights_off",
+  "/static/ios/light_bulb_attic.png",
+  "Office Lights Off",
+  "All Lights Off"
+)}}
+{% endmacro %}

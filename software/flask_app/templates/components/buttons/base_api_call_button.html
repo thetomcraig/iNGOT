@@ -1,0 +1,8 @@
+{% macro api_call_button(action, img, alt_text, label_text) %}
+<form action="{{ action }}" method="post" target="sink">
+  <button class="image-button" type="submit">
+    <img src="{{ img }}" alt="{{ alt_text }}">
+    <span class="icon-label">{{ label_text }}</span>
+  </button>
+</form>
+{% endmacro %}

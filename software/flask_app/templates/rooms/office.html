@@ -1,55 +1,15 @@
 <title>Office</title>
 <link rel="stylesheet" href="/static/office.css?v=20260708-labels" />
-
 {% extends "rooms/base.html" %}
+{% import "components/buttons/api_call_buttons.html" as api_call_buttons %}
 {% block content %}
-<!------------->
-<!-- TOP ROW -->
-<!------------->
 <tr>
-  <td>
-    <form action="/office_lamps_toggle" method="post" target="sink">
-      <button class="image-button" type="submit">
-        <img src="/static/ios/lamp.png" alt="Office Lamps Toggle" />
-        <span class="icon-label">Lamps</span>
-      </button>
-    </form>
-  </td>
-  <td>
-    <form action="/office_fans_lights_toggle" method="post" target="sink">
-      <button class="image-button" type="submit">
-        <img
-          src="/static/ios/ceiling_light.png"
-          alt="Office Fan Lights Toggle"
-        />
-        <span class="icon-label">Overhead</span>
-      </button>
-    </form>
-  </td>
-  <td>
-    <form action="/TODO" method="post" target="sink">
-      <button class="image-button" type="submit">
-        <img src="/static/ios/fan.png" alt="TODO" />
-        <span class="icon-label">Fans</span>
-      </button>
-    </form>
-  </td>
+  <td>{{ api_call_buttons.office_lamps_toggle() }}</td>
+  <td>{{ api_call_buttons.office_fans_lights_toggle() }}</td>
+  <td>{{ api_call_buttons.office_fans_toggle() }}</td>
 </tr>
-<!---------------->
-<!-- BOTTOM ROW -->
-<!---------------->
 <tr>
-  <td>
-    <form action="/office_ceiling_lights_toggle" method="post" target="sink">
-      <button class="image-button" type="submit">
-        <img
-          src="/static/ios/light_bulb_peg_board.png"
-          alt="Office Ceiling Lights Toggle"
-        />
-        <span class="icon-label">Workshop</span>
-      </button>
-    </form>
-  </td>
+  <td>{{ api_call_buttons.office_ceiling_lights_toggle() }}</td>
   <td>
     <button id="3d-printer-button" class="image-button" type="button">
     <button id="modal-button" class="image-button" type="button">
@@ -57,13 +17,6 @@
       <span class="icon-label">Printer</span>
     </button>
   </td>
-  <td>
-    <form action="/office_lights_off" method="post" target="sink">
-      <button class="image-button" type="submit">
-        <img src="/static/ios/light_bulb_attic.png" alt="Office Lights Off" />
-        <span class="icon-label">All Lights Off</span>
-      </button>
-    </form>
-  </td>
+  <td>{{ api_call_buttons.office_lights_off() }}</td>
 </tr>
 {% endblock %}

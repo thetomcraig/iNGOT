@@ -1,57 +1,14 @@
 <title>Living Room</title>
 <link rel="stylesheet" href="/static/living_room.css?v=20260708-labels" />
-
 {% extends "rooms/base.html" %}
+{% import "components/buttons/api_call_buttons.html" as api_call_buttons %}
 {% block content %}
-<!------------->
-<!-- TOP ROW -->
-<!------------->
 <tr>
-  <td>
-    <form action="/living_room_toggle" method="post" target="sink">
-      <button class="image-button" type="submit">
-        <img src="/static/ios/light_bulb_couch.png" alt="Living Room Toggle" />
-      </button>
-    </form>
-    <span class="icon-label">Living Room</span>
-  </td>
-  <td>
-    <form action="/dining_room_toggle" method="post" target="sink">
-      <button class="image-button" type="submit">
-        <img
-          src="/static/ios/light_bulb_table.png"
-          alt="Dining Room Toggle"
-        />
-      </button>
-    </form>
-    <span class="icon-label">Dining Room</span>
-  </td>
-  <td>
-    <form action="/vacuum_start" method="post" target="sink">
-      <button class="image-button" type="submit">
-        <img
-          src="/static/ios/vacuum_start.png"
-          alt="Start Vacuum"
-        />
-      </button>
-    </form>
-    <span class="icon-label">Start Rocky</span>
-  </td>
-  <td>
-    <form action="/vacuum_stop" method="post" target="sink">
-      <button class="image-button" type="submit">
-        <img
-          src="/static/ios/vacuum_stop.png"
-          alt="Stop Vacuum"
-        />
-      </button>
-    </form>
-    <span class="icon-label">Stop Rocky</span>
-  </td>
+  <td>{{ api_call_buttons.living_room_light() }}</td>
+  <td>{{ api_call_buttons.dining_room_light() }}</td>
+  <td>{{ api_call_buttons.vacuum_start() }}</td>
+  <td>{{ api_call_buttons.vacuum_stop() }}</td>
 </tr>
-<!---------------->
-<!-- BOTTOM ROW -->
-<!---------------->
 <tr>
   <td>
     <span class="temp-tile">
@@ -68,38 +25,8 @@
     </span>
     <span class="icon-label">Eloise</span>
   </td>
-  <td>
-    <form action="/playpause" method="post" target="sink">
-      <button class="image-button" type="submit">
-        <img
-          src="/static/ios/tv.png"
-          alt="Play Pause"
-        />
-      </button>
-    </form>
-    <span class="icon-label">Play Pause</span>
-  </td>
-  <td>
-    <form action="/ice_maker_toggle" method="post" target="sink">
-      <button class="image-button" type="submit">
-        <img
-          src="/static/ios/ice_maker.png"
-          alt="Ice Maker Toggle"
-        />
-      </button>
-    </form>
-    <span class="icon-label">Ice Maker</span>
-  </td>
-  <td>
-    <form action="/downstairs_toggle" method="post" target="sink">
-      <button class="image-button" type="submit">
-        <img
-          src="/static/ios/light_bulb_house.png"
-          alt="Downstairs Lights Toggle"
-        />
-      </button>
-    </form>
-    <span class="icon-label">Lights</span>
-  </td>
+  <td>{{ api_call_buttons.play_pause() }}</td>
+  <td>{{ api_call_buttons.ice_maker_toggle() }}</td>
+  <td>{{ api_call_buttons.downstairs_toggle() }}</td>
 </tr>
 {% endblock %}
