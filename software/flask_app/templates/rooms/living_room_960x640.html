@@ -1,0 +1,16 @@
+<title>Living Room</title>
+<link rel="stylesheet" href="/static/living_room_960x640.css?v=20260708-labels" />
+{% extends "rooms/base.html" %}
+{% import "components/buttons/api_call_buttons.html" as api_call_buttons %}
+{% block content %}
+<tr>
+  <td>{{ api_call_buttons.living_room_light() }}</td>
+  <td>{{ api_call_buttons.dining_room_light() }}</td>
+  <td>{{ api_call_buttons.vacuum_stop() }}</td>
+</tr>
+<tr>
+  <td>{{ api_call_buttons.play_pause() }}</td>
+  <td>{{ api_call_buttons.ice_maker_toggle() }}</td>
+  <td>{{ api_call_buttons.downstairs_toggle() }}</td>
+</tr>
+{% endblock %}

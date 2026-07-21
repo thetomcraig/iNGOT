@@ -3,9 +3,13 @@ from flask_base import app
 from ha_routes import *
 
 
-@app.route("/living_room")
-def index():
-    return render_template("rooms/living_room.html")
+@app.route("/living_room_1136x640")
+def living_room_1136x640():
+    return render_template("rooms/living_room_1136x640.html")
+
+@app.route("/living_room_960x640")
+def living_room_960x640():
+    return render_template("rooms/living_room_960x640.html")
 
 @app.route("/office")
 def office():
