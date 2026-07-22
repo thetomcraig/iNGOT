@@ -22,6 +22,10 @@ def office():
         modal_confirm_action="/3d_printer_toggle"
     )
 
+@app.route("/office_1136x640")
+def office_1136x640():
+    return render_template("rooms/office_1136x640.html")
+
 @app.route("/libbys_office")
 def libbys_office():
     return render_template("rooms/libbys_office.html")

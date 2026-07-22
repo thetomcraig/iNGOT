@@ -1,0 +1,37 @@
+<title>Office</title>
+<link rel="stylesheet" href="/static/office_1136x640.css?v=20260708-labels" />
+{% extends "rooms/base.html" %}
+{% import "components/buttons/api_call_buttons.html" as api_call_buttons %}
+{% block content %}
+<tr>
+  <td>{{ api_call_buttons.office_lamps_toggle() }}</td>
+  <td>{{ api_call_buttons.office_fans_lights_toggle() }}</td>
+  <td>{{ api_call_buttons.office_ceiling_lights_toggle() }}</td>
+  <td>{{ api_call_buttons.office_fans_toggle() }}</td>
+</tr>
+<tr>
+  <td>
+    <span class="temp-tile">
+      <img
+        src="/static/ios/blank_ios_weather_blue.png"
+        alt="Eloise's Temperature"
+      />
+      <span class="temp-value" id="eloises-temp">
+        <span class="temp-reading">
+          <span class="temp-number" id="eloises-temp-number"></span>
+          <span class="temp-degree">°</span>
+        </span>
+      </span>
+    </span>
+    <span class="icon-label">Eloise</span>
+  </td>
+  <td>
+    <button id="modal-button" class="image-button" type="button">
+      <img src="/static/ios/3d_printer.png" alt="3D Printer Toggle" />
+      <span class="icon-label">Printer</span>
+    </button>
+  </td>
+  <td>{{ api_call_buttons.downstairs_toggle() }}</td>
+  <td>{{ api_call_buttons.office_lights_off() }}</td>
+</tr>
+{% endblock %}
