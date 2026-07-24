@@ -24,7 +24,13 @@ def office():
 
 @app.route("/office_1136x640")
 def office_1136x640():
-    return render_template("rooms/office_1136x640.html")
+    return render_template("rooms/office_1136x640.html",
+        modal_title="3D Printer",
+        modal_message="Toggle the printer?",
+        modal_cancel_text="Cancel",
+        modal_confirm_text="OK",
+        modal_confirm_action="/3d_printer_toggle"
+    )
 
 @app.route("/libbys_office")
 def libbys_office():
