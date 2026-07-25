@@ -34,6 +34,15 @@
     </table>
     <script src="{{ url_for('static', filename='scripts/press_feedback.js') }}"></script>
     <script src="{{ url_for('static', filename='scripts/weather.js') }}"></script>
+    <script>
+      document.addEventListener(
+        "touchmove",
+        function(e) {
+            e.preventDefault();
+        },
+        { passive: false }
+      );
+    </script>
     </main>
   </body>
 </html>

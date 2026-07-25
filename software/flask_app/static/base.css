@@ -66,6 +66,13 @@ td {
     line-height: 1;
 }
 
+img {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
 .image-button img {
     display: block;
     margin: 0 auto;
