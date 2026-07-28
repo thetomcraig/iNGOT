@@ -116,3 +116,12 @@
   "Lamp"
 )}}
 {% endmacro %}
+
+{% macro eloise_lamp_toggle() %}
+{{ api_call_button(
+  "/eloise_lamp_toggle",
+  "/static/ios/lamp_pink.png",
+  "Eloise Lamp Toggle",
+  "Eloise"
+)}}
+{% endmacro %}

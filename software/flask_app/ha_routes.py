@@ -130,3 +130,12 @@ def libbys_office_lights_toggle():
         {"entity_id": "switch.libby_s_office_lamp"}
     )
     return '', 204
+
+@app.route("/eloise_lamp_toggle", methods=['GET', 'POST'])
+def eloise_lamp_toggle():
+    call_service(
+        "switch",
+        "toggle",
+        {"entity_id": "switch.eloise_s_lamp"}
+    )
+    return '', 204
