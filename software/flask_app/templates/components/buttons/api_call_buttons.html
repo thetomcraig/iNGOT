@@ -1,4 +1,5 @@
 {% from "components/buttons/base_api_call_button.html" import api_call_button %}
+{% from "components/modal.html" import confirmation_modal %}
 
 {% macro living_room_light() %}
 {{ api_call_button(
@@ -106,6 +107,23 @@
   "Upstairs Lights Off",
   "Upstairs"
 )}}
+{% endmacro %}
+
+{% macro three_d_printer_toggle() %}
+<button
+  class="image-button"
+  type="button"
+  data-modal-open="three-d-printer-confirmation"
+>
+  <img src="/static/ios/3d_printer.png" alt="3D Printer Toggle" />
+  <span class="icon-label">Printer</span>
+</button>
+{{ confirmation_modal(
+  "three-d-printer-confirmation",
+  "3D Printer",
+  "Toggle the printer?",
+  "/3d_printer_toggle"
+) }}
 {% endmacro %}
 
 {% macro libbys_office_lights_toggle() %}

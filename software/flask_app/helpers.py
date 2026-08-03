@@ -28,3 +28,14 @@ def get_state(entity_id):
     )
     response.raise_for_status()
     return response.json()
+
+
+def get_all_states():
+    """Return the current state objects in HA"""
+    response = requests.get(
+        f"{HA_URL}/api/states",
+        headers=HEADERS,
+        timeout=10,
+    )
+    response.raise_for_status()
+    return response.json()

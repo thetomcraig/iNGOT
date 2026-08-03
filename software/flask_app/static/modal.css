@@ -45,7 +45,7 @@
     inset 0 1px 0 rgba(255,255,255,.30),
     0 8px 24px rgba(0,0,0,.65);
 
-    position: relative;
+    position: fixed;
     z-index: 1001;
 }
 
@@ -154,7 +154,7 @@
     margin: 0;
 }
 
-#modal-cancel {
+.modal-cancel {
     float: left;
 
     background: -webkit-gradient(
@@ -176,7 +176,7 @@
     color: white;
 }
 
-#modal-confirm {
+.modal-confirm {
     float: right;
 }
 
@@ -191,7 +191,7 @@
     );
 }
 
-#modal-cancel:active {
+.modal-cancel:active {
 
     background: -webkit-gradient(
         linear,

@@ -45,50 +45,6 @@
       };
     }
 
-    var modal = document.getElementById("modal");
-    var backdrop = document.getElementById("modal-backdrop");
-
-    function showModal() {
-      var top = window.navigator.standalone ? 150 : 135;
-modal.style.top = top + "px";
-      modal.style.display = "block";
-      backdrop.style.display = "block";
-    }
-
-    function hideModal() {
-      modal.style.display = "none";
-      backdrop.style.display = "none";
-    }
-
-    var modalButton = document.getElementById("modal-button");
-    if (modalButton) {
-      modalButton.onclick = function () {
-        showModal();
-        return false;
-      };
-    }
-
-    var cancelButton = document.getElementById("modal-cancel");
-    if (cancelButton) {
-      cancelButton.onclick = function () {
-        hideModal();
-        return false;
-      };
-    }
-
-    var confirmButton = document.getElementById("modal-confirm");
-
-    if (confirmButton) {
-      confirmButton.onclick = function () {
-        hideModal();
-
-        window.setTimeout(function () {
-          document.getElementById("modal-form").submit();
-        }, 50);
-
-        return false;
-      };
-    }
   }
 
   if (window.addEventListener) {

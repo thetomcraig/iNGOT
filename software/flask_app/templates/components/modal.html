@@ -1,17 +1,13 @@
-<div id="modal-backdrop" class="modal-backdrop" style="display: none"></div>
-<div id="modal" class="modal" style="display: none">
+{% macro confirmation_modal(id, title, message, action, cancel_text="Cancel", confirm_text="OK") %}
+<div id="{{ id }}" class="modal" style="display: none">
   <div class="modal-highlight-top"></div>
-  <h2>{{ modal_title }}</h2>
-  <p>{{ modal_message }}</p>
-  <div class="modal-buttons">
-    <button id="modal-cancel" type="button">{{ modal_cancel_text }}</button>
-    <button id="modal-confirm" type="button">{{ modal_confirm_text }}</button>
-  </div>
+  <h2>{{ title }}</h2>
+  <p>{{ message }}</p>
+  <form action="{{ action }}" method="post" target="sink" data-modal-form>
+    <div class="modal-buttons">
+      <button class="modal-cancel" type="button" data-modal-close>{{ cancel_text }}</button>
+      <button class="modal-confirm" type="submit">{{ confirm_text }}</button>
+    </div>
+  </form>
 </div>
-<form
-  id="modal-form"
-  action="{{ modal_confirm_action }}"
-  method="post"
-  target="sink"
-  style="display: none"
-></form>
+{% endmacro %}
