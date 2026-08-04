@@ -38,9 +38,12 @@
     <script src="{{ url_for('static', filename='scripts/modal.js') }}"></script>
     <script src="{{ url_for('static', filename='scripts/press_feedback.js') }}"></script>
     <script src="{{ url_for('static', filename='scripts/weather.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/page_refresh.js') }}"></script>
     <script>
-      var homeAssistantStates = {{ home_assistant_states | tojson }};
-
+      window.homeAssistantStates = {{ home_assistant_states | tojson }};
+    </script>
+    <script src="{{ url_for('static', filename='scripts/home_assistant_state_manager.js') }}"></script>
+    <script>
       var startX, startY;
 var moved = false;
 

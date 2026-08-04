@@ -42,7 +42,12 @@
 
     for (i = 0; i < forms.length; i++) {
       if (forms[i].getAttribute("data-modal-form") !== null) {
-        forms[i].onsubmit = hideModal;
+        forms[i].onsubmit = function () {
+          hideModal();
+          window.setTimeout(function () {
+            window.location.reload();
+          }, 180);
+        };
       }
     }
 
