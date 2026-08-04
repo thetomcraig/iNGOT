@@ -44,9 +44,6 @@
       if (forms[i].getAttribute("data-modal-form") !== null) {
         forms[i].onsubmit = function () {
           hideModal();
-          window.setTimeout(function () {
-            window.location.reload();
-          }, 180);
         };
       }
     }

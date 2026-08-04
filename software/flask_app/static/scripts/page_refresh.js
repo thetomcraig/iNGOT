@@ -1,21 +1,22 @@
 (function () {
   function refreshAfterAction() {
-    var sink = document.querySelector('iframe[name="sink"]');
-    var refreshPending = false;
+    var refreshScheduled = false;
 
-    if (!sink) return;
-
+    // All API action buttons submit their form to the hidden "sink" iframe.
+    // Listening for submit covers every button created by api_call_button.
     document.addEventListener("submit", function (event) {
-      if (event.target.getAttribute("target") === "sink") {
-        refreshPending = true;
+      if (event.target.getAttribute("target") !== "sink" || refreshScheduled) {
+        return;
       }
-    });
 
-    sink.addEventListener("load", function () {
-      if (!refreshPending) return;
+      refreshScheduled = true;
 
-      refreshPending = false;
-      window.location.reload();
+      // Let the form POST begin before replacing the current page. The API
+      // endpoints return 204 responses, which do not reliably trigger iframe
+      // load events across browsers.
+      window.setTimeout(function () {
+        window.location.reload();
+      }, 180);
     });
   }
 
