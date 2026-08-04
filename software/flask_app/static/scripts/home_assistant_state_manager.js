@@ -1,7 +1,8 @@
 (function () {
   // Map each Home Assistant entity to the elements that visually represent it.
   var stateElementMap = {
-    "switch.3d_printer": ".three-d-printer-icon"
+    "switch.3d_printer": ".three-d-printer",
+    "switch.office_lamp": ".office-lamp"
   };
 
   function applyHomeAssistantStates(homeAssistantStates) {
