@@ -82,9 +82,10 @@ img {
 }
 
 .state-icon.is-on {
-    outline: 3px solid #2fff00;
-    outline-offset: 2px;
-    border-radius: 18px;
+    /* box-shadow is more reliable than outline-offset in older iOS Safari. */
+    box-shadow: 0 0 0 3px #2fff00;
+    border-radius: 20px;
+    padding: 2px;
 }
 
 .icon-label {
