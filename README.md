@@ -15,7 +15,7 @@
 ### Introduction
 
 <p align="center" valign="middle" width="33%" bgcolor="#ffffff">
-  <img src="images/gold_ai_processed.png" alt="iNgot Photo" width="220"><br>
+  <img src="images/gold_ai_processed.png" alt="iNgot Photo" width="400"><br>
   <b>iNgot</b>
 </p>
 
