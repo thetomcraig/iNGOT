@@ -93,7 +93,7 @@ img {
 
 .state-icon.is-on {
     /* box-shadow is more reliable than outline-offset in older iOS Safari. */
-    box-shadow: 0 0 0 3px #2fff00;
+    box-shadow: 0 0 0 3px #ffffff;
 }
 
 .icon-label {
