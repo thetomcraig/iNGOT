@@ -12,25 +12,19 @@
 </a>
 </p>
 
-### Introduction
-
 <p align="center" valign="middle" width="33%" bgcolor="#ffffff">
   <img src="images/gold_ai_processed.png" alt="iNgot Photo" width="400"><br>
-  <b>iNgot</b>
 </p>
 
+### Introduction
 **iNgot** is a project that transforms old touch screen devices into kiosk displays.  
-
-#### Why "iNgot"?
-The name iNgot comes the [hunks of metal](https://en.wikipedia.org/wiki/Ingot) which are the same shape.  
-This is also an homage to the "iDevice" naming scheme of the mid 00's.  
 Save these devices from the landfill, they're worth their weight in gold!
 
 ### Components
 iNgot is comprised of three components:  
 - Touch screen device: smart phone, tablet, etc. Any old device will do!
 - Enclosure: A 3D printed enclosure.
-- Software: A lightweight flask application.
+- Software: A lightweight flask application, which controls [HomeAssistant](https://www.home-assistant.io/) entities.
 
 ### Hardware
 #### Devices
@@ -42,8 +36,9 @@ By designging the enclosure and software to be compatible with legacy hardware, 
 I designed the enclosure to be as compatible as possible with iPods and smart phones.  
 The hardware consists of three parts:  
 - The prism: A trapezoidal prism shaped block.  This is the same size and shape for all devices, aside from the positions of the buttons.
-- The front: Front plate with a cut out for the screen and home button for iDevices
-- The retainer: This piece sits in between the other two, and holds the device securely in place
+- The front: Front plate with a cut out for the screen
+- The retainer: This piece sits in between the other two, and holds the device securely in place.  
+
 The parts are kept together with screws and threaded inserts.
 
 ### Software
@@ -51,15 +46,19 @@ The software is a lightweight Flask application with a front end written to be c
 The oldest device I have on hand is a first generation iPod touch (2007) so the CSS and Javascript are written with that in mind.  
 iOS devices are notoriously more difficult to tweak that Android devices, but a mish mash of jailbreak tweaks and old school web design has been pretty successful in acheiving the project goals, which are:
 - Always-on display
-- Auto-aunch webpage on boot
+- Auto-launch webpage on boot
 - No lock screen
 - Supression of notifications
 - Up to date information (as "real time" as possible, given hardware/software limitations) 
 
 ### Other Features
-iNgot has a USB C port, a small custom cable inside hooks it up to the device.  
+iNgot has a USB C port, and a small custom cable inside hooks it up to the device.  
 To assist in easy disassembly, iNogt has a big ol' hole in the back, which you can poke a stick through to push the device out. As much as I like a _big ol' hole for pokin'_ I may be able to eliminate this.  
 The buttons are also 3D printed, and need no additional parts.  
+
+#### Why "iNgot"?
+The name iNgot comes the [hunks of metal](https://en.wikipedia.org/wiki/Ingot) which are the same shape.  
+This is also an homage to the "iDevice" naming scheme of the mid 00's.  
 
 ### Gallery
 
