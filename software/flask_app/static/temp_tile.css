@@ -1,15 +1,18 @@
 .temp-tile {
     position: relative;
     display: inline-block;
-    width: 100px;
-    height: 100px;
+}
+
+.temp-tile-icon {
+    position: relative;
+    display: block;
     line-height: 0;
 }
 
-.temp-tile img {
+.temp-tile .temp-tile-image {
     display: block;
-    width: 100%;
-    height: 100%;
+    width: 100px;
+    height: 100px;
 }
 
 .temp-value {

@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="/static/office_1136x640.css?v=20260708-labels" />
 {% extends "rooms/base.html" %}
 {% import "components/buttons/api_call_buttons.html" as api_call_buttons %}
+{% import "components/buttons/temp_tile_button.html" as temp_tile_buttons %}
 {% block content %}
 <tr>
   <td>{{ api_call_buttons.office_lamps_toggle() }}</td>
@@ -11,19 +12,12 @@
 </tr>
 <tr>
   <td>
-    <span class="temp-tile">
-      <img
-        src="/static/ios/blank_ios_weather_blue.png"
-        alt="Eloise's Temperature"
-      />
-      <span class="temp-value" id="eloises-temp">
-        <span class="temp-reading">
-          <span class="temp-number" id="eloises-temp-number"></span>
-          <span class="temp-degree">°</span>
-        </span>
-      </span>
-    </span>
-    <span class="icon-label">Eloise</span>
+    {{ temp_tile_buttons.temp_tile_button(
+      "/static/ios/blank_ios_weather_blue.png",
+      "Eloise's Temperature",
+      "Eloise",
+      "eloises-temp-number"
+    ) }}
   </td>
   <td>{{ api_call_buttons.three_d_printer_toggle() }}</td>
   <td>{{ api_call_buttons.downstairs_toggle() }}</td>

@@ -1,0 +1,24 @@
+{% macro temp_tile_button(img, alt_text, label_text, number_id, action=None, modal_id=None) %}
+{% if action %}
+<form action="{{ action }}" method="post" target="sink">
+{% endif %}
+  <button
+    class="image-button temp-tile"
+    type="{{ 'submit' if action else 'button' }}"
+    {% if modal_id %}data-modal-open="{{ modal_id }}"{% endif %}
+  >
+    <span class="temp-tile-icon">
+      <img src="{{ img }}" alt="{{ alt_text }}" class="temp-tile-image" />
+      <span class="temp-value">
+        <span class="temp-reading">
+          <span class="temp-number" id="{{ number_id }}"></span>
+          <span class="temp-degree">°</span>
+        </span>
+      </span>
+    </span>
+    <span class="icon-label">{{ label_text }}</span>
+  </button>
+{% if action %}
+</form>
+{% endif %}
+{% endmacro %}

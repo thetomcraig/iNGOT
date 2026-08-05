@@ -74,6 +74,8 @@ img {
 }
 
 .image-button img {
+    border-radius: 26px;
+    border: 3px solid transparent;
     display: block;
     margin: 0 auto;
     width: auto;
@@ -87,8 +89,6 @@ img {
  * Its size never changes, so toggling .is-on cannot move the table grid.
  */
 .state-icon {
-    border-radius: 20px;
-    border: 3px solid transparent;
     padding: 2px;
     margin: 0 auto;
 }

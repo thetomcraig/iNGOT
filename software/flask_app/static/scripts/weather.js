@@ -35,7 +35,9 @@
 function refreshTemps() {
   var i;
   for (i = 0; i < tempTiles.length; i++) {
-    refreshTemp(tempTiles[i]);
+    if (tempTiles[i].number) {
+      refreshTemp(tempTiles[i]);
+    }
   }
 }
 
