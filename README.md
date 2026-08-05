@@ -44,7 +44,7 @@ The parts are kept together with screws and threaded inserts.
 ### Software
 The software is a lightweight Flask application with a front end written to be compatible with a wide range of mobile browsers.  
 The oldest device I have on hand is a first generation iPod touch (2007) so the CSS and Javascript are written with that in mind.  
-iOS devices are notoriously more difficult to tweak that Android devices, but a mish mash of jailbreak tweaks and old school web design has been pretty successful in acheiving the project goals, which are:
+iOS devices are notoriously more difficult to tweak than Android devices, but a mish mash of jailbreak tweaks and old school web design has been pretty successful in acheiving the project goals, which are:
 - Always-on display
 - Auto-launch webpage on boot
 - No lock screen
