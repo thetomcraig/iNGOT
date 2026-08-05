@@ -69,6 +69,10 @@ This is also an homage to the "iDevice" naming scheme of the mid 00's.
       <sub>Samsung a10e</sub>
     </td>
     <td align="center" valign="middle" width="33%" bgcolor="#ffffff">
+      <a href="images/green.jpeg"><img src="images/green.jpeg" alt="Green iNgot enclosure" width="220"></a><br>
+      <sub>iPhone 4s</sub>
+    </td>
+    <td align="center" valign="middle" width="33%" bgcolor="#ffffff">
       <a href="images/black.jpeg"><img src="images/black.jpeg" alt="Black iNgot enclosure" width="220"></a><br>
       <sub>iPhone 5</sub>
     </td>
