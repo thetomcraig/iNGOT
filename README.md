@@ -76,6 +76,8 @@ This is also an homage to the "iDevice" naming scheme of the mid 00's.
       <a href="images/black.jpeg"><img src="images/black.jpeg" alt="Black iNgot enclosure" width="220"></a><br>
       <sub>iPhone 5</sub>
     </td>
+    </tr>
+    <tr>
     <td align="center" valign="middle" width="33%" bgcolor="#ffffff">
       <a href="images/gold.jpeg"><img src="images/gold.jpeg" alt="Gold iNgot enclosure" width="220"></a><br>
       <sub>iPod Touch</sub>
