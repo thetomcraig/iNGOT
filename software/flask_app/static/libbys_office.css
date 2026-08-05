@@ -2,8 +2,9 @@
 
 .button-grid {
     left: 40px;
+    top: 5px;
 }
 
 td {
-    padding: 10px 1px;
+    padding: 5px 5px;
 }
