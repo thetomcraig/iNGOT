@@ -1,9 +1,11 @@
 @import url("/static/base.css");
 
+
 .button-grid {
-    left: 7.5%;
+    left: 20px;
+    top: 25px;
 }
 
 td {
-    padding: 15px 15px;
+    padding: 6px 18px;
 }
