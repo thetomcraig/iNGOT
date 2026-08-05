@@ -7,14 +7,15 @@
 
 <p align="center">
   <a href="#introduction">Introduction</a> •
+  <a href="#gallery">Gallery</a> •
   <a href="#credits-and-license">Credits and License
 </a>
 </p>
 
 ### Introduction
 
-<p align="center">
-  <img src="photo.jpeg" alt="iNgot Photo"><br>
+<p align="center" valign="middle" width="33%" bgcolor="#ffffff">
+  <img src="images/gold_ai_processed.png" alt="iNgot Photo" width="220"><br>
   <b>iNgot</b>
 </p>
 
@@ -59,6 +60,25 @@ iOS devices are notoriously more difficult to tweak that Android devices, but a 
 iNgot has a USB C port, a small custom cable inside hooks it up to the device.  
 To assist in easy disassembly, iNogt has a big ol' hole in the back, which you can poke a stick through to push the device out. As much as I like a _big ol' hole for pokin'_ I may be able to eliminate this.  
 The buttons are also 3D printed, and need no additional parts.  
+
+### Gallery
+
+<table cellpadding="16" cellspacing="0" border="1">
+  <tr>
+    <td align="center" valign="middle" width="33%" bgcolor="#ffffff">
+      <a href="images/beige.jpeg"><img src="images/beige.jpeg" alt="Beige iNgot enclosure" width="220"></a><br>
+      <sub>Samsung a10e</sub>
+    </td>
+    <td align="center" valign="middle" width="33%" bgcolor="#ffffff">
+      <a href="images/black.jpeg"><img src="images/black.jpeg" alt="Black iNgot enclosure" width="220"></a><br>
+      <sub>iPhone 5</sub>
+    </td>
+    <td align="center" valign="middle" width="33%" bgcolor="#ffffff">
+      <a href="images/gold.jpeg"><img src="images/gold.jpeg" alt="Gold iNgot enclosure" width="220"></a><br>
+      <sub>iPod Touch</sub>
+    </td>
+  </tr>
+</table>
 
 ### Credits and License
 Gold icons created by vectorsmarket15 - Flaticon.  
