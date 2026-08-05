@@ -82,18 +82,19 @@ img {
 }
 
 /*
- * Keep the layout gutter present in both states. Otherwise adding .is-on
- * changes the table's column/row dimensions and shifts the other icons.
+ * Keep a real border in both states. Unlike box-shadow, it is included in
+ * the image's box and therefore is not clipped by iOS button rendering.
+ * Its size never changes, so toggling .is-on cannot move the table grid.
  */
 .state-icon {
     border-radius: 20px;
+    border: 3px solid transparent;
     padding: 2px;
-    margin: 3px auto;
+    margin: 0 auto;
 }
 
 .state-icon.is-on {
-    /* box-shadow is more reliable than outline-offset in older iOS Safari. */
-    box-shadow: 0 0 0 3px #ffffff;
+    border-color: #ffffff;
 }
 
 .icon-label {
