@@ -63,27 +63,27 @@ This is also an homage to the "iDevice" naming scheme of the mid 00's.
 ### Gallery
 
 <p align="center">
-  <a href="images/beige.jpeg"><img src="images/beige.jpeg" alt="Beige iNgot enclosure" width="100%" style="max-width: 400px;"></a><br>
+  <a href="images/beige.jpeg"><img src="images/beige.jpeg" alt="Beige iNgot enclosure" width="100%" style="max-width: 300px;"></a><br>
   <sub>Samsung a10e</sub>
 </p>
 
 <p align="center">
-  <a href="images/green.png"><img src="images/green.png" alt="Green iNgot enclosure" width="100%" style="max-width: 400px;"></a><br>
+  <a href="images/green.png"><img src="images/green.png" alt="Green iNgot enclosure" width="100%" style="max-width: 300px;"></a><br>
   <sub>iPhone 4s</sub>
 </p>
 
 <p align="center">
-  <a href="images/black.png"><img src="images/black.png" alt="Black iNgot enclosure" width="100%" style="max-width: 400px;"></a><br>
+  <a href="images/black.png"><img src="images/black.png" alt="Black iNgot enclosure" width="100%" style="max-width: 300px;"></a><br>
   <sub>iPhone 5</sub>
 </p>
 
 <p align="center">
-  <a href="images/white.png"><img src="images/white.png" alt="White iNgot enclosure" width="100%" style="max-width: 400px;"></a><br>
+  <a href="images/white.png"><img src="images/white.png" alt="White iNgot enclosure" width="100%" style="max-width: 300px;"></a><br>
   <sub>iPod Touch</sub>
 </p>
 
 <p align="center">
-  <a href="images/gold.png"><img src="images/gold.png" alt="Gold iNgot enclosure" width="100%" style="max-width: 400px;"></a><br>
+  <a href="images/gold.png"><img src="images/gold.png" alt="Gold iNgot enclosure" width="100%" style="max-width: 300px;"></a><br>
   <sub>iPod Touch</sub>
 </p>
 
