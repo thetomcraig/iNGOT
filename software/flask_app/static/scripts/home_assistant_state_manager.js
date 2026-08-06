@@ -3,10 +3,12 @@
   var stateElementMap = {
     "switch.3d_printer": ".three-d-printer",
     "switch.office_lamp": ".office-lamp",
+    "switch.libby_s_office_lamp": ".libby-s-office-lamp",
+    "switch.eloise_s_lamp": ".eloise-s-lamp",
     "light.office_ceiling_light_north": ".office-ceiling-lights",
     "light.office_fan_light_west": ".office-fan-lights",
-    "switch.eloise_s_lamp": ".eloise-s-lamp",
-    "switch.libby_s_office_lamp": ".libby-s-office-lamp",
+    "switch.living_room_light": ".living-room-light",
+    "light.dining_room_light": ".dining-room-light",
   };
 
   function hasClass(element, className) {
