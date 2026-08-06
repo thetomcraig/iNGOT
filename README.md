@@ -64,21 +64,19 @@ This is also an homage to the "iDevice" naming scheme of the mid 00's.
 
 <table cellpadding="16" cellspacing="0" border="1">
   <tr>
-    <td align="center" valign="middle" width="33%" bgcolor="#ffffff">
+    <td align="center" valign="middle" width="100%" bgcolor="#ffffff">
       <a href="images/beige.jpeg"><img src="images/beige.jpeg" alt="Beige iNgot enclosure" width="220"></a><br>
       <sub>Samsung a10e</sub>
     </td>
-    <td align="center" valign="middle" width="33%" bgcolor="#ffffff">
+    <td align="center" valign="middle" width="100%" bgcolor="#ffffff">
       <a href="images/green.png"><img src="images/green.png" alt="Green iNgot enclosure" width="220"></a><br>
       <sub>iPhone 4s</sub>
     </td>
-    <td align="center" valign="middle" width="33%" bgcolor="#ffffff">
+    <td align="center" valign="middle" width="100%" bgcolor="#ffffff">
       <a href="images/black.png"><img src="images/black.png" alt="Black iNgot enclosure" width="220"></a><br>
       <sub>iPhone 5</sub>
     </td>
-    </tr>
-    <tr>
-    <td align="center" valign="middle" width="33%" bgcolor="#ffffff">
+    <td align="center" valign="middle" width="100%" bgcolor="#ffffff">
       <a href="images/gold.png"><img src="images/gold.png" alt="Gold iNgot enclosure" width="220"></a><br>
       <sub>iPod Touch</sub>
     </td>
