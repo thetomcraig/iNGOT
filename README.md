@@ -78,6 +78,11 @@ This is also an homage to the "iDevice" naming scheme of the mid 00's.
 </p>
 
 <p align="center">
+  <a href="images/white.png"><img src="images/white.png" alt="White iNgot enclosure" width="100%" style="max-width: 400px;"></a><br>
+  <sub>iPod Touch</sub>
+</p>
+
+<p align="center">
   <a href="images/gold.png"><img src="images/gold.png" alt="Gold iNgot enclosure" width="100%" style="max-width: 400px;"></a><br>
   <sub>iPod Touch</sub>
 </p>
