@@ -1,7 +1,7 @@
 # iNgot
 
 <p align="center">
-  <img src="icon.png" alt="iNgot title"><br>
+  <img src="images/icon.png" alt="iNgot title"><br>
   <b>iNgot</b>
 </p>
 
@@ -13,7 +13,7 @@
 </p>
 
 <p align="center" valign="middle" width="33%" bgcolor="#ffffff">
-  <img src="images/gold_ai_processed.png" alt="iNgot Photo" width="400"><br>
+  <img src="images/gold.png" alt="iNgot Photo" width="400"><br>
 </p>
 
 ### Introduction
@@ -69,7 +69,7 @@ This is also an homage to the "iDevice" naming scheme of the mid 00's.
       <sub>Samsung a10e</sub>
     </td>
     <td align="center" valign="middle" width="33%" bgcolor="#ffffff">
-      <a href="images/green.jpeg"><img src="images/green.jpeg" alt="Green iNgot enclosure" width="220"></a><br>
+      <a href="images/green.png"><img src="images/green.png" alt="Green iNgot enclosure" width="220"></a><br>
       <sub>iPhone 4s</sub>
     </td>
     <td align="center" valign="middle" width="33%" bgcolor="#ffffff">
@@ -79,7 +79,7 @@ This is also an homage to the "iDevice" naming scheme of the mid 00's.
     </tr>
     <tr>
     <td align="center" valign="middle" width="33%" bgcolor="#ffffff">
-      <a href="images/gold.jpeg"><img src="images/gold.jpeg" alt="Gold iNgot enclosure" width="220"></a><br>
+      <a href="images/gold.png"><img src="images/gold.png" alt="Gold iNgot enclosure" width="220"></a><br>
       <sub>iPod Touch</sub>
     </td>
   </tr>
