@@ -94,7 +94,8 @@ img {
 }
 
 .state-icon.is-on {
-    border-color: #4dd246;
+    /* iOS 3 does not reliably repaint a changed border-color on an image. */
+    border: 3px solid #4dd246;
 }
 
 .icon-label {

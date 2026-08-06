@@ -8,21 +8,42 @@
     "switch.eloise_s_lamp": ".eloise-s-lamp",
   };
 
+  function hasClass(element, className) {
+    return new RegExp("(^|\\s)" + className + "(?:\\s|$)").test(element.className);
+  }
+
+  function addClass(element, className) {
+    if (!hasClass(element, className)) {
+      element.className += (element.className ? " " : "") + className;
+    }
+  }
+
+  function removeClass(element, className) {
+    var classPattern = new RegExp("(^|\\s+)" + className + "(?=\\s|$)", "g");
+    element.className = element.className.replace(classPattern, " ").replace(/^\\s+|\\s+$/g, "");
+  }
+
   function applyHomeAssistantStates(homeAssistantStates) {
-    Object.keys(stateElementMap).forEach(function (entityId) {
+    var entityId;
+
+    // iOS 3 predates Object.keys and element.classList.
+    for (entityId in stateElementMap) {
+      if (!stateElementMap.hasOwnProperty(entityId)) {
+        continue;
+      }
+
       var entityState = homeAssistantStates[entityId];
       var isOn = entityState && entityState.state === "on";
       var elements = document.querySelectorAll(stateElementMap[entityId]);
 
-      // iOS 8 lacks NodeList.forEach and classList.toggle's force argument.
       for (var i = 0; i < elements.length; i += 1) {
         if (isOn) {
-          elements[i].classList.add("is-on");
+          addClass(elements[i], "is-on");
         } else {
-          elements[i].classList.remove("is-on");
+          removeClass(elements[i], "is-on");
         }
       }
-    });
+    }
   }
 
   window.applyHomeAssistantStates = applyHomeAssistantStates;
