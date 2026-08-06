@@ -44,7 +44,7 @@ The parts are kept together with screws and threaded inserts.
 ### Software
 The software is a lightweight Flask application with a front end written to be compatible with a wide range of mobile browsers.  
 The oldest device I have on hand is a first generation iPod touch (2007) so the CSS and Javascript are written with that in mind.  
-iOS devices are notoriously more difficult to tweak than Android devices, but a mish mash of jailbreak tweaks and old school web design has been pretty successful in acheiving the project goals, which are:
+iOS devices are notoriously more difficult to tweak than Android devices, but a mish mash of jailbreak tweaks and old school web design has been pretty successful in acheiving the project goals, with:
 - Always-on display
 - Auto-launch webpage on boot
 - No lock screen
@@ -53,7 +53,7 @@ iOS devices are notoriously more difficult to tweak than Android devices, but a 
 
 ### Other Features
 iNgot has a USB C port, and a small custom cable inside hooks it up to the device.  
-To assist in easy disassembly, iNogt has a big ol' hole in the back, which you can poke a stick through to push the device out. As much as I like a _big ol' hole for pokin'_ I may be able to eliminate this.  
+To assist in easy disassembly, iNogt has a big ol' hole in the back, which you can poke a stick through to push the device out. As much as I like a _big ol' hole for pokin'_ I may be able to eliminate this in future iterations.  
 The buttons are also 3D printed, and need no additional parts.  
 
 #### Why "iNgot"?
@@ -62,26 +62,24 @@ This is also an homage to the "iDevice" naming scheme of the mid 00's.
 
 ### Gallery
 
-<table cellpadding="16" cellspacing="0" border="1">
-  <tr>
-    <td align="center" valign="middle" width="100%" bgcolor="#ffffff">
-      <a href="images/beige.jpeg"><img src="images/beige.jpeg" alt="Beige iNgot enclosure" width="220"></a><br>
-      <sub>Samsung a10e</sub>
-    </td>
-    <td align="center" valign="middle" width="100%" bgcolor="#ffffff">
-      <a href="images/green.png"><img src="images/green.png" alt="Green iNgot enclosure" width="220"></a><br>
-      <sub>iPhone 4s</sub>
-    </td>
-    <td align="center" valign="middle" width="100%" bgcolor="#ffffff">
-      <a href="images/black.png"><img src="images/black.png" alt="Black iNgot enclosure" width="220"></a><br>
-      <sub>iPhone 5</sub>
-    </td>
-    <td align="center" valign="middle" width="100%" bgcolor="#ffffff">
-      <a href="images/gold.png"><img src="images/gold.png" alt="Gold iNgot enclosure" width="220"></a><br>
-      <sub>iPod Touch</sub>
-    </td>
-  </tr>
-</table>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; background-color: #ffffff; padding: 16px;">
+  <div style="text-align: center;">
+    <a href="images/beige.jpeg"><img src="images/beige.jpeg" alt="Beige iNgot enclosure" style="width: 100%; max-width: 400px; height: auto;"></a><br>
+    <sub>Samsung a10e</sub>
+  </div>
+  <div style="text-align: center;">
+    <a href="images/green.png"><img src="images/green.png" alt="Green iNgot enclosure" style="width: 100%; max-width: 400px; height: auto;"></a><br>
+    <sub>iPhone 4s</sub>
+  </div>
+  <div style="text-align: center;">
+    <a href="images/black.png"><img src="images/black.png" alt="Black iNgot enclosure" style="width: 100%; max-width: 400px; height: auto;"></a><br>
+    <sub>iPhone 5</sub>
+  </div>
+  <div style="text-align: center;">
+    <a href="images/gold.png"><img src="images/gold.png" alt="Gold iNgot enclosure" style="width: 100%; max-width: 400px; height: auto;"></a><br>
+    <sub>iPod Touch</sub>
+  </div>
+</div>
 
 ### Credits and License
 Gold icons created by vectorsmarket15 - Flaticon.  
