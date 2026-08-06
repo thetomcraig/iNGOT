@@ -73,7 +73,7 @@ This is also an homage to the "iDevice" naming scheme of the mid 00's.
       <sub>iPhone 4s</sub>
     </td>
     <td align="center" valign="middle" width="33%" bgcolor="#ffffff">
-      <a href="images/black.jpeg"><img src="images/black.jpeg" alt="Black iNgot enclosure" width="220"></a><br>
+      <a href="images/black.png"><img src="images/black.png" alt="Black iNgot enclosure" width="220"></a><br>
       <sub>iPhone 5</sub>
     </td>
     </tr>
