@@ -62,24 +62,25 @@ This is also an homage to the "iDevice" naming scheme of the mid 00's.
 
 ### Gallery
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; background-color: #ffffff; padding: 16px;">
-  <div style="text-align: center; padding-bottom: 16px;">
-    <a href="images/beige.jpeg"><img src="images/beige.jpeg" alt="Beige iNgot enclosure" style="width: 100%; max-width: 400px; height: auto; display: block; margin-bottom: 8px;"></a>
-    <sub>Samsung a10e</sub>
-  </div>
-  <div style="text-align: center; padding-bottom: 16px;">
-    <a href="images/green.png"><img src="images/green.png" alt="Green iNgot enclosure" style="width: 100%; max-width: 400px; height: auto; display: block; margin-bottom: 8px;"></a>
-    <sub>iPhone 4s</sub>
-  </div>
-  <div style="text-align: center; padding-bottom: 16px;">
-    <a href="images/black.png"><img src="images/black.png" alt="Black iNgot enclosure" style="width: 100%; max-width: 400px; height: auto; display: block; margin-bottom: 8px;"></a>
-    <sub>iPhone 5</sub>
-  </div>
-  <div style="text-align: center; padding-bottom: 16px;">
-    <a href="images/gold.png"><img src="images/gold.png" alt="Gold iNgot enclosure" style="width: 100%; max-width: 400px; height: auto; display: block; margin-bottom: 8px;"></a>
-    <sub>iPod Touch</sub>
-  </div>
-</div>
+<p align="center">
+  <a href="images/beige.jpeg"><img src="images/beige.jpeg" alt="Beige iNgot enclosure" width="100%" style="max-width: 400px;"></a><br>
+  <sub>Samsung a10e</sub>
+</p>
+
+<p align="center">
+  <a href="images/green.png"><img src="images/green.png" alt="Green iNgot enclosure" width="100%" style="max-width: 400px;"></a><br>
+  <sub>iPhone 4s</sub>
+</p>
+
+<p align="center">
+  <a href="images/black.png"><img src="images/black.png" alt="Black iNgot enclosure" width="100%" style="max-width: 400px;"></a><br>
+  <sub>iPhone 5</sub>
+</p>
+
+<p align="center">
+  <a href="images/gold.png"><img src="images/gold.png" alt="Gold iNgot enclosure" width="100%" style="max-width: 400px;"></a><br>
+  <sub>iPod Touch</sub>
+</p>
 
 ### Credits and License
 Gold icons created by vectorsmarket15 - Flaticon.  
