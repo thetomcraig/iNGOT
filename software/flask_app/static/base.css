@@ -74,6 +74,7 @@ img {
 }
 
 .image-button img {
+    -webkit-border-radius: 26px;
     border-radius: 26px;
     border: 3px solid transparent;
     display: block;
