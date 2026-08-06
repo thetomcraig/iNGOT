@@ -6,6 +6,7 @@
     "light.office_ceiling_light_north": ".office-ceiling-lights",
     "light.office_fan_light_west": ".office-fan-lights",
     "switch.eloise_s_lamp": ".eloise-s-lamp",
+    "switch.libby_s_office_lamp": ".libby-s-office-lamp",
   };
 
   function hasClass(element, className) {
