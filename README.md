@@ -63,21 +63,21 @@ This is also an homage to the "iDevice" naming scheme of the mid 00's.
 ### Gallery
 
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; background-color: #ffffff; padding: 16px;">
-  <div style="text-align: center;">
-    <a href="images/beige.jpeg"><img src="images/beige.jpeg" alt="Beige iNgot enclosure" style="width: 100%; max-width: 400px; height: auto;"></a><br>
-    <sub>Samsung a10e</sub>
+  <div style="text-align: center; display: flex; flex-direction: column;">
+    <a href="images/beige.jpeg"><img src="images/beige.jpeg" alt="Beige iNgot enclosure" style="width: 100%; max-width: 400px; height: auto;"></a>
+    <sub style="margin-top: 8px; margin-bottom: 0;">Samsung a10e</sub>
   </div>
-  <div style="text-align: center;">
-    <a href="images/green.png"><img src="images/green.png" alt="Green iNgot enclosure" style="width: 100%; max-width: 400px; height: auto;"></a><br>
-    <sub>iPhone 4s</sub>
+  <div style="text-align: center; display: flex; flex-direction: column;">
+    <a href="images/green.png"><img src="images/green.png" alt="Green iNgot enclosure" style="width: 100%; max-width: 400px; height: auto;"></a>
+    <sub style="margin-top: 8px; margin-bottom: 0;">iPhone 4s</sub>
   </div>
-  <div style="text-align: center;">
-    <a href="images/black.png"><img src="images/black.png" alt="Black iNgot enclosure" style="width: 100%; max-width: 400px; height: auto;"></a><br>
-    <sub>iPhone 5</sub>
+  <div style="text-align: center; display: flex; flex-direction: column;">
+    <a href="images/black.png"><img src="images/black.png" alt="Black iNgot enclosure" style="width: 100%; max-width: 400px; height: auto;"></a>
+    <sub style="margin-top: 8px; margin-bottom: 0;">iPhone 5</sub>
   </div>
-  <div style="text-align: center;">
-    <a href="images/gold.png"><img src="images/gold.png" alt="Gold iNgot enclosure" style="width: 100%; max-width: 400px; height: auto;"></a><br>
-    <sub>iPod Touch</sub>
+  <div style="text-align: center; display: flex; flex-direction: column;">
+    <a href="images/gold.png"><img src="images/gold.png" alt="Gold iNgot enclosure" style="width: 100%; max-width: 400px; height: auto;"></a>
+    <sub style="margin-top: 8px; margin-bottom: 0;">iPod Touch</sub>
   </div>
 </div>
 
