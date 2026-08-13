@@ -33,6 +33,7 @@ def inject_home_assistant_states():
 def living_room_1136x640():
     return render_template("rooms/living_room_1136x640.html")
 
+@app.route("/ingot_green")
 @app.route("/living_room_960x640")
 def living_room_960x640():
     return render_template("rooms/living_room_960x640.html")
@@ -41,6 +42,7 @@ def living_room_960x640():
 def office():
     return render_template("rooms/office.html")
 
+@app.route("/ingot_black")
 @app.route("/office_1136x640")
 def office_1136x640():
     return render_template("rooms/office_1136x640.html")
