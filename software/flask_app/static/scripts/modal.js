@@ -21,6 +21,8 @@
       activeModal = modal;
       modal.style.top = (window.navigator.standalone ? 150 : 135) + "px";
       modal.style.display = "block";
+      var input = modal.querySelector("input[autofocus]");
+      if (input) input.focus();
       backdrop.style.display = "block";
     }
 
