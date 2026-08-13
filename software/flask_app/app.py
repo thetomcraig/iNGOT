@@ -29,6 +29,7 @@ def inject_home_assistant_states():
     load_home_assistant_states()
     return {"home_assistant_states": app.config["HOME_ASSISTANT_STATES"]}
 
+@app.route("/ingot_dark_green")
 @app.route("/living_room_1136x640")
 def living_room_1136x640():
     return render_template("rooms/living_room_1136x640.html")
