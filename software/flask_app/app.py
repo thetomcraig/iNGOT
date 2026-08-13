@@ -45,6 +45,7 @@ def office():
 def office_1136x640():
     return render_template("rooms/office_1136x640.html")
 
+@app.route("/ingot_gold")
 @app.route("/libbys_office")
 def libbys_office():
     return render_template("rooms/libbys_office.html")
