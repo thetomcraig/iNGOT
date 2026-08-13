@@ -9,7 +9,6 @@
   <td>
     <button class="image-button" type="button" data-modal-open="living-room-message">
       <img src="/static/ios/blank_cyan.png" alt="Send a message" />
-      <span class="icon-label">Message</span>
     </button>
     <span
       class="guest-room-message"
@@ -24,8 +23,8 @@
 {% block modals %}
 {{ text_input_confirmation_modal(
   "living-room-message",
-  "Message",
-  "Set Greeting",
+  "",
+  "Set Message",
   "/set_message",
   "message",
   "Message",

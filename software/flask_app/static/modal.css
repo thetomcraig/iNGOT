@@ -14,8 +14,8 @@
     left: 50%;
     /* this has no effect on old safari */
     top: 50%;
-    width: 270px;
-    margin-left: -135px;
+    width: 350px;
+    margin-left: -188px;
     margin-top: -65px;
 
     padding: 14px;
@@ -100,18 +100,22 @@
 .modal-inline-controls {
     display: -webkit-box;
     display: flex;
-    gap: 5px;
+    -webkit-box-orient: horizontal;
+    /* iOS 3 centers native buttons against inputs using their text baseline. */
+    -webkit-box-align: start;
     position: relative;
     z-index: 2;
 }
 
 .modal-text-input {
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     height: 34px;
     padding: 5px 8px;
     min-width: 0;
     -webkit-box-flex: 1;
     flex: 1;
+    margin-right: 5px;
 
     border: 1px solid rgba(0,0,0,.55);
     -webkit-border-radius: 7px;
@@ -124,9 +128,13 @@
 }
 
 .modal-inline-controls button {
-    width: 55px;
-    height: 34px;
+    /* Floats are not suppressed by the iOS 3 -webkit-box implementation. */
+    float: none;
+    -webkit-box-flex: 0;
+    width: 65px;
+    height: 32px;
     padding: 0;
+    line-height: 34px;
 
     border: 1px solid rgba(0,0,0,.45);
     -webkit-border-radius: 8px;
