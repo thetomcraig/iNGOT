@@ -3,24 +3,35 @@
 {% extends "rooms/base.html" %}
 {% import "components/buttons/api_call_buttons.html" as api_call_buttons %}
 {% import "components/buttons/temp_tile_button.html" as temp_tile_buttons %}
+{% from "components/modal.html" import text_input_confirmation_modal %}
 {% block content %}
 <tr>
-  <td>{{ api_call_buttons.living_room_light() }}</td>
-  <td>{{ api_call_buttons.dining_room_light() }}</td>
-  <td>{{ api_call_buttons.vacuum_start() }}</td>
-  <td>{{ api_call_buttons.vacuum_stop() }}</td>
-</tr>
-<tr>
   <td>
-    {{ temp_tile_buttons.temp_tile_button(
-      "/static/ios/blank_ios_weather_blue.png",
-      "Eloise's Temperature",
-      "Eloise",
-      "eloises-temp-number"
-    ) }}
+    <button class="image-button" type="button" data-modal-open="living-room-message">
+      <img src="/static/ios/blank_cyan.png" alt="Send a message" />
+      <span class="icon-label">Message</span>
+    </button>
+    <span
+      class="guest-room-message"
+      data-ha-entity="input_text.ingot_guest_room_message"
+      data-ha-state-text
+      aria-live="polite"
+    ></span>
   </td>
-  <td>{{ api_call_buttons.play_pause() }}</td>
-  <td>{{ api_call_buttons.ice_maker_toggle() }}</td>
-  <td>{{ api_call_buttons.downstairs_toggle() }}</td>
 </tr>
+{% endblock %}
+
+{% block modals %}
+{{ text_input_confirmation_modal(
+  "living-room-message",
+  "Message",
+  "Set Greeting",
+  "/set_guest_room_message",
+  "message",
+  "Message",
+  placeholder="Message",
+  required=true,
+  confirm_text="OK",
+  entity_id="input_text.ingot_guest_room_message"
+) }}
 {% endblock %}

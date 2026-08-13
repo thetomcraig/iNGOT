@@ -84,6 +84,71 @@
     z-index: 2;
 }
 
+.modal-text-input-confirmation {
+    padding: 10px;
+}
+
+.modal-text-input-confirmation h2 {
+    margin: 2px 0 6px;
+    font-size: 18px;
+}
+
+.modal-text-input-confirmation p {
+    display: none;
+}
+
+.modal-inline-controls {
+    display: -webkit-box;
+    display: flex;
+    gap: 5px;
+    position: relative;
+    z-index: 2;
+}
+
+.modal-text-input {
+    box-sizing: border-box;
+    height: 34px;
+    padding: 5px 8px;
+    min-width: 0;
+    -webkit-box-flex: 1;
+    flex: 1;
+
+    border: 1px solid rgba(0,0,0,.55);
+    -webkit-border-radius: 7px;
+    border-radius: 7px;
+
+    font: 16px Helvetica, Arial, sans-serif;
+
+    position: relative;
+    z-index: 2;
+}
+
+.modal-inline-controls button {
+    width: 55px;
+    height: 34px;
+    padding: 0;
+
+    border: 1px solid rgba(0,0,0,.45);
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-appearance: none;
+
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    text-shadow: 0 -1px 1px rgba(0,0,0,.8);
+
+    background: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(#dfe5f1),
+        color-stop(.48,#aebcd6),
+        color-stop(.49,#7f92b6),
+        to(#667ca6)
+    );
+}
+
 .modal-highlight-top {
     position:absolute;
 

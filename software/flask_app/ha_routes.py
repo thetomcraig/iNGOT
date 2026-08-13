@@ -1,3 +1,4 @@
+from flask import request
 from flask_base import app
 from helpers import call_service, get_state
 
@@ -46,6 +47,18 @@ def _3d_printer_toggle():
         "switch",
         "toggle",
         {"entity_id": "switch.3d_printer"}
+    )
+    return '', 204
+
+@app.route("/set_guest_room_message", methods=['POST'])
+def set_guest_room_message():
+    call_service(
+        "input_text",
+        "set_value",
+        {
+            "entity_id": "input_text.ingot_guest_room_message",
+            "value": request.form.get("message", ""),
+        },
     )
     return '', 204
 

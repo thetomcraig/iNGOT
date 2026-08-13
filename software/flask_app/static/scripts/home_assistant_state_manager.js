@@ -49,12 +49,54 @@
   }
 
   /**
+   * Render the state of an entity into every span marked for state text.
+   *
+   * @param {string} entityId Home Assistant entity ID.
+   * @param {string} state The Home Assistant state to display.
+   */
+  function setEntityText(entityId, state) {
+    var spans = document.getElementsByTagName("span");
+    var i;
+
+    for (i = 0; i < spans.length; i += 1) {
+      if (
+        entityIdForElement(spans[i]) === entityId &&
+        spans[i].getAttribute("data-ha-state-text") !== null
+      ) {
+        spans[i].textContent = state;
+      }
+    }
+  }
+
+  /**
+   * Optimistically store text-input values in the local HA state collection.
+   *
+   * @param {HTMLFormElement} form Form whose text input was submitted.
+   */
+  function updateTextStateForForm(form) {
+    var inputs = form.getElementsByTagName("input");
+    var i;
+
+    for (i = 0; i < inputs.length; i += 1) {
+      var entityId = entityIdForElement(inputs[i]);
+      if (!entityId || inputs[i].getAttribute("data-ha-state-input") === null) {
+        continue;
+      }
+
+      var entityState = window.homeAssistantStates[entityId] || {};
+      entityState.state = inputs[i].value;
+      window.homeAssistantStates[entityId] = entityState;
+    }
+  }
+
+  /**
    * Synchronize all stateful icons with a Home Assistant state collection.
    *
    * @param {Object} homeAssistantStates States indexed by entity ID.
    */
   function applyHomeAssistantStates(homeAssistantStates) {
     var images = document.getElementsByTagName("img");
+    var spans = document.getElementsByTagName("span");
     var updatedEntities = {};
     var i;
 
@@ -67,6 +109,16 @@
       updatedEntities[entityId] = true;
       var entityState = homeAssistantStates[entityId];
       setEntityOn(entityId, entityState && entityState.state === "on");
+    }
+
+    for (i = 0; i < spans.length; i += 1) {
+      var textEntityId = entityIdForElement(spans[i]);
+      if (!textEntityId || spans[i].getAttribute("data-ha-state-text") === null) {
+        continue;
+      }
+
+      var textEntityState = homeAssistantStates[textEntityId];
+      setEntityText(textEntityId, textEntityState ? textEntityState.state : "");
     }
   }
 
@@ -91,6 +143,8 @@
       entityState.state = entityState.state === "on" ? "off" : "on";
       window.homeAssistantStates[entityId] = entityState;
     }
+
+    updateTextStateForForm(form);
 
     // Update every representation of an entity, not just the icon pressed.
     applyHomeAssistantStates(window.homeAssistantStates);
