@@ -50,13 +50,13 @@ def _3d_printer_toggle():
     )
     return '', 204
 
-@app.route("/set_guest_room_message", methods=['POST'])
-def set_guest_room_message():
+@app.route("/set_message", methods=['POST'])
+def set_message():
     call_service(
         "input_text",
         "set_value",
         {
-            "entity_id": "input_text.ingot_guest_room_message",
+            "entity_id": request.form.get("entity_id", ""),
             "value": request.form.get("message", ""),
         },
     )

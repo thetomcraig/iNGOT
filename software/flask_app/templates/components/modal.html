@@ -34,6 +34,9 @@
       {% if required %}required{% endif %}
       autofocus
     />
+    {% if entity_id %}
+    <input type="hidden" name="entity_id" value="{{ entity_id }}" />
+    {% endif %}
     <button class="modal-cancel" type="button" data-modal-close>{{ cancel_text }}</button>
     <button class="modal-confirm" type="submit">{{ confirm_text }}</button>
     </div>
