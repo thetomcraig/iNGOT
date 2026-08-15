@@ -18,6 +18,9 @@ td {
     appearance: none;
     cursor: pointer;
     pointer-events: auto;
+    width: 100%;
+    height: 100%;
+    display: block;
 }
 
 .guest-room-message {
@@ -30,4 +33,5 @@ td {
     text-align: center;
     text-shadow: 0 1px 2px rgba(0, 0, 0, .85);
     overflow-wrap: break-word;
+    width: 100%;
 }
