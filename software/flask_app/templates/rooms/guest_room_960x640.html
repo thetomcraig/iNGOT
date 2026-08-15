@@ -1,22 +1,29 @@
 <title>Living Room</title>
-<link rel="stylesheet" href="/static/guest_room_960x640.css?v=20260708-labels" />
+<link rel="stylesheet" href="/static/guest_room_960x640.css?v=20260814-message-modal" />
 {% extends "rooms/base.html" %}
 {% import "components/buttons/api_call_buttons.html" as api_call_buttons %}
-{% import "components/buttons/temp_tile_button.html" as temp_tile_buttons %}
 {% from "components/modal.html" import text_input_confirmation_modal %}
 {% block content %}
 <tr>
-  <td>
-    <button class="image-button" type="button" data-modal-open="living-room-message">
-      <img src="/static/ios/blank_cyan.png" alt="Send a message" />
+  <td colspan="3">
+    <button
+      class="guest-room-message-container"
+      type="button"
+      data-modal-open="living-room-message"
+    >
+      <span
+        class="guest-room-message"
+        data-ha-entity="input_text.ingot_guest_room_message"
+        data-ha-state-text
+        aria-live="polite"
+      ></span>
     </button>
-    <span
-      class="guest-room-message"
-      data-ha-entity="input_text.ingot_guest_room_message"
-      data-ha-state-text
-      aria-live="polite"
-    ></span>
   </td>
+</tr>
+<tr>
+   <td>{{ api_call_buttons.libbys_office_lights_toggle() }}</td>
+   <td>{{ api_call_buttons.libbys_office_lights_toggle() }}</td>
+   <td>{{ api_call_buttons.libbys_office_lights_toggle() }}</td>
 </tr>
 {% endblock %}
 
@@ -31,6 +38,6 @@
   placeholder="Message",
   required=true,
   confirm_text="OK",
-  entity_id="input_text.ingot_guest_room_message"
+  entity_id="input_text.ingot_guest_room_message",
 ) }}
 {% endblock %}
