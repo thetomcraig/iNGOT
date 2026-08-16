@@ -25,6 +25,9 @@
     var i;
 
     for (i = 0; i < buttons.length; i++) {
+      if (buttons[i].className.indexOf("message-container") !== -1) {
+        continue;
+      }
       buttons[i].ontouchstart = function () {
         press(this);
       };
