@@ -38,7 +38,7 @@
       button._holdTimer = window.setTimeout(function () {
         button._holdTimer = null;
         showModal(button.getAttribute("data-modal-open-hold"));
-      }, 2000);
+      }, 1000);
     }
 
     for (i = 0; i < buttons.length; i++) {
