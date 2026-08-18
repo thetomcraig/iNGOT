@@ -69,27 +69,6 @@
   }
 
   /**
-   * Optimistically store text-input values in the local HA state collection.
-   *
-   * @param {HTMLFormElement} form Form whose text input was submitted.
-   */
-  function updateTextStateForForm(form) {
-    var inputs = form.getElementsByTagName("input");
-    var i;
-
-    for (i = 0; i < inputs.length; i += 1) {
-      var entityId = entityIdForElement(inputs[i]);
-      if (!entityId || inputs[i].getAttribute("data-ha-state-input") === null) {
-        continue;
-      }
-
-      var entityState = window.homeAssistantStates[entityId] || {};
-      entityState.state = inputs[i].value;
-      window.homeAssistantStates[entityId] = entityState;
-    }
-  }
-
-  /**
    * Synchronize all stateful icons with a Home Assistant state collection.
    *
    * @param {Object} homeAssistantStates States indexed by entity ID.
@@ -99,68 +78,76 @@
     var spans = document.getElementsByTagName("span");
     var updatedEntities = {};
     var i;
+    var entityId;
+    var entityState;
 
+    console.log("Applying Home Assistant states, ALL states:")
+    console.log(homeAssistantStates);
+    console.log("searching images");
+    console.log(images);
     for (i = 0; i < images.length; i += 1) {
-      var entityId = entityIdForElement(images[i]);
+      entityId = entityIdForElement(images[i]);
       if (!entityId || updatedEntities[entityId]) {
         continue;
       }
-
       updatedEntities[entityId] = true;
-      var entityState = homeAssistantStates[entityId];
+      entityState = homeAssistantStates[entityId];
+      console.log("set on/off for " + entityId);
       setEntityOn(entityId, entityState && entityState.state === "on");
     }
 
+    console.log("searching spans");
     for (i = 0; i < spans.length; i += 1) {
-      var textEntityId = entityIdForElement(spans[i]);
-      if (!textEntityId || spans[i].getAttribute("data-ha-state-text") === null) {
+      entityId = entityIdForElement(spans[i]);
+      if (!entityId || spans[i].getAttribute("data-ha-state-text") === null) {
         continue;
       }
-
-      var textEntityState = homeAssistantStates[textEntityId];
-      setEntityText(textEntityId, textEntityState ? textEntityState.state : "");
+      console.log("set text for " + entityId);
+      entityState = homeAssistantStates[entityId];
+      setEntityText(entityId, entityState ? entityState.state : "");
     }
   }
 
-  /**
-   * Optimistically toggle every stateful icon contained by a submitted form.
-   *
-   * @param {HTMLFormElement} form Form whose API action was submitted.
-   */
-  function toggleStateForForm(form) {
-    var images = form.getElementsByTagName("img");
-    var toggledEntities = {};
-    var i;
+  function logEntityState(entityId) {
+    var request = new XMLHttpRequest();
+    console.log("calling flask 'ha_state' endpoint for " + entityId);
+    var url = "/ha_state/" + encodeURIComponent(entityId) + "?debug=" + new Date().getTime();
 
-    for (i = 0; i < images.length; i += 1) {
-      var entityId = entityIdForElement(images[i]);
-      if (!entityId || toggledEntities[entityId]) {
-        continue;
+    request.open("GET", url, true);
+    request.onreadystatechange = function () {
+      if (request.readyState !== 4) {
+        return;
       }
-
-      toggledEntities[entityId] = true;
-      var entityState = window.homeAssistantStates[entityId] || {};
-      entityState.state = entityState.state === "on" ? "off" : "on";
-      window.homeAssistantStates[entityId] = entityState;
-    }
-
-    updateTextStateForForm(form);
-
-    // Update every representation of an entity, not just the icon pressed.
-    applyHomeAssistantStates(window.homeAssistantStates);
+      console.log("Home Assistant response for " + entityId + ":");
+      console.log(request.status);
+      console.log(request.responseText);
+    };
+    request.send(null);
   }
 
-  /**
-   * Listen for API form submissions and update their icons immediately.
-   */
-  function attachOptimisticStateToggles() {
+  function attachStateQueries() {
+    console.log("attaching state queries");
     var forms = document.getElementsByTagName("form");
     var i;
 
+    console.log("found forms");
+    console.log(forms);
     for (i = 0; i < forms.length; i += 1) {
       if (forms[i].addEventListener) {
         forms[i].addEventListener("submit", function () {
-          toggleStateForForm(this);
+          var images = this.getElementsByTagName("img");
+          var entityId = this.getAttribute("data-ha-entity");
+
+          if (!entityId && images.length) {
+            entityId = entityIdForElement(images[0]);
+          }
+          if (entityId) {
+            // The form action and this listener run in parallel. Give HA time
+            // to apply the service call before reading the entity state.
+            window.setTimeout(function () {
+              logEntityState(entityId);
+            }, 500);
+          }
         }, false);
       }
     }
@@ -169,5 +156,5 @@
   window.applyHomeAssistantStates = applyHomeAssistantStates;
   window.homeAssistantStates = window.homeAssistantStates || {};
   applyHomeAssistantStates(window.homeAssistantStates);
-  attachOptimisticStateToggles();
+  attachStateQueries();
 }());

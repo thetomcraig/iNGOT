@@ -1,6 +1,15 @@
-from flask import request
+from flask import jsonify, make_response, request
 from flask_base import app
 from helpers import call_service, get_state
+
+
+@app.route("/ha_state/<path:entity_id>", methods=['GET'])
+def ha_state(entity_id):
+    """Return one fresh Home Assistant state for the browser state manager."""
+    response = make_response(jsonify(get_state(entity_id)))
+    response.headers["Cache-Control"] = "no-store, no-cache, must-revalidate, max-age=0"
+    response.headers["Pragma"] = "no-cache"
+    return response
 
 
 @app.route("/eloises_temp", methods=['GET', 'POST'])
