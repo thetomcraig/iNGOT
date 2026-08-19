@@ -26,7 +26,16 @@
 
     for (i = 0; i < buttons.length; i++) {
       if (buttons[i].className.indexOf("message-container") !== -1) {
-        continue;
+        // For message-container, we want to prevent context menu
+        buttons[i].addEventListener('contextmenu', function(e) {
+          e.preventDefault();
+        }, false);
+        
+        buttons[i].addEventListener('touchstart', function(e) {
+          // Prevent touch callout for mobile browsers
+          this.style.webkitTouchCallout = 'none';
+          this.style.webkitUserSelect = 'none';
+        }, false);
       }
       buttons[i].ontouchstart = function () {
         press(this);
