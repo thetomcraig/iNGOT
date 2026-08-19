@@ -21,21 +21,6 @@ def ha_states():
     return response
 
 
-@app.route("/eloises_temp", methods=['GET', 'POST'])
-def eloises_temp():
-    print('get temp')
-    sensor = get_state("sensor.eloise_s_room_temp_temperature")
-    temp = round(float(sensor.get("state", "")))
-    print(f"Temperature: {temp}")
-    return f"{temp}°"
-
-@app.route("/outside_temp", methods=['GET', 'POST'])
-def outside_temp():
-    weather = get_state("weather.forecast_home")
-    temp = round(float(weather.get("attributes", {}).get("temperature", "")))
-    print(f"Outside Temperature: {temp}")
-    return f"{temp}°"
-
 @app.route("/vacuum_start", methods=['GET', 'POST'])
 def vacuum_start():
     call_service("button", "press", {

@@ -16,7 +16,8 @@
       "/static/ios/blank_ios_weather_blue.png",
       "Eloise's Temperature",
       "Eloise",
-      "eloises-temp-number"
+      "eloises-temp-number",
+      (home_assistant_states.get("sensor.eloise_s_room_temp_temperature", {}).get("state") | float | round | int)
     ) }}
   </td>
   <td>{{ api_call_buttons.three_d_printer_toggle() }}</td>

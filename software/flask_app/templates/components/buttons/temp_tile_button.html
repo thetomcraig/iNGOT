@@ -1,4 +1,4 @@
-{% macro temp_tile_button(img, alt_text, label_text, number_id, action=None, modal_id=None) %}
+{% macro temp_tile_button(img, alt_text, label_text, number_id, value=None, action=None, modal_id=None) %}
 {% if action %}
 <form action="{{ action }}" method="post" target="sink">
 {% endif %}
@@ -11,7 +11,7 @@
       <img src="{{ img }}" alt="{{ alt_text }}" class="temp-tile-image" />
       <span class="temp-value">
         <span class="temp-reading">
-          <span class="temp-number" id="{{ number_id }}"></span>
+          <span class="temp-number" id="{{ number_id }}">{{ value if value is not none else '' }}</span>
           <span class="temp-degree">°</span>
         </span>
       </span>

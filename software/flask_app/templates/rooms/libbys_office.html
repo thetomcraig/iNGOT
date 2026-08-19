@@ -15,7 +15,8 @@
       "/static/ios/blank_ios_weather_blue.png",
       "Eloise's Temperature",
       "Eloise",
-      "eloises-temp-number"
+      "eloises-temp-number",
+      (home_assistant_states.get("sensor.eloise_s_room_temp_temperature", {}).get("state") | float | round | int)
     ) }}
   </td>
   <td>
@@ -23,7 +24,8 @@
       "/static/ios/blank_nord2.png",
       "Outside Temperature",
       "Today",
-      "outside-temp-number"
+      "outside-temp-number",
+      (home_assistant_states.get("weather.forecast_home", {}).get("attributes", {}).get("temperature") | float | round | int)
     ) }}
   </td>
   <td>{{ api_call_buttons.downstairs_toggle() }}</td>
