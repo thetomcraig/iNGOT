@@ -9,7 +9,7 @@
     <button
       class="message-container"
       type="button"
-      data-modal-open-hold="living-room-message"
+      data-modal-open="living-room-message"
     >
       <span
         class="guest-room-message"
@@ -21,7 +21,15 @@
   </td>
 </tr>
 <tr>
-   <td>{{ api_call_buttons.libbys_office_lights_toggle() }}</td>
+    <td>
+    {{ temp_tile_buttons.temp_tile_button(
+      "/static/ios/blank_nord2.png",
+      "Outside Temperature",
+      "Today",
+      "outside-temp-number",
+      (home_assistant_states.get("weather.forecast_home", {}).get("attributes", {}).get("temperature") | float | round | int)
+    ) }}
+  </td>
    <td>{{ api_call_buttons.libbys_office_lights_toggle() }}</td>
    <td>{{ api_call_buttons.libbys_office_lights_toggle() }}</td>
 </tr>
