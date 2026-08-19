@@ -5,7 +5,7 @@
 }
 
 td {
-    padding: 7px 7px;
+    padding: 20px 7px;
 }
 
 .message-container {
@@ -21,6 +21,8 @@ td {
     width: 100%;
     height: 100%;
     display: block;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .guest-room-message {
@@ -34,4 +36,8 @@ td {
     text-shadow: 0 1px 2px rgba(0, 0, 0, .85);
     overflow-wrap: break-word;
     width: 100%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
