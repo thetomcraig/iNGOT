@@ -1,5 +1,5 @@
-{% macro api_call_button(action, img, alt_text, label_text, class_name="", entity_id="") %}
-<form action="{{ action }}" method="post" target="sink">
+{% macro api_call_button(action, img, alt_text, label_text, class_name="", entity_id="", refresh_page=false) %}
+<form action="{{ action }}" method="post" target="sink"{% if entity_id %} data-ha-entity="{{ entity_id }}"{% endif %}{% if refresh_page %} data-ha-refresh{% endif %}>
   <button class="image-button" type="submit">
     <img
       src="{{ img }}"
