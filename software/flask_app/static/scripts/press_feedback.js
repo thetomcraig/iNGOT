@@ -50,6 +50,8 @@
 
   }
 
+  window.attachPressFeedback = attachPressFeedback;
+
   if (window.addEventListener) {
     window.addEventListener("load", attachPressFeedback, false);
   } else if (window.attachEvent) {

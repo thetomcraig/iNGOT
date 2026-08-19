@@ -108,7 +108,7 @@
     }
   }
 
-  function logEntityState(entityId) {
+  function logEntityState(entityId, button) {
     var request = new XMLHttpRequest();
     console.log("calling flask 'ha_state' endpoint for " + entityId);
     var url = "/ha_state/" + encodeURIComponent(entityId) + "?debug=" + new Date().getTime();
@@ -121,8 +121,23 @@
       console.log("Home Assistant response for " + entityId + ":");
       console.log(request.status);
       console.log(request.responseText);
+      if (request.status >= 200 && request.status < 300) {
+        var state = JSON.parse(request.responseText);
+        window.homeAssistantStates[entityId] = state;
+        applyHomeAssistantStates(window.homeAssistantStates);
+        reloadButton(button);
+      }
     };
     request.send(null);
+  }
+
+  function reloadButton(button) {
+    if (button && button.parentNode) {
+      button.parentNode.replaceChild(button.cloneNode(true), button);
+      if (window.attachPressFeedback) {
+        window.attachPressFeedback();
+      }
+    }
   }
 
   function attachStateQueries() {
@@ -137,6 +152,8 @@
         forms[i].addEventListener("submit", function () {
           var images = this.getElementsByTagName("img");
           var entityId = this.getAttribute("data-ha-entity");
+          var buttons = this.getElementsByTagName("button");
+          var button = buttons.length ? buttons[0] : null;
 
           if (!entityId && images.length) {
             entityId = entityIdForElement(images[0]);
@@ -145,7 +162,7 @@
             // The form action and this listener run in parallel. Give HA time
             // to apply the service call before reading the entity state.
             window.setTimeout(function () {
-              logEntityState(entityId);
+              logEntityState(entityId, button);
             }, 500);
           }
         }, false);
