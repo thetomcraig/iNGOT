@@ -1,0 +1,10 @@
+{% macro modal_button(img, alt_text, label_text, modal_id, class_name="", entity_id="") %}
+<button class="image-button" data-modal-open="{{ modal_id }}">
+  <img
+    src="{{ img }}"
+    alt="{{ alt_text }}"
+    class="{{ class_name }}"
+  >
+  <span class="icon-label">{{ label_text }}</span>
+</button>
+{% endmacro %}

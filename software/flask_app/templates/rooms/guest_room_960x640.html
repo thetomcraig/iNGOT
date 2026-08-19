@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="/static/guest_room_960x640.css?v=20260814-message-modal" />
 {% extends "rooms/base.html" %}
 {% import "components/buttons/api_call_buttons.html" as api_call_buttons %}
+{% import "components/buttons/modal_button.html" as modal_button %}
 {% import "components/buttons/temp_tile_button.html" as temp_tile_buttons %}
 {% from "components/modal.html" import text_input_confirmation_modal %}
 {% block content %}
@@ -32,7 +33,14 @@
     ) }}
   </td>
    <td>{{ api_call_buttons.libbys_office_lights_toggle() }}</td>
-   <td>{{ api_call_buttons.libbys_office_lights_toggle() }}</td>
+   <td>{{ modal_button.modal_button(
+        "/static/ios/question_mark.png",
+        "Help",
+        "Help",
+        "help-guest-room",
+        "help-guest-room"
+        )}}
+  </td>
 </tr>
 {% endblock %}
 
