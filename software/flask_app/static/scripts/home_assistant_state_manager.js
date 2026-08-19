@@ -101,70 +101,46 @@
     }
   }
 
-  function logAllEntityStates() {
-    var request = new XMLHttpRequest();
-    var url = "/ha_states?debug=" + new Date().getTime();
-
-    request.open("GET", url, true);
-    request.onreadystatechange = function () {
-      if (request.readyState !== 4) {
-        return;
-      }
-      if (request.status >= 200 && request.status < 300) {
-        var states = JSON.parse(request.responseText);
-        var state;
-        var i;
-
-        window.homeAssistantStates = {};
-        for (i = 0; i < states.length; i += 1) {
-          state = states[i];
-          window.homeAssistantStates[state.entity_id] = state;
-        }
-        applyHomeAssistantStates(window.homeAssistantStates);
-        reloadEntityButtons();
-      }
-    };
-    request.send(null);
-  }
-
-  function reloadButton(button) {
-    if (button && button.parentNode) {
-      button.parentNode.replaceChild(button.cloneNode(true), button);
-      if (window.attachPressFeedback) {
-        window.attachPressFeedback();
-      }
-    }
-  }
-
-  function reloadEntityButtons() {
-    var buttons = document.getElementsByTagName("button");
-    var images;
+  function toggleEntityForForm(form) {
+    var images = form.getElementsByTagName("img");
+    var entityId = form.getAttribute("data-ha-entity");
+    var isOn = false;
     var i;
-    var j;
 
-    for (i = buttons.length - 1; i >= 0; i -= 1) {
-      images = buttons[i].getElementsByTagName("img");
-      for (j = 0; j < images.length; j += 1) {
-        if (entityIdForElement(images[j])) {
-          reloadButton(buttons[i]);
-          break;
-        }
+    if (!entityId && images.length) {
+      entityId = entityIdForElement(images[0]);
+    }
+    if (!entityId) {
+      return;
+    }
+
+    for (i = 0; i < images.length; i += 1) {
+      if (entityIdForElement(images[i]) === entityId) {
+        isOn = hasClass(images[i], "is-on");
+        break;
       }
     }
+
+    setEntityOn(entityId, !isOn);
   }
 
-  function attachStateQueries() {
+  function attachButtonBehaviors() {
     var forms = document.getElementsByTagName("form");
     var i;
 
     for (i = 0; i < forms.length; i += 1) {
       if (forms[i].addEventListener) {
         forms[i].addEventListener("submit", function () {
-          // The form action and this listener run in parallel. Give HA time
-          // to apply the service call before reading all entity states.
-          window.setTimeout(function () {
-            logAllEntityStates();
-          }, 750);
+          var form = this;
+
+          if (form.getAttribute("data-ha-refresh") !== null) {
+            window.setTimeout(function () {
+              window.location.reload();
+            }, 750);
+            return;
+          }
+
+          toggleEntityForForm(form);
         }, false);
       }
     }
@@ -173,5 +149,5 @@
   window.applyHomeAssistantStates = applyHomeAssistantStates;
   window.homeAssistantStates = window.homeAssistantStates || {};
   applyHomeAssistantStates(window.homeAssistantStates);
-  attachStateQueries();
+  attachButtonBehaviors();
 }());
