@@ -24,6 +24,12 @@ td {
 }
 
 .guest-room-message {
+    max-height: 4.8em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
     display: block;
     max-width: 280px;
     margin: 6px auto 0;
