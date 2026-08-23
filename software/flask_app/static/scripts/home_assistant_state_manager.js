@@ -141,6 +141,23 @@
           }
 
           toggleEntityForForm(form);
+          
+          // Handle optimistic update for text input modals
+          var modalId = form.closest('.modal')?.id;
+          if (modalId && form.querySelector('input[type="text"]')) {
+            var textInput = form.querySelector('input[type="text"]');
+            var entity_id = form.querySelector('input[name="entity_id"]')?.value;
+            
+            // Update the associated text span element optimistically
+            if (entity_id) {
+              var spans = document.querySelectorAll('span[data-ha-entity="' + entity_id + '"][data-ha-state-text]');
+              spans.forEach(function(span) {
+                if (textInput.value !== "") {
+                  span.textContent = textInput.value;
+                }
+              });
+            }
+          }
         }, false);
       }
     }
