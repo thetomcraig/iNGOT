@@ -15,8 +15,8 @@
 </div>
 {% endmacro %}
 
-{% macro confirmation_modal(id, title, message, action, cancel_text="Cancel", confirm_text="OK", entity_id="") %}
-{% call modal(id, title, message, action, cancel_text, confirm_text, "", true, entity_id) %}{% endcall %}
+{% macro confirmation_modal(id, title, message, action, cancel_text="Cancel", confirm_text="OK", entity_id="", modal_class="") %}
+{% call modal(id, title, message, action, cancel_text, confirm_text, modal_class, true, entity_id) %}{% endcall %}
 {% endmacro %}
 
 {% macro text_input_confirmation_modal(id, title, message, action, input_name, input_label, placeholder="", value="", required=false, cancel_text="Cancel", confirm_text="OK", entity_id="") %}
