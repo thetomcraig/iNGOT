@@ -2,7 +2,7 @@
 <div id="{{ id }}" class="modal{% if modal_class %} {{ modal_class }}{% endif %}" style="display: none">
   <div class="modal-highlight-top"></div>
   <h2>{{ title }}</h2>
-  <p>{{ message }}</p>
+  <p>{{ message|safe }}</p>
   <form action="{{ action }}" method="post" target="sink" data-modal-form{% if entity_id %} data-ha-entity="{{ entity_id }}"{% endif %}>
     {% if caller %}{{ caller() }}{% endif %}
     {% if show_buttons %}
