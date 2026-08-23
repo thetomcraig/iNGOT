@@ -4,14 +4,14 @@
 {% import "components/buttons/api_call_buttons.html" as api_call_buttons %}
 {% import "components/buttons/modal_button.html" as modal_button %}
 {% import "components/buttons/temp_tile_button.html" as temp_tile_buttons %}
-{% from "components/modal.html" import text_input_confirmation_modal %}
+{% from "components/modal.html" import confirmation_modal, text_input_confirmation_modal, info_modal %}
 {% block content %}
 <tr>
   <td colspan="3">
     <button
       class="message-container"
       type="button"
-      data-modal-open="living-room-message"
+      data-modal-open="guest-room-message"
     >
       <span
         class="guest-room-message"
@@ -45,8 +45,18 @@
 {% endblock %}
 
 {% block modals %}
+{{ confirmation_modal(
+  "help-guest-room",
+  "Guest Room Help",
+  "Line One\nline two\nlinethree.",
+  "",
+  "TMP",
+  "OK",
+  ""
+) }}
+
 {{ text_input_confirmation_modal(
-  "living-room-message",
+  "guest-room-message",
   "",
   "Set Message",
   "/set_message",
