@@ -103,13 +103,17 @@
 
   function toggleEntityForForm(form) {
     var images = form.getElementsByTagName("img");
-    var entityId = form.getAttribute("data-ha-entity");
+    var entityId;
     var isOn = false;
     var i;
 
-    if (!entityId && images.length) {
-      entityId = entityIdForElement(images[0]);
+    // Only image buttons have an optimistic on/off state. A text-input
+    // modal may also carry data-ha-entity, but it must not affect borders.
+    if (!images.length) {
+      return;
     }
+
+    entityId = entityIdForElement(images[0]);
     if (!entityId) {
       return;
     }
@@ -141,21 +145,33 @@
           }
 
           toggleEntityForForm(form);
-          
-          // Handle optimistic update for text input modals
-          var modalId = form.closest('.modal')?.id;
-          if (modalId && form.querySelector('input[type="text"]')) {
-            var textInput = form.querySelector('input[type="text"]');
-            var entity_id = form.querySelector('input[name="entity_id"]')?.value;
-            
-            // Update the associated text span element optimistically
-            if (entity_id) {
-              var spans = document.querySelectorAll('span[data-ha-entity="' + entity_id + '"][data-ha-state-text]');
-              spans.forEach(function(span) {
-                if (textInput.value !== "") {
-                  span.textContent = textInput.value;
-                }
-              });
+
+          // Optimistically update text spans without using optional chaining,
+          // querySelector, or forEach (the dashboard also runs on old iOS).
+          var inputs = form.getElementsByTagName("input");
+          var textInput = null;
+          var entityInput = null;
+          var spans;
+          var j;
+
+          for (j = 0; j < inputs.length; j += 1) {
+            if (inputs[j].getAttribute("type") === "text") {
+              textInput = inputs[j];
+            }
+            if (inputs[j].getAttribute("name") === "entity_id") {
+              entityInput = inputs[j];
+            }
+          }
+
+          if (textInput && entityInput && textInput.value !== "") {
+            spans = document.getElementsByTagName("span");
+            for (j = 0; j < spans.length; j += 1) {
+              if (
+                entityIdForElement(spans[j]) === entityInput.value &&
+                spans[j].getAttribute("data-ha-state-text") !== null
+              ) {
+                spans[j].textContent = textInput.value;
+              }
             }
           }
         }, false);
