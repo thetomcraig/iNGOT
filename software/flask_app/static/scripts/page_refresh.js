@@ -1,8 +1,9 @@
-(function () {
-  // var refreshIntervalMs = 10 * 60 * 1000;
-  var refreshIntervalMs = 10 * 60 * 3000;
+// Disabling the page refresh for now
+// (function () {
+//   // var refreshIntervalMs = 10 * 60 * 1000;
+//   var refreshIntervalMs = 10 * 60 * 3000;
 
-  window.setTimeout(function () {
-    window.location.reload();
-  }, refreshIntervalMs);
-}());
+//   window.setTimeout(function () {
+//     window.location.reload();
+//   }, refreshIntervalMs);
+// }());
