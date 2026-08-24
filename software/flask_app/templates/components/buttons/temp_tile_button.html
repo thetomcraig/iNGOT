@@ -11,7 +11,7 @@
       <img src="{{ img }}" alt="{{ alt_text }}" class="temp-tile-image" />
       <span class="temp-value">
         <span class="temp-reading">
-          <span class="temp-number" id="{{ number_id }}">{{ value if value is not none else '' }}</span>
+          <span class="{{number_id}}" id="{{ number_id }}">{{ value if value is not none else '' }}</span>
           <span class="temp-degree">°</span>
         </span>
       </span>
