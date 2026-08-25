@@ -29,7 +29,7 @@
       "Outside Temperature",
       "Today",
       "outside-temp-number",
-      (home_assistant_states.get("weather.forecast_home", {}).get("attributes", {}).get("temperature") | float | round | int)
+      outside_temp | int if outside_temp else '?'
     ) }}
   </td>
    <td>{{ api_call_buttons.libbys_office_lights_toggle() }}</td>

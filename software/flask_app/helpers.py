@@ -39,3 +39,34 @@ def get_all_states():
     )
     response.raise_for_status()
     return response.json()
+
+
+def get_outside_temperature():
+    """
+    Fetch outside temperature from Open-Meteo API for Los Angeles area.
+    
+    Returns:
+        float: Temperature in Fahrenheit, or None if the request fails.
+    """
+    try:
+        url = "https://api.open-meteo.com/v1/forecast"
+        params = {
+            "latitude": 34.17,
+            "longitude": -118.26,
+            "current": "temperature_2m,weather_code",
+            "hourly": "temperature_2m,precipitation_probability,weather_code",
+            "daily": "temperature_2m_max,temperature_2m_min,weather_code",
+            "temperature_unit": "fahrenheit",
+            "timezone": "auto"
+        }
+        
+        response = requests.get(url, params=params)
+        response.raise_for_status()
+        
+        data = response.json()
+        temperature = data["current"]["temperature_2m"]
+        
+        return temperature
+    except (requests.RequestException, KeyError, ValueError):
+        # Return None if there's any error in fetching or parsing data
+        return None

@@ -2,7 +2,7 @@ import requests
 from flask import render_template
 from flask_base import app
 from ha_routes import *
-from helpers import get_all_states
+from helpers import get_all_states, get_outside_temperature
 
 
 def load_home_assistant_states():
@@ -32,7 +32,8 @@ def inject_home_assistant_states():
 @app.route("/ingot_dark_green")
 @app.route("/guest_room_960x640")
 def guest_room_960x640():
-    return render_template("rooms/guest_room_960x640.html")
+    outside_temp = get_outside_temperature()
+    return render_template("rooms/guest_room_960x640.html", outside_temp=outside_temp)
 
 @app.route("/ingot_green")
 @app.route("/living_room_960x640")
@@ -51,7 +52,8 @@ def office_1136x640():
 @app.route("/ingot_gold")
 @app.route("/libbys_office")
 def libbys_office():
-    return render_template("rooms/libbys_office.html")
+    outside_temp = get_outside_temperature()
+    return render_template("rooms/libbys_office.html", outside_temp=outside_temp)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5001)
