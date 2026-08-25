@@ -160,6 +160,39 @@
     setEntityOn(entityId, !isOn);
   }
 
+  function updateTextSpanForForm(form) {
+    var inputs = form.getElementsByTagName("input");
+    var textInput = null;
+    var entityInput = null;
+    var spans;
+    var i;
+
+    for (i = 0; i < inputs.length; i += 1) {
+      if (inputs[i].getAttribute("type") === "text") {
+        textInput = inputs[i];
+      }
+      if (inputs[i].getAttribute("name") === "entity_id") {
+        entityInput = inputs[i];
+      }
+    }
+
+    if (!textInput || !entityInput || textInput.value === "") {
+      return false;
+    }
+
+    spans = document.getElementsByTagName("span");
+    for (i = 0; i < spans.length; i += 1) {
+      if (
+        entityIdForElement(spans[i]) === entityInput.value &&
+        spans[i].getAttribute("data-ha-state-text") !== null
+      ) {
+        spans[i].textContent = textInput.value;
+      }
+    }
+
+    return true;
+  }
+
   function attachButtonBehaviors() {
     var forms = document.getElementsByTagName("form");
     var i;
@@ -176,36 +209,11 @@
             return;
           }
 
+          if (updateTextSpanForForm(form)) {
+            return;
+          }
+
           toggleEntityForForm(form);
-
-          // Optimistically update text spans without using optional chaining,
-          // querySelector, or forEach (the dashboard also runs on old iOS).
-          var inputs = form.getElementsByTagName("input");
-          var textInput = null;
-          var entityInput = null;
-          var spans;
-          var j;
-
-          for (j = 0; j < inputs.length; j += 1) {
-            if (inputs[j].getAttribute("type") === "text") {
-              textInput = inputs[j];
-            }
-            if (inputs[j].getAttribute("name") === "entity_id") {
-              entityInput = inputs[j];
-            }
-          }
-
-          if (textInput && entityInput && textInput.value !== "") {
-            spans = document.getElementsByTagName("span");
-            for (j = 0; j < spans.length; j += 1) {
-              if (
-                entityIdForElement(spans[j]) === entityInput.value &&
-                spans[j].getAttribute("data-ha-state-text") !== null
-              ) {
-                spans[j].textContent = textInput.value;
-              }
-            }
-          }
         }, false);
       }
     }
