@@ -1,4 +1,4 @@
-<title>Living Room</title>
+<title>Guest Room</title>
 <link rel="stylesheet" href="/static/guest_room_960x640.css?v=20260814-message-modal" />
 {% extends "rooms/base.html" %}
 {% import "components/buttons/api_call_buttons.html" as api_call_buttons %}
@@ -32,7 +32,7 @@
       outside_temp | int if outside_temp else '?'
     ) }}
   </td>
-   <td>{{ api_call_buttons.libbys_office_lights_toggle() }}</td>
+   <td>{{ api_call_buttons.guest_room_lamp_toggle() }}</td>
    <td>{{ modal_button.modal_button(
         "/static/ios/question_mark.png",
         "Help",
@@ -50,8 +50,8 @@
   "Welcome!",
   "• <- Phone chargers are on the left.<br>\
    • Outlets are below this table.<br>\
-   • WiFi: <b>Netscape Navigator</b><br>\
-   • password: <b>donkdonkdonk</b>
+   • WiFi: <b>Netscape Navigator</b>. pw: <b>donkdonkdonk</b><br>\
+   • Window AC unit in the main room.
   ",
   "",
   "Tom is Cool",

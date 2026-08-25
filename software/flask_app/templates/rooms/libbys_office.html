@@ -12,11 +12,11 @@
 <tr>
   <td>
     {{ temp_tile_buttons.temp_tile_button(
-      "/static/ios/blank_nord2.png",
-      "Outside Temperature",
-      "Outside",
-      "outside-temp-number",
-      outside_temp | int if outside_temp else '?'
+      "/static/ios/blank_ios_weather_blue.png",
+      "Eloise's Temperature",
+      "Eloise",
+      "eloises-temp-number",
+      (home_assistant_states.get("sensor.eloise_s_room_temp_temperature", {}).get("state") | float | round | int)
     ) }}
   </td>
   <td>
@@ -25,7 +25,7 @@
       "Outside Temperature",
       "Outside",
       "outside-temp-number",
-      ""
+      outside_temp | int if outside_temp else '?'
     ) }}
   </td>
   <td>{{ api_call_buttons.downstairs_toggle() }}</td>
