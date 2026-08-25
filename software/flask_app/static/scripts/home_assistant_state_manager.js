@@ -103,15 +103,20 @@
 
   function toggleEntityForForm(form) {
     var images = form.getElementsByTagName("img");
-    var entityId = form.getAttribute("data-ha-entity");
+    var entityId;
     var isOn = false;
     var i;
 
-    if (!entityId && images.length) {
-      entityId = entityIdForElement(images[0]);
+    // The optimistic on/off state belongs to the image, not to the form.
+    // Forms used by text-input modals can also have an entity ID, but must
+    // not cause an image border update.
+    if (!images.length) {
+      return false;
     }
+
+    entityId = entityIdForElement(images[0]);
     if (!entityId) {
-      return;
+      return false;
     }
 
     for (i = 0; i < images.length; i += 1) {
@@ -122,6 +127,59 @@
     }
 
     setEntityOn(entityId, !isOn);
+    return true;
+  }
+
+  /**
+   * Optimistically render a text-input submission in its matching span.
+   *
+   * The entity is attached to the state input (and, when present, the
+   * hidden entity_id input), while the display state is attached to a span.
+   * Keep this separate from image on/off state so shared entity IDs cannot
+   * accidentally change a button border.
+   *
+   * @param {HTMLFormElement} form Form containing the text input.
+   * @returns {boolean} Whether a state text input was handled.
+   */
+  function updateTextSpanForForm(form) {
+    var inputs = form.getElementsByTagName("input");
+    var textInput = null;
+    var entityInput = null;
+    var entityId = form.getAttribute("data-ha-entity");
+    var spans;
+    var i;
+
+    for (i = 0; i < inputs.length; i += 1) {
+      if (inputs[i].getAttribute("data-ha-state-input") !== null) {
+        textInput = inputs[i];
+        entityId = entityIdForElement(inputs[i]) || entityId;
+      }
+      if (inputs[i].getAttribute("name") === "entity_id") {
+        entityInput = inputs[i];
+      }
+    }
+
+    if (!textInput) {
+      return false;
+    }
+    if (!entityId && entityInput) {
+      entityId = entityInput.value;
+    }
+    if (!entityId) {
+      return false;
+    }
+
+    spans = document.getElementsByTagName("span");
+    for (i = 0; i < spans.length; i += 1) {
+      if (
+        entityIdForElement(spans[i]) === entityId &&
+        spans[i].getAttribute("data-ha-state-text") !== null
+      ) {
+        spans[i].textContent = textInput.value;
+      }
+    }
+
+    return true;
   }
 
   function attachButtonBehaviors() {
@@ -137,6 +195,10 @@
             window.setTimeout(function () {
               window.location.reload();
             }, 750);
+            return;
+          }
+
+          if (updateTextSpanForForm(form)) {
             return;
           }
 

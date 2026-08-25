@@ -20,7 +20,7 @@
 {% endmacro %}
 
 {% macro text_input_confirmation_modal(id, title, message, action, input_name, input_label, placeholder="", value="", required=false, cancel_text="Cancel", confirm_text="OK", entity_id="") %}
-{% call modal(id, title, message, action, cancel_text, confirm_text, "modal-text-input-confirmation", false) %}
+{% call modal(id, title, message, action, cancel_text, confirm_text, "modal-text-input-confirmation", false, entity_id) %}
     <div class="modal-inline-controls">
     <input
       id="{{ id }}-{{ input_name }}"
