@@ -182,3 +182,14 @@
   "switch.eloise_s_lamp"
 )}}
 {% endmacro %}
+
+{% macro guest_room_lamp_toggle() %}
+{{ api_call_button(
+  "/guest_room_lamp_toggle",
+  "/static/ios/salt_lamp.png",
+  "Guest Lamp Toggle",
+  "Lamp",
+  "state-icon",
+  "switch.guest_room_lamp"
+)}}
+{% endmacro %}
