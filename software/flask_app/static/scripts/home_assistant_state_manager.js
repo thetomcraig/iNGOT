@@ -69,38 +69,6 @@
   }
 
   /**
-   * Fetch weather data from Open-Meteo API and update the temperature display.
-   */
-  function fetchWeatherData() {
-    // Coordinates for Los Angeles (example values)
-    const latitude = 34.17;
-    const longitude = -118.26;
-    
-    // Construct the API URL with parameters
-    const apiUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,weather_code&hourly=temperature_2m,precipitation_probability,weather_code&daily=temperature_2m_max,temperature_2m_min,weather_code&temperature_unit=fahrenheit&timezone=auto`;
-
-    // Fetch weather data
-    fetch(apiUrl)
-      .then(response => response.json())
-      .then(data => {
-        console.log(data);
-        if (data && data.current && data.current.temperature_2m !== undefined) {
-          // Get the current temperature
-          const currentTemp = data.current.temperature_2m;
-          
-          // Find all elements with class outside-temp-number and update them with the temperature
-          const tempElements = document.querySelectorAll('.outside-temp-number');
-          tempElements.forEach(element => {
-            element.textContent = Math.round(currentTemp);
-          });
-        }
-      })
-      .catch(error => {
-        console.error('Error fetching weather data:', error);
-      });
-  }
-
-  /**
    * Synchronize all stateful icons with a Home Assistant state collection.
    *
    * @param {Object} homeAssistantStates States indexed by entity ID.
@@ -177,14 +145,6 @@
       }
     }
   }
-
-  // Fetch weather data when the page loads
-  window.addEventListener('load', function() {
-    fetchWeatherData();
-    
-    // Set up periodic updates (every 10 minutes)
-    setInterval(fetchWeatherData, 10 * 60 * 1000);
-  });
 
   window.applyHomeAssistantStates = applyHomeAssistantStates;
   window.homeAssistantStates = window.homeAssistantStates || {};
