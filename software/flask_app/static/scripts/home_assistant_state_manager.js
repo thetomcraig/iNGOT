@@ -135,17 +135,13 @@
 
   function toggleEntityForForm(form) {
     var images = form.getElementsByTagName("img");
-    var entityId;
+    var entityId = form.getAttribute("data-ha-entity");
     var isOn = false;
     var i;
 
-    // Only image buttons have an optimistic on/off state. A text-input
-    // modal may also carry data-ha-entity, but it must not affect borders.
-    if (!images.length) {
-      return;
+    if (!entityId && images.length) {
+      entityId = entityIdForElement(images[0]);
     }
-
-    entityId = entityIdForElement(images[0]);
     if (!entityId) {
       return;
     }
@@ -158,39 +154,6 @@
     }
 
     setEntityOn(entityId, !isOn);
-  }
-
-  function updateTextSpanForForm(form) {
-    var inputs = form.getElementsByTagName("input");
-    var textInput = null;
-    var entityInput = null;
-    var spans;
-    var i;
-
-    for (i = 0; i < inputs.length; i += 1) {
-      if (inputs[i].getAttribute("type") === "text") {
-        textInput = inputs[i];
-      }
-      if (inputs[i].getAttribute("name") === "entity_id") {
-        entityInput = inputs[i];
-      }
-    }
-
-    if (!textInput || !entityInput || textInput.value === "") {
-      return false;
-    }
-
-    spans = document.getElementsByTagName("span");
-    for (i = 0; i < spans.length; i += 1) {
-      if (
-        entityIdForElement(spans[i]) === entityInput.value &&
-        spans[i].getAttribute("data-ha-state-text") !== null
-      ) {
-        spans[i].textContent = textInput.value;
-      }
-    }
-
-    return true;
   }
 
   function attachButtonBehaviors() {
@@ -206,10 +169,6 @@
             window.setTimeout(function () {
               window.location.reload();
             }, 750);
-            return;
-          }
-
-          if (updateTextSpanForForm(form)) {
             return;
           }
 
