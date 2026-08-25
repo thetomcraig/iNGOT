@@ -137,3 +137,12 @@ def eloise_lamp_toggle():
         {"entity_id": "switch.eloise_s_lamp"}
     )
     return '', 204
+
+@app.route("/guest_room_lamp_toggle", methods=['GET', 'POST'])
+def guest_room_lamp_toggle():
+    call_service(
+        "switch",
+        "toggle",
+        {"entity_id": "switch.guest_room_lamp"}
+    )
+    return '', 204
