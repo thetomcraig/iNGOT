@@ -23,15 +23,7 @@
   </td>
 </tr>
 <tr>
-    <td>
-    {{ temp_tile_buttons.temp_tile_button(
-      "/static/ios/blank_nord2.png",
-      "Outside Temperature",
-      "Outside",
-      "outside-temp-number",
-      outside_temp | int if outside_temp else '?'
-    ) }}
-  </td>
+   <td>{{ temp_tile_buttons.outside_temp(outside_temp | int if outside_temp else '?') }}</td>
    <td>{{ api_call_buttons.guest_room_lamp_toggle() }}</td>
    <td>{{ modal_button.modal_button(
         "/static/ios/question_mark.png",

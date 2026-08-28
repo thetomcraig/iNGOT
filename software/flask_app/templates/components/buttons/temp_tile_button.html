@@ -7,6 +7,7 @@
     type="{{ 'submit' if action else 'button' }}"
     {% if modal_id %}data-modal-open="{{ modal_id }}"{% endif %}
   >
+    {% if caller %}{{ caller() }}{% endif %}
     <span class="temp-tile-icon">
       <img src="{{ img }}" alt="{{ alt_text }}" class="temp-tile-image" />
       <span class="temp-value">
@@ -21,4 +22,30 @@
 {% if action %}
 </form>
 {% endif %}
+{% endmacro %}
+
+
+{% macro outside_temp(outside_temp) %}
+  {% call temp_tile_button(
+    "/static/ios/blank_nord2.png",
+    "Outside Temperature",
+    "Outside",
+    "outside-temp-number",
+    outside_temp,
+    None,
+    None
+  ) %}{% endcall %}
+{% endmacro %}
+
+
+{% macro eloise_temp(eloise_temp) %}
+  {% call temp_tile_button(
+    "/static/ios/blank_ios_weather_blue.png",
+    "Eloise's Temperature",
+    "Eloise",
+    "eloises-temp-number",
+    eloise_temp,
+    None,
+    None
+  ) %}{% endcall %}
 {% endmacro %}
