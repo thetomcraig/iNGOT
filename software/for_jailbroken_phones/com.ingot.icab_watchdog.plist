@@ -9,7 +9,7 @@
 
     <key>ProgramArguments</key>
     <array>
-        <string>/usr/local/bin/autolaunch.sh</string>
+        <string>/usr/local/bin/refresh.sh</string>
     </array>
 
     <!-- Run every hour -->

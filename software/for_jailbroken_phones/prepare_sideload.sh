@@ -75,10 +75,7 @@ echo "Then run on the iPhone:"
 echo
 cat <<EOF
 cd /Applications
-tar -xzf /tmp/$APP_NAME.tar.gz
-chown -R root:wheel /Applications/$APP_NAME
-chmod -R 755 /Applications/$APP_NAME
-uicache
+tar -xzf /tmp/$APP_NAME.tar.gz && chown -R root:wheel /Applications/$APP_NAME && chmod -R 755 /Applications/$APP_NAME && uicache && killall SpringBoard
 EOF
 
 echo
@@ -86,3 +83,5 @@ echo "Cleaning up..."
 rm -rf "$WORKDIR"
 
 echo "Done."
+
+
