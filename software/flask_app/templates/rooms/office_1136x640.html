@@ -11,15 +11,7 @@
   <td>{{ api_call_buttons.office_fans_toggle() }}</td>
 </tr>
 <tr>
-  <td>
-    {{ temp_tile_buttons.temp_tile_button(
-      "/static/ios/blank_ios_weather_blue.png",
-      "Eloise's Temperature",
-      "Eloise",
-      "eloises-temp-number",
-      (home_assistant_states.get("sensor.eloise_s_room_temp_temperature", {}).get("state") | float | round | int)
-    ) }}
-  </td>
+  <td>{{ temp_tile_buttons.eloise_temp(eloise_temp) }}</td>
   <td>{{ api_call_buttons.three_d_printer_toggle() }}</td>
   <td>{{ api_call_buttons.downstairs_toggle() }}</td>
   <td>{{ api_call_buttons.office_lights_off() }}</td>

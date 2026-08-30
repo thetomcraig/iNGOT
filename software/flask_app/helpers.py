@@ -66,7 +66,7 @@ def get_outside_temperature():
         data = response.json()
         temperature = data["current"]["temperature_2m"]
         
-        return temperature
+        return int(round(float(temperature)))
     except (requests.RequestException, KeyError, ValueError):
         # Return None if there's any error in fetching or parsing data
         return None

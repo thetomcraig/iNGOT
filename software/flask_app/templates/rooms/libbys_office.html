@@ -10,8 +10,8 @@
   <td>{{ api_call_buttons.vacuum_start() }}</td>
 </tr>
 <tr>
-  <td>{{ temp_tile_buttons.eloise_temp(home_assistant_states.get("sensor.eloise_s_room_temp_temperature", {}).get("state") | float | round | int) }}</td>
-  <td>{{ temp_tile_buttons.outside_temp(outside_temp | int if outside_temp else '?') }}</td>
+  <td>{{ temp_tile_buttons.eloise_temp(eloise_temp) }}</td>
+  <td>{{ temp_tile_buttons.outside_temp(outside_temp) }}</td>
   <td>{{ api_call_buttons.downstairs_toggle() }}</td>
 </tr>
 {% endblock %}

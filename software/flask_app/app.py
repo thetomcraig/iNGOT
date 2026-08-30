@@ -12,28 +12,33 @@ def load_home_assistant_states():
         app.logger.exception("Unable to load Home Assistant states at startup")
         states = []
 
-    # Index the API response so the frontend can look up an entity directly,
-    # e.g. homeAssistantStates["light.dining_room_light"].state.
-    app.config["HOME_ASSISTANT_STATES"] = {
+    return {
         state["entity_id"]: state
         for state in states
         if isinstance(state, dict) and "entity_id" in state
     }
 
 
-load_home_assistant_states()
-
-
 @app.context_processor
-def inject_home_assistant_states():
-    load_home_assistant_states()
-    return {"home_assistant_states": app.config["HOME_ASSISTANT_STATES"]}
+def inject_data():
+    ha_states = load_home_assistant_states()
+    outside_temp = get_outside_temperature()
+    # Pulling out into its own var for convenience
+    eloise_temp = round(float(ha_states.get("sensor.eloise_s_room_temp_temperature", {}).get('state', 0.0)))
+    data = {
+        "outside_temp": outside_temp,
+        "eloise_temp": eloise_temp,
+        "home_assistant_states": ha_states,
+    }
+    return data
 
 @app.route("/ingot_dark_green")
+def office_960x640():
+    return render_template("rooms/office_960x640.html")
+
 @app.route("/guest_room_960x640")
 def guest_room_960x640():
-    outside_temp = get_outside_temperature()
-    return render_template("rooms/guest_room_960x640.html", outside_temp=outside_temp)
+    return render_template("rooms/guest_room_960x640.html")
 
 @app.route("/ingot_green")
 @app.route("/living_room_960x640")
@@ -52,8 +57,7 @@ def office_1136x640():
 @app.route("/ingot_gold")
 @app.route("/libbys_office")
 def libbys_office():
-    outside_temp = get_outside_temperature()
-    return render_template("rooms/libbys_office.html", outside_temp=outside_temp)
+    return render_template("rooms/libbys_office.html")
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5001)
