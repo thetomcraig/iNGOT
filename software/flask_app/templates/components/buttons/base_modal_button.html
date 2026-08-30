@@ -5,6 +5,7 @@
     alt="{{ alt_text }}"
     class="{{ class_name }}"
   >
+  {% if caller %}{{ caller() }}{% endif %}
   <span class="icon-label">{{ label_text }}</span>
 </button>
 {% endmacro %}

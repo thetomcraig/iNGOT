@@ -1,0 +1,30 @@
+{% from "components/modal.html" import text_input_confirmation_modal %}
+
+{% macro guest_room_text_block() %}
+  <button
+    class="message-container"
+    type="button"
+    data-modal-open="guest-room-message"
+  >
+    <span
+      class="guest-room-message"
+      data-ha-entity="input_text.ingot_guest_room_message"
+      data-ha-state-text
+      aria-live="polite"
+    ></span>
+  </button>
+
+{{ text_input_confirmation_modal(
+  "guest-room-message",
+  "",
+  "Set Message",
+  "/set_message",
+  "message",
+  "Message",
+  placeholder="Message",
+  required=true,
+  confirm_text="OK",
+  entity_id="input_text.ingot_guest_room_message",
+) }}
+
+{% endmacro %} 

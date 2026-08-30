@@ -1,0 +1,29 @@
+{% from "components/modal.html" import confirmation_modal %}
+{% from "components/buttons/base_modal_button.html" import modal_button %}
+
+{% macro guest_room_help_button() %}
+
+  {{ modal_button(
+    "/static/ios/question_mark.png",
+    "Help",
+    "Help",
+    "help-guest-room",
+    "help-guest-room"
+  )}}
+
+  {{ confirmation_modal(
+    "help-guest-room",
+    "Welcome!",
+    "• <- Phone chargers are on the left.<br>\
+    • Outlets are below this table.<br>\
+    • WiFi: <b>Netscape Navigator</b>. pw: <b>donkdonkdonk</b><br>\
+    • Window AC unit in the main room.
+    ",
+    "",
+    "Tom is Cool",
+    "OK",
+    "",
+    modal_class="help-guest-room"
+  ) }}
+
+{% endmacro %}

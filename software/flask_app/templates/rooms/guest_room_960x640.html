@@ -2,66 +2,15 @@
 <link rel="stylesheet" href="/static/guest_room_960x640.css?v=20260814-message-modal" />
 {% extends "rooms/base.html" %}
 {% import "components/buttons/api_call_buttons.html" as api_call_buttons %}
-{% import "components/buttons/modal_button.html" as modal_button %}
+{% import "components/buttons/modal_buttons.html" as modal_button %}
 {% import "components/buttons/temp_tile_button.html" as temp_tile_buttons %}
+{% import "components/text_blocks.html" as text_blocks %}
 {% from "components/modal.html" import confirmation_modal, text_input_confirmation_modal, info_modal %}
-{% block content %}
 <tr>
-  <td colspan="3">
-    <button
-      class="message-container"
-      type="button"
-      data-modal-open="guest-room-message"
-    >
-      <span
-        class="guest-room-message"
-        data-ha-entity="input_text.ingot_guest_room_message"
-        data-ha-state-text
-        aria-live="polite"
-      ></span>
-    </button>
-  </td>
+  <td colspan="3">{{ text_blocks.guest_room_text_block() }}</td>
 </tr>
 <tr>
    <td>{{ temp_tile_buttons.outside_temp(outside_temp) }}</td>
    <td>{{ api_call_buttons.guest_room_lamp_toggle() }}</td>
-   <td>{{ modal_button.modal_button(
-        "/static/ios/question_mark.png",
-        "Help",
-        "Help",
-        "help-guest-room",
-        "help-guest-room"
-        )}}
-  </td>
+   <td>{{ modal_button.guest_room_help_button() }}</td>
 </tr>
-{% endblock %}
-
-{% block modals %}
-{{ confirmation_modal(
-  "help-guest-room",
-  "Welcome!",
-  "• <- Phone chargers are on the left.<br>\
-   • Outlets are below this table.<br>\
-   • WiFi: <b>Netscape Navigator</b>. pw: <b>donkdonkdonk</b><br>\
-   • Window AC unit in the main room.
-  ",
-  "",
-  "Tom is Cool",
-  "OK",
-  "",
-  modal_class="help-guest-room"
-) }}
-
-{{ text_input_confirmation_modal(
-  "guest-room-message",
-  "",
-  "Set Message",
-  "/set_message",
-  "message",
-  "Message",
-  placeholder="Message",
-  required=true,
-  confirm_text="OK",
-  entity_id="input_text.ingot_guest_room_message",
-) }}
-{% endblock %}
