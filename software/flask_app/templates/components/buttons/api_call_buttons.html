@@ -168,3 +168,14 @@
   "switch.guest_room_lamp"
 )}}
 {% endmacro %}
+
+{% macro inside_soil_moisture(plants) %}
+{{ api_call_button(
+  "",
+  "/static/ios/plant_" ~ plants["sensor.inside_soil_soil_moisture"]["color"] ~ ".png",
+  "Inside Soil",
+  "Inside Soil",
+  "state-icon",
+  "sensor.inside_soil_soil_moisture"
+) }}
+{% endmacro %}

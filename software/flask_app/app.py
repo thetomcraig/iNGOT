@@ -2,7 +2,7 @@ import requests
 from flask import render_template
 from flask_base import app
 from ha_routes import *
-from helpers import get_all_states, get_outside_temperature
+from helpers import get_all_states, get_outside_temperature, calculate_plants
 
 
 def load_home_assistant_states():
@@ -12,11 +12,12 @@ def load_home_assistant_states():
         app.logger.exception("Unable to load Home Assistant states at startup")
         states = []
 
-    return {
+    entity_states = {
         state["entity_id"]: state
         for state in states
         if isinstance(state, dict) and "entity_id" in state
     }
+    return entity_states
 
 
 @app.context_processor
@@ -25,7 +26,10 @@ def inject_data():
     outside_temp = get_outside_temperature()
     # Pulling out into its own var for convenience
     eloise_temp = round(float(ha_states.get("sensor.eloise_s_room_temp_temperature", {}).get('state', 0.0)))
+    # Translate soil information to color-coded severity levels
+    plants_dict = calculate_plants(ha_states)
     data = {
+        "plants": plants_dict,
         "outside_temp": outside_temp,
         "eloise_temp": eloise_temp,
         "home_assistant_states": ha_states,

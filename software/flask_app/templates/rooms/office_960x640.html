@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="/static/office_960x640.css?"/>
 {% extends "rooms/base.html" %}
 {% import "components/buttons/temp_tile_button.html" as temp_tile_buttons %}
+{% import "components/buttons/modal_buttons.html" as modal_buttons %}
 
 {% block content %}
 <tr>
@@ -10,8 +11,9 @@
   <td>{{ api_call_buttons.office_ceiling_lights_toggle() }}</td>
 </tr>
 <tr>
-  <td>{{ temp_tile_buttons.eloise_temp(eloise_temp) }}</td>
-  <td>{{ api_call_buttons.three_d_printer_toggle() }}</td>
+  <!-- <td>{{ temp_tile_buttons.eloise_temp(eloise_temp) }}</td> -->
+       <td>{{ api_call_buttons.inside_soil_moisture(plants) }}</td>
+  <td>{{ modal_buttons.three_d_printer_toggle() }}</td>
   <td>{{ api_call_buttons.office_lights_off() }}</td>
 </tr>
 {% endblock %}
