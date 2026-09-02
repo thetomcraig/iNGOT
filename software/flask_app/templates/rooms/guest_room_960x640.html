@@ -1,11 +1,9 @@
 <title>Guest Room</title>
 <link rel="stylesheet" href="/static/guest_room_960x640.css" />
 {% extends "rooms/base.html" %}
-{% import "components/buttons/api_call_buttons.html" as api_call_buttons %}
-{% import "components/buttons/modal_buttons.html" as modal_button %}
+{% import "components/buttons/modal_buttons.html" as modal_buttons %}
 {% import "components/buttons/temp_tile_button.html" as temp_tile_buttons %}
 {% import "components/text_blocks.html" as text_blocks %}
-{% from "components/modal.html" import confirmation_modal, text_input_confirmation_modal, info_modal %}
 
 {% block content %}
 <tr>
@@ -14,6 +12,6 @@
 <tr>
    <td>{{ temp_tile_buttons.outside_temp(outside_temp) }}</td>
    <td>{{ api_call_buttons.guest_room_lamp_toggle() }}</td>
-   <td>{{ modal_button.guest_room_help_button() }}</td>
+   <td>{{ modal_buttons.guest_room_help_button() }}</td>
 </tr>
 {% endblock %}

@@ -136,31 +136,6 @@
 )}}
 {% endmacro %}
 
-{% macro three_d_printer_toggle() %}
-<button
-  class="image-button"
-  type="button"
-  data-modal-open="three-d-printer-confirmation"
->
-  <img
-    class="state-icon"
-    data-ha-entity="switch.3d_printer"
-    src="/static/ios/3d_printer.png"
-    alt="3D Printer Toggle"
-  />
-  <span class="icon-label">Printer</span>
-</button>
-{{ confirmation_modal(
-  "three-d-printer-confirmation",
-  "3D Printer",
-  "Toggle the printer?",
-  "/3d_printer_toggle",
-  "Cancel",
-  "OK",
-  "switch.3d_printer"
-) }}
-{% endmacro %}
-
 {% macro libbys_office_lights_toggle() %}
 {{ api_call_button(
   "/libbys_office_lights_toggle",

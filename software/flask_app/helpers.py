@@ -14,7 +14,6 @@ HEADERS = {
 }
 
 def call_service(domain, service, payload, rest_method="POST"):
-    print(f"Calling service: {domain}/{service} with payload: {payload}")
     url = f"{HA_URL}/api/services/{domain}/{service}"
     if rest_method == "POST":
         return requests.post(url, headers=HEADERS, json=payload)

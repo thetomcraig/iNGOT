@@ -27,41 +27,21 @@
         position: absolute;
       "
     ></iframe>
+
+    {% import "components/buttons/api_call_buttons.html" as api_call_buttons %}
+
     <main class="panel">
     <table class="button-grid" cellpadding="0" cellspacing="0" border="0">
       {% block content %}
       {% endblock %}
     </table>
-    {% block modals %}
-    {% endblock %}
     <div id="modal-backdrop" class="modal-backdrop" style="display: none"></div>
     <script src="{{ url_for('static', filename='scripts/modal.js') }}"></script>
     <script src="{{ url_for('static', filename='scripts/press_feedback.js') }}"></script>
-    <script src="{{ url_for('static', filename='scripts/page_refresh.js') }}"></script>
     <script>
       window.homeAssistantStates = {{ home_assistant_states | tojson }};
     </script>
     <script src="{{ url_for('static', filename='scripts/home_assistant_state_manager.js') }}"></script>
-    <script>
-      var startX, startY;
-var moved = false;
-
-document.addEventListener("touchstart", function(e) {
-    startX = e.touches[0].clientX;
-    startY = e.touches[0].clientY;
-    moved = false;
-}, false);
-
-document.addEventListener("touchmove", function(e) {
-    var dx = e.touches[0].clientX - startX;
-    var dy = e.touches[0].clientY - startY;
-
-    if (Math.abs(dx) > 5 || Math.abs(dy) > 5) {
-        moved = true;
-        e.preventDefault();
-    }
-}, false);
-    </script>
     </main>
   </body>
 </html>
