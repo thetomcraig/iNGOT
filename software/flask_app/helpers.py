@@ -77,10 +77,10 @@ def calculate_plants(ha_states):
         int_value = int(float(state.get("state", 0)))
         if 0 < int_value < 20:
             entity_to_state[entity]["color"] = "red"
-        if 20 < int_value < 40:
+        if 20 <= int_value < 40:
             entity_to_state[entity]["color"] = "dark_orange"
-        if 40 < int_value < 60:
+        if 40 <= int_value < 60:
             entity_to_state[entity]["color"] = "light_orange"
-        if 60 < int_value:
+        if 60 <= int_value:
             entity_to_state[entity]["color"] = "green"
     return entity_to_state
