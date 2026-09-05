@@ -24,6 +24,38 @@ def load_home_assistant_states():
 def inject_data():
     ha_states = load_home_assistant_states()
     outside_temp = get_outside_temperature()
+    # print(outside_temp)
+    # print("app.jinja_env")
+    # print(app.jinja_env)
+    # print(dir(app.jinja_env))
+    # print(app.jinja_env.list_templates())
+    # print("app.jinja_env.get_template")
+    # print(app.jinja_env.get_template("components/buttons/api_call_buttons.html"))
+    # print("dir(app.jinja_env.get_template")
+    # print(dir(app.jinja_env.get_template("components/buttons/api_call_buttons.html")))
+    # print("app.jinja_env.get_template(components/buttons/api_call_buttons.html.module-")
+    # print(app.jinja_env.get_template("components/buttons/api_call_buttons.html").module)
+    # template = app.jinja_env.get_template(
+    # "components/buttons/api_call_buttons.html"
+    # )
+    # module = template.make_module()
+    # print('module')
+    # print(module)
+    # print(dir(module))
+    # print(module.inside_soil_moisture)
+    # template = app.jinja_env.get_template(
+    #     "components/buttons/api_call_buttons.html"
+    # )
+
+    # macros = template.make_module()
+
+    # macro_map = {
+    #     "sensor.inside_soil_soil_moisture": macros.inside_soil_moisture,
+    #     "sensor.dining_room_light": macros.dining_room_light,
+    #     "sensor.vacuum_start": macros.vacuum_start,
+    # }
+    # print(macro_map)
+
     # Pulling out into its own var for convenience
     eloise_temp = round(float(ha_states.get("sensor.eloise_s_room_temp_temperature", {}).get('state', 0.0)))
     # Translate soil information to color-coded severity levels
@@ -39,7 +71,17 @@ def inject_data():
 @app.route("/ingot_dark_green")
 @app.route("/office_960x640")
 def office_960x640():
-    return render_template("rooms/office_960x640.html")
+    macro_names = ["office_lamps_toggle"]
+    template = app.jinja_env.get_template(
+        "components/buttons/api_call_buttons.html"
+    )
+    macros = template.make_module()
+    selected_macros = [
+        getattr(macros, name)
+        for name in macro_names
+    ]
+    print(selected_macros)
+    return render_template("rooms/office_960x640.html", macros=selected_macros)
 
 @app.route("/guest_room_960x640")
 def guest_room_960x640():
