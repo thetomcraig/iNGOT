@@ -36,7 +36,7 @@ def inject_data():
     }
     return data
 
-@app.route("/ingot_dark_green")
+@app.route("/ingot_green")
 @app.route("/office_960x640")
 def office_960x640():
     return render_template("rooms/office_960x640.html")
@@ -45,7 +45,6 @@ def office_960x640():
 def guest_room_960x640():
     return render_template("rooms/guest_room_960x640.html")
 
-@app.route("/ingot_green")
 @app.route("/living_room_960x640")
 def living_room_960x640():
     return render_template("rooms/living_room_960x640.html")
