@@ -1,8 +1,41 @@
 import requests
-from flask import render_template
+import logging
+import time
+from flask import render_template, request, g
 from flask_base import app
 from ha_routes import *
 from helpers import get_all_states, get_outside_temperature, calculate_plants
+
+# Configure logging to file
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler('/var/log/ingot_app.log'),
+        logging.StreamHandler()
+    ]
+)
+logger = logging.getLogger(__name__)
+
+# Add a request logging handler
+@app.before_request
+def log_request_info():
+    g.start_time = time.time()
+    logger.info('Request: %s %s from %s - User-Agent: %s', 
+                request.method, 
+                request.path, 
+                request.remote_addr, 
+                request.headers.get('User-Agent', ''))
+
+@app.after_request
+def log_response_info(response):
+    duration = time.time() - g.start_time if hasattr(g, 'start_time') else 0
+    logger.info('Response: %s %s - Status: %d - Duration: %.2fs', 
+                request.method, 
+                request.path, 
+                response.status_code, 
+                duration)
+    return response
 
 
 def load_home_assistant_states():
@@ -37,6 +70,7 @@ def inject_data():
     return data
 
 @app.route("/ingot_green")
+@app.route("/ingot_dark_green")
 @app.route("/office_960x640")
 def office_960x640():
     return render_template("rooms/office_960x640.html")
