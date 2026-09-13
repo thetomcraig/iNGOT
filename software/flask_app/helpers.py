@@ -1,5 +1,10 @@
 import requests
 
+import logging
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
 HA_URL = "http://ariston:8123"
 ENV_VARS = {}
 
@@ -73,14 +78,20 @@ def get_outside_temperature():
 def calculate_plants(ha_states):
     plant_entities = ["sensor.inside_soil_soil_moisture"]
     entity_to_state = {entity: ha_states.get(entity) for entity in plant_entities}
+    print(entity_to_state)
     for entity, state in entity_to_state.items():
-        int_value = int(float(state.get("state", 0)))
-        if 0 < int_value < 20:
-            entity_to_state[entity]["color"] = "red"
-        if 20 <= int_value < 40:
-            entity_to_state[entity]["color"] = "dark_orange"
-        if 40 <= int_value < 60:
-            entity_to_state[entity]["color"] = "light_orange"
-        if 60 <= int_value:
-            entity_to_state[entity]["color"] = "green"
+        if state is None:
+            logger.info(f"HA state is None! {entity_to_state}")
+            entity_to_state[entity] = None
+            return entity_to_state
+        else:
+            int_value = int(float(state.get("state", 0)))
+            if 0 < int_value < 20:
+                entity_to_state[entity]["color"] = "red"
+            if 20 <= int_value < 40:
+                entity_to_state[entity]["color"] = "dark_orange"
+            if 40 <= int_value < 60:
+                entity_to_state[entity]["color"] = "light_orange"
+            if 60 <= int_value:
+                entity_to_state[entity]["color"] = "green"
     return entity_to_state
