@@ -80,9 +80,10 @@ def calculate_plants(ha_states):
     entity_to_state = {entity: ha_states.get(entity) for entity in plant_entities}
     print(entity_to_state)
     for entity, state in entity_to_state.items():
+        # Fallback, if anything else fails
+        entity_to_state[entity] = {"color": "black"}
         if state is None:
             logger.info(f"HA state is None! {entity_to_state}")
-            entity_to_state[entity] = None
             return entity_to_state
         else:
             int_value = int(float(state.get("state", 0)))
