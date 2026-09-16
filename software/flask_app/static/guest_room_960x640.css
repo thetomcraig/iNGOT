@@ -1,11 +1,12 @@
 @import url("/static/base.css");
 
+/* Settings for iPhone 4 */
 .button-grid {
-    left: 3%;
+    left: 15px;
+    top: 25px;
 }
-
 td {
-    padding: 7px 7px;
+    padding: 6px 18px;
 }
 
 .guest-room-message {
