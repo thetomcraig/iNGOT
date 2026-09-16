@@ -57,24 +57,26 @@ def load_home_assistant_states():
 def inject_data():
     ha_states = load_home_assistant_states()
     outside_temp = get_outside_temperature()
-    # Pulling out into its own var for convenience
+    # Pulling out into its vars for convenience
     eloise_temp = round(float(ha_states.get("sensor.eloise_s_room_temp_temperature", {}).get('state', 0.0)))
+    help_text = ha_states.get("input_text.ingot_guest_room_help_message", {}).get('state', "No help text found")
     # Translate soil information to color-coded severity levels
     plants_dict = calculate_plants(ha_states)
     data = {
         "plants": plants_dict,
         "outside_temp": outside_temp,
         "eloise_temp": eloise_temp,
+        "guest_room_help_text": help_text,
         "home_assistant_states": ha_states,
     }
     return data
 
 @app.route("/ingot_green")
-@app.route("/ingot_dark_green")
 @app.route("/office_960x640")
 def office_960x640():
     return render_template("rooms/office_960x640.html")
 
+@app.route("/ingot_dark_green")
 @app.route("/guest_room_960x640")
 def guest_room_960x640():
     return render_template("rooms/guest_room_960x640.html")

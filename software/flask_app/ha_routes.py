@@ -1,6 +1,6 @@
 from flask import request
 from flask_base import app
-from helpers import call_service, get_state
+from helpers import call_service
 
 
 @app.route("/vacuum_start", methods=['GET', 'POST'])
