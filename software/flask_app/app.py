@@ -75,8 +75,12 @@ def inject_data():
 def office_960x640():
     return render_template("rooms/office_960x640.html")
 
-@app.route("/ingot_dark_green")
 @app.route("/ingot_green")
+@app.route("/bathroom_960x640")
+def bathroom_960x640():
+    return render_template("rooms/bathroom_960x640.html")
+
+@app.route("/ingot_gold")
 @app.route("/guest_room_960x640")
 def guest_room_960x640():
     return render_template("rooms/guest_room_960x640.html")
@@ -90,7 +94,7 @@ def living_room_960x640():
 def office_1136x640():
     return render_template("rooms/office_1136x640.html")
 
-@app.route("/ingot_gold")
+@app.route("/ingot_dark_green")
 @app.route("/libbys_office")
 def libbys_office():
     return render_template("rooms/libbys_office.html")

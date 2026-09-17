@@ -1,10 +1,19 @@
 @import url("/static/base.css");
 
-.button-grid {
-    left: 25px;
+/* Settings for iPhone 4 */
+/* .button-grid {
+    left: 15px;
     top: 25px;
+}
+td {
+    padding: 6px 18px;
+} */
+
+/* Settings for iPod Touch 1/2 */
+.button-grid {
+    left: 3%;
 }
 
 td {
-    padding: 5px 5px;
+    padding: 7px 7px;
 }

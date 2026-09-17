@@ -1,0 +1,22 @@
+<title>Guest Room</title>
+<link rel="stylesheet" href="/static/bathroom_960x640.css" />
+{% extends "rooms/base.html" %}
+{% import "components/buttons/modal_buttons.html" as modal_buttons %}
+{% import "components/buttons/temp_tile_button.html" as temp_tile_buttons %}
+{% import "components/text_blocks.html" as text_blocks %}
+
+{% block content %}
+<tr>
+  <td colspan="3">
+    <div class="clock-container">
+      <h1 id="clock"></h1>
+      <p id="date"></p>
+    </div>
+  </td>
+</tr>
+<tr>
+   <td>{{ temp_tile_buttons.outside_temp(outside_temp) }}</td>
+   <td>{{ temp_tile_buttons.eloise_temp(eloise_temp) }}</td>
+   <td>{{ api_call_buttons.inside_soil_moisture(plants) }}</td>
+</tr>
+{% endblock %}
