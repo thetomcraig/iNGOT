@@ -56,7 +56,7 @@ def load_home_assistant_states():
 @app.context_processor
 def inject_data():
     ha_states = load_home_assistant_states()
-    outside_temp = get_outside_temperature()
+    outside_temps = get_outside_temperature()
     # Pulling out into its vars for convenience
     eloise_temp = round(float(ha_states.get("sensor.eloise_s_room_temp_temperature", {}).get('state', 0.0)))
     help_text = ha_states.get("input_text.ingot_guest_room_help_message", {}).get('state', "No help text found")
@@ -64,7 +64,7 @@ def inject_data():
     plants_dict = calculate_plants(ha_states)
     data = {
         "plants": plants_dict,
-        "outside_temp": outside_temp,
+        "outside_temps": outside_temps,
         "eloise_temp": eloise_temp,
         "guest_room_help_text": help_text,
         "home_assistant_states": ha_states,

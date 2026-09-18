@@ -54,9 +54,13 @@ def get_outside_temperature():
         response.raise_for_status()
         
         data = response.json()
-        temperature = data["current"]["temperature_2m"]
-        
-        return int(round(float(temperature)))
+        temps = {
+            "low": int(round(float(data["daily"]["temperature_2m_min"][0]))),
+            "current": int(round(float(data["current"]["temperature_2m"]))),
+            "high": int(round(float(data["daily"]["temperature_2m_max"][0]))),
+        }
+        return temps
+
     except (requests.RequestException, KeyError, ValueError):
         # Return None if there's any error in fetching or parsing data
         return None
