@@ -29,6 +29,24 @@
     transform: translateY(-50%);
 }
 
+.corner-value {
+    position: absolute;
+    top: 80%;
+    width: 100%;
+    color: #000;
+    font-size: 20;
+}
+
+.corner-value.value-left {
+    left: 15%;
+    text-align: left;
+}
+
+.corner-value.value-right {
+    left: -15%;
+    text-align: right;
+}
+
 .temp-reading {
     position: relative;
     display: inline-block;

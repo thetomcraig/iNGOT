@@ -10,11 +10,17 @@
     {% if caller %}{{ caller() }}{% endif %}
     <span class="temp-tile-icon">
       <img src="{{ img }}" alt="{{ alt_text }}" class="temp-tile-image" />
+      <span class="corner-value value-left">
+        <span>00</span>
+      </span>
       <span class="temp-value">
         <span class="temp-reading">
           <span class="{{number_id}}" id="{{ number_id }}">{{ value if value is not none else '' }}</span>
           <span class="temp-degree">°</span>
         </span>
+      </span>
+      <span class="corner-value value-right">
+        <span>00</span>
       </span>
     </span>
     <span class="icon-label">{{ label_text }}</span>
