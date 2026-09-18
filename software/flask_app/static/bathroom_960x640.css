@@ -9,41 +9,10 @@ td {
     padding: 6px 18px;
 }
 
-.clock {
-    max-height: 4.8em;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-    display: block;
-    max-width: 280px;
-    margin: 6px auto 0;
-    color: #fff;
-    font: 24px Helvetica, Arial, sans-serif;
-    line-height: 1.2;
-    text-align: center;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, .85);
-    overflow-wrap: break-word;
-    width: 100%;
-  /* align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background: #002252; 
-  color: #ffffff; /* White text */
-  /* font-family: 'Courier New', monospace; */
-}
-
-/* Time Styling */
 #clock {
-  font-size: 60px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 80px;
   font-weight: bold;
   margin: 10px 0;
-  color: #eea731;
-}
-
-/* Date Styling */
-#date {
-  font-size: 22px;
-  opacity: 0.9;
+  color: #dad8d8;
 }
