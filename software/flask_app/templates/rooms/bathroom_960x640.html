@@ -1,4 +1,4 @@
-<title>Guest Room</title>
+<title>Bathroom</title>
 <link rel="stylesheet" href="/static/bathroom_960x640.css" />
 {% extends "rooms/base.html" %}
 {% import "components/buttons/modal_buttons.html" as modal_buttons %}
@@ -15,7 +15,7 @@
 </tr>
 <tr>
    <td>{{ temp_tile_buttons.outside_temp(outside_temps) }}</td>
-   <td>{{ temp_tile_buttons.eloise_temp(eloise_temp) }}</td>
+   <td>{{ temp_tile_buttons.child_1_temp(child_1_name, child_1_temp) }}</td>
    <td>{{ api_call_buttons.inside_soil_moisture(plants) }}</td>
 </tr>
 {% endblock %}

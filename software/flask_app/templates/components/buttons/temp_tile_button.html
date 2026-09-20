@@ -46,14 +46,14 @@
 {% endmacro %}
 
 
-{% macro eloise_temp(eloise_temp) %}
+{% macro child_1_temp(child_1_name, child_1_temp) %}
   {% call temp_tile_button(
     "/static/ios/blank_ios_weather_blue.png",
-    "Eloise's Temperature",
-    "Eloise",
-    "eloises-temp-number",
+    child_1_name|title ~ "'s Temperature",
+    child_1_name|title,
+    child_1_name ~ "s-temp-number",
     "",
-    eloise_temp,
+    child_1_temp,
     "",
     None,
     None

@@ -1,6 +1,6 @@
 from flask import request
 from flask_base import app
-from helpers import call_service
+from helpers import call_service, ENV_VARS
 
 
 @app.route("/vacuum_start", methods=['GET', 'POST'])
@@ -120,21 +120,21 @@ def office_lamps_toggle():
     )
     return '', 204
 
-@app.route("/libbys_office_lights_toggle", methods=['GET', 'POST'])
-def libbys_office_lights_toggle():
+@app.route("/spouse_office_lights_toggle", methods=['GET', 'POST'])
+def spouse_office_lights_toggle():
     call_service(
         "switch",
         "toggle",
-        {"entity_id": "switch.libby_s_office_lamp"}
+        {"entity_id": f"switch.{ENV_VARS['spouse']}_s_office_lamp"}
     )
     return '', 204
 
-@app.route("/eloise_lamp_toggle", methods=['GET', 'POST'])
-def eloise_lamp_toggle():
+@app.route("/child_1_lamp_toggle", methods=['GET', 'POST'])
+def child_1_lamp_toggle():
     call_service(
         "switch",
         "toggle",
-        {"entity_id": "switch.eloise_s_lamp"}
+        {"entity_id": f"switch.{ENV_VARS['CHILD_1']}_s_lamp"}
     )
     return '', 204
 

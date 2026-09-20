@@ -1,0 +1,17 @@
+<title>{{spouse_name|title }}'s Office</title>
+<link rel="stylesheet" href="/static/spouse_office.css"/>
+{% extends "rooms/base.html" %}
+{% import "components/buttons/temp_tile_button.html" as temp_tile_buttons %}
+
+{% block content %}
+<tr>
+  <td>{{ api_call_buttons.spouse_office_lights_toggle(spouse_name) }}</td>
+  <td>{{ api_call_buttons.child_1_lamp_toggle(child_1_name) }}</td>
+  <td>{{ api_call_buttons.vacuum_start() }}</td>
+</tr>
+<tr>
+   <td>{{ temp_tile_buttons.child_1_temp(child_1_name, child_1_temp) }}</td>
+    <td>{{ api_call_buttons.inside_soil_moisture(plants) }}</td>
+   <td>{{ temp_tile_buttons.outside_temp(outside_temps) }}</td>
+</tr>
+{% endblock %}

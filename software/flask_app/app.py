@@ -4,7 +4,7 @@ import time
 from flask import render_template, request, g
 from flask_base import app
 from ha_routes import *
-from helpers import get_all_states, get_outside_temperature, calculate_plants
+from helpers import get_all_states, get_outside_temperature, calculate_plants, ENV_VARS
 
 # Configure logging to file
 logging.basicConfig(
@@ -58,14 +58,16 @@ def inject_data():
     ha_states = load_home_assistant_states()
     outside_temps = get_outside_temperature()
     # Pulling out into its vars for convenience
-    eloise_temp = round(float(ha_states.get("sensor.eloise_s_room_temp_temperature", {}).get('state', 0.0)))
+    child_1_temp = round(float(ha_states.get(f"sensor.{ENV_VARS['CHILD_1']}_s_room_temp_temperature", {}).get('state', 0.0)))
     help_text = ha_states.get("input_text.ingot_guest_room_help_message", {}).get('state', "No help text found")
     # Translate soil information to color-coded severity levels
     plants_dict = calculate_plants(ha_states)
     data = {
         "plants": plants_dict,
+        "child_1_name": ENV_VARS['CHILD_1'],
+        "spouse_name": ENV_VARS['SPOUSE'],
         "outside_temps": outside_temps,
-        "eloise_temp": eloise_temp,
+        "child_1_temp": child_1_temp,
         "guest_room_help_text": help_text,
         "home_assistant_states": ha_states,
     }
@@ -95,9 +97,9 @@ def office_1136x640():
     return render_template("rooms/office_1136x640.html")
 
 @app.route("/ingot_dark_green")
-@app.route("/libbys_office")
-def libbys_office():
-    return render_template("rooms/libbys_office.html")
+@app.route("/spouse_office")
+def spouse_office():
+    return render_template("rooms/spouse_office.html")
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5001)

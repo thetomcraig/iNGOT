@@ -28,7 +28,7 @@
   "/vacuum_start",
   "/static/ios/vacuum_start.png",
   "Start Vacuum",
-  "Start Rocky",
+  "Start",
   "",
   "",
   true
@@ -136,25 +136,25 @@
 )}}
 {% endmacro %}
 
-{% macro libbys_office_lights_toggle() %}
+{% macro spouse_office_lights_toggle(spouse_name) %}
 {{ api_call_button(
-  "/libbys_office_lights_toggle",
+  "/spouse_office_lights_toggle",
   "/static/ios/lamp_purple.png",
-  "Libbys Office Lights Toggle",
+  spouse_name|title ~ "s Office Lights Toggle",
   "Lamp",
   "state-icon",
-  "switch.libby_s_office_lamp"
+  "switch." ~ spouse_name ~ "s_office_lamp"
 )}}
 {% endmacro %}
 
-{% macro eloise_lamp_toggle() %}
+{% macro child_1_lamp_toggle(child_1_name) %}
 {{ api_call_button(
-  "/eloise_lamp_toggle",
+  "/child_1_lamp_toggle",
   "/static/ios/lamp_pink.png",
-  "Eloise Lamp Toggle",
-  "Eloise",
+  child_1_name|title ~ " Lamp Toggle",
+  child_1_name|title,
   "state-icon",
-  "switch.eloise_s_lamp"
+  "switch." ~ child_1_name ~ "_s_lamp"
 )}}
 {% endmacro %}
 
