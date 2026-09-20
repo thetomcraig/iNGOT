@@ -9,6 +9,17 @@ td {
     padding: 7px 7px;
 }
 
+/* Make each row take up 50% of the height */
+.button-grid {
+    height: 100vh;
+    table-layout: fixed;
+}
+
+.button-grid tr {
+    height: 50vh;
+    display: table-row;
+}
+
 .guest-room-message {
     max-height: 4.8em;
     overflow: hidden;
