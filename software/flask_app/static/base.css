@@ -26,6 +26,12 @@ body {
     object-position: center center;
 }
 
+table {
+    height: 85%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
 .panel {
     position: fixed;
     z-index: 2;
@@ -50,10 +56,13 @@ form {
     display: inline;
 }
 
+
 td {
     text-align: center;
     vertical-align: middle;
+    height: 50%;
 }
+
 
 .image-button {
     padding: 0;
