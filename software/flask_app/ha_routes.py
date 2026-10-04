@@ -125,7 +125,7 @@ def spouse_office_lights_toggle():
     call_service(
         "switch",
         "toggle",
-        {"entity_id": f"switch.{ENV_VARS['spouse']}_s_office_lamp"}
+        {"entity_id": f"switch.{ENV_VARS['SPOUSE']}_s_office_lamp"}
     )
     return '', 204
 
