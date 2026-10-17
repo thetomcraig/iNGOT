@@ -17,6 +17,17 @@ def vacuum_stop():
     })
     return '', 204
 
+@app.route("/vacuum_toggle_pause", methods=['GET', 'POST'])
+def vacuum_toggle_pause():
+    call_service(
+        "script",
+        "turn_on",
+        {
+            "entity_id": "script.vacuum_toggle_pause"
+        }
+    )
+    return '', 204
+
 @app.route("/office_lights_off", methods=['GET', 'POST'])
 def office_lights_off():
     call_service(
