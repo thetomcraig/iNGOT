@@ -47,6 +47,18 @@
 )}}
 {% endmacro %}
 
+{% macro vacuum_toggle_pause() %}
+{{ api_call_button(
+  "/vacuum_toggle_pause",
+  "/static/ios/vacuum_start.png",
+  "Start Vacuum",
+  "Start",
+  "",
+  "",
+  true
+)}}
+{% endmacro %}
+
 {% macro play_pause() %}
 {{ api_call_button(
   "/playpause",
