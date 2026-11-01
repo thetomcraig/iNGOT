@@ -14,7 +14,7 @@
 
     <!-- Run every hour -->
     <key>StartInterval</key>
-    <integer>600</integer>
+    <integer>3600</integer>
 
     <key>StandardOutPath</key>
     <string>/var/log/icab-watchdog.log</string>
