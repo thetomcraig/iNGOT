@@ -1,6 +1,7 @@
 @import url("/static/base.css");
 
 /* Settings for iPhone 4 */
+/* 960×640 */
 /* .button-grid {
     left: 15px;
     top: 25px;
@@ -10,6 +11,7 @@ td {
 } */
 
 /* Settings for iPod Touch 1/2 */
+/* 320x480 */
 .button-grid {
     left: 3%;
 }
