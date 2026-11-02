@@ -4,7 +4,7 @@
 /* 960×640 */
 .button-grid {
     left: 15px;
-    /* top: 25px; */
+    top: 25px;
 }
 td {
     padding: 6px 18px;
