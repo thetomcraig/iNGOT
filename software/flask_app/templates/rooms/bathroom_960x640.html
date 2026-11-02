@@ -5,10 +5,15 @@
 {% import "components/buttons/temp_tile_button.html" as temp_tile_buttons %}
 {% import "components/text_blocks.html" as text_blocks %}
 {% import "components/clock.html" as clock_component %}
+{% import "components/date.html" as date_component %}
 
 
 {% block content %}
-{{ clock_component.clock() }}
+<tr>
+  {{ date_component.date() }}
+</tr>
+<tr>
+  {{ clock_component.clock() }}
 </tr>
 <tr>
    <td>{{ temp_tile_buttons.outside_temp(outside_temps) }}</td>
