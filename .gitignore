@@ -5,3 +5,4 @@
 software/.vscode/settings.json
 .opencode
 .env
+*.egg-info
