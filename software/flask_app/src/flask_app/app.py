@@ -2,9 +2,9 @@ import requests
 import logging
 import time
 from flask import render_template, request, g
-from flask_base import app
-from ha_routes import *
-from helpers import get_all_states, get_outside_temperature, calculate_plants, ENV_VARS
+from .flask_base import app
+from .ha_routes import *
+from .helpers import get_all_states, get_outside_temperature, calculate_plants, ENV_VARS
 
 # Configure logging to file
 logging.basicConfig(

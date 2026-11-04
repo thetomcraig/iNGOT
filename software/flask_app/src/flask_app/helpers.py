@@ -1,12 +1,15 @@
 import requests
+import os
 
 import logging
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+# Load environment variables from .env file in the project root
 ENV_VARS = {}
-with open(".env", "r") as f:
+env_path = os.path.join(os.path.dirname(__file__), "..", "..", ".env")
+with open(env_path, "r") as f:
     for line in f:
         key_var = line.split("=")
         ENV_VARS[key_var[0].strip()] = key_var[1].strip()
