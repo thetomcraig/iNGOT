@@ -46,10 +46,10 @@ table {
     pointer-events: none;
 }
 
-.button-grid {
+/* .button-grid {
     position: absolute;
     top: 5%;
-}
+} */
 
 form {
     margin: 0;
@@ -59,11 +59,11 @@ form {
 }
 
 
-td {
+/* td {
     text-align: center;
     vertical-align: middle;
     height: 50%;
-}
+} */
 
 
 .image-button {
