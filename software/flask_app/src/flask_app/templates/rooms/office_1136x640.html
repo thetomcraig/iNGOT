@@ -6,6 +6,7 @@
 {% import "components/clock.html" as clock_component %}
 
 {% block content %}
+{{ clock_component.clock() }}
 <tr>
   <td>{{ api_call_buttons.office_lamps_toggle() }}</td>
   <td>{{ api_call_buttons.office_fans_lights_toggle() }}</td>

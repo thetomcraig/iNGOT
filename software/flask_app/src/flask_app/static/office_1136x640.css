@@ -8,10 +8,3 @@
 td {
     padding: 10px 10px;
 }
-
-/* Center the clock element */
-.button-grid {
-    margin: 0 auto;
-    left: 50% !important;
-    transform: translateX(-50%);
-}
