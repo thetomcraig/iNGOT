@@ -45,11 +45,6 @@ table {
     -webkit-box-sizing: border-box;
     pointer-events: none;
 }
-
-/* .button-grid {
-    position: absolute;
-    top: 5%;
-} */
 .button-grid {
     width: 100% !important;
     left: 0 !important;
@@ -65,6 +60,7 @@ td {
 .panel {
     padding: 20px;
 }
+
 td form {
     text-align: center;
     display: flex;
@@ -78,14 +74,6 @@ form {
     pointer-events: auto;
     display: inline;
 }
-
-
-/* td {
-    text-align: center;
-    vertical-align: middle;
-    height: 50%;
-} */
-
 
 .image-button {
     padding: 0;

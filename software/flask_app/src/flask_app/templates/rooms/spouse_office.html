@@ -5,12 +5,14 @@
 {% import "components/clock.html" as clock_component %}
 
 {% block content %}
-<!-- <td class="top-row" colspan="3">
-  {{ clock_component.clock() }}
-</td>
+<tr>
+  <td colspan="3">
+    {{ clock_component.clock() }}
+  </td>
+</tr>
 <tr>
    <td>{{ temp_tile_buttons.outside_temp(outside_temps) }}</td>
    <td>{{ temp_tile_buttons.child_1_temp(child_1_name, child_1_temp) }}</td>
    <td>{{ api_call_buttons.spouse_office_lights_toggle(spouse_name) }}</td>
-</tr> -->
+</tr>
 {% endblock %}
