@@ -8,4 +8,19 @@
 
 td {
     padding: 10px 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Add padding to panel for left and right margins */
+.panel {
+    padding: 0 20px;
+}
+
+/* Ensure form elements inside td are centered */
+td form {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
