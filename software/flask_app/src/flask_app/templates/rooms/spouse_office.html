@@ -5,7 +5,8 @@
 {% import "components/clock.html" as clock_component %}
 
 {% block content %}
-{{ clock_component.clock() }}
+<tr>
+   {{ clock_component.clock() }}
 </tr>
 <tr>
    <td>{{ temp_tile_buttons.outside_temp(outside_temps) }}</td>
