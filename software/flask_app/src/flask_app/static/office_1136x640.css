@@ -1,10 +1,11 @@
 @import url("/static/base.css");
 
 /* Settings for iPhone 5 */
-/* .button-grid {
-    left: 16px;
+.button-grid {
+    width: 100% !important;
+    left: 0 !important;
 }
 
 td {
     padding: 10px 10px;
-} */
+}
