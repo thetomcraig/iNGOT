@@ -10,10 +10,9 @@
 
 {% block content %}
 <tr>
-  {{ date_component.date() }}
-</tr>
-<tr>
-  {{ clock_component.clock() }}
+  <td colspan="3">
+    {{ clock_component.clock() }}
+  </td>
 </tr>
 <tr>
    <td>{{ temp_tile_buttons.outside_temp(outside_temps) }}</td>
